@@ -1,0 +1,44 @@
+{#- ch17/template.jinja
+    SmolLM2's chat template (ChatML), plus the tool-calling system
+    prompt from the SmolLM2-1.7B-Instruct model card, rendered
+    whenever a request carries tools, and assistant tool calls
+    rendered in the same format the prompt asks the model for:
+    <tool_call>[{"name": ..., "arguments": {...}}]</tool_call>. -#}
+{%- if tools -%}
+<|im_start|>system
+You are an expert in composing functions. You are given a question and a set of possible functions.
+Based on the question, you will need to make one or more function/tool calls to achieve the purpose.
+If none of the functions can be used, point it out and refuse to answer.
+If the given question lacks the parameters required by the function, also point it out.
+
+You have access to the following tools:
+<tools>{{ tools | tojson }}</tools>
+
+The output MUST strictly adhere to the following format, and NO other text MUST be included.
+The example format is as follows. Please make sure the parameter type is correct. If no function call is needed, please make the tool calls an empty list '[]'.
+<tool_call>[
+{"name": "func_name1", "arguments": {"argument1": "value1", "argument2": "value2"}},
+... (more tool calls as required)
+]</tool_call><|im_end|>
+{% elif messages[0]['role'] != 'system' -%}
+<|im_start|>system
+You are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>
+{% endif -%}
+{%- for message in messages -%}
+<|im_start|>{{ message['role'] }}
+{{ message['content'] or '' }}
+{%- if message['tool_calls'] -%}
+<tool_call>[
+{%- for call in message['tool_calls'] -%}
+{%- set fn = call['function'] -%}
+{"name": "{{ fn['name'] }}", "arguments": {% if fn['arguments'] is string -%}
+{{ fn['arguments'] }}{% else %}{{ fn['arguments'] | tojson }}{% endif -%}
+}{% if not loop.last %}, {% endif -%}
+{%- endfor -%}
+]</tool_call>
+{%- endif -%}
+<|im_end|>
+{% endfor -%}
+{%- if add_generation_prompt -%}
+<|im_start|>assistant
+{% endif -%}

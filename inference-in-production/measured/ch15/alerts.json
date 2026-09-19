@@ -1,0 +1,1 @@
+{"status":"success","data":{"alerts":[{"labels":{"alertname":"TTFTBudgetBurn","model_name":"smollm2-360m","severity":"page"},"annotations":{"summary":"smollm2-360m: TTFT budget burning"},"state":"firing","activeAt":"2026-09-19T21:40:14.522994112Z","value":"1.4583333333333337e-01"}]}}

@@ -1,0 +1,4 @@
+{
+ "llama.cpp": {"tool call": 0.45, "json schema": 0.9},
+ "vllm": {"json schema": 0.9}
+}

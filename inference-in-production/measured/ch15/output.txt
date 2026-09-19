@@ -1,0 +1,94 @@
+
+== config into the shared volume
+grafana.json
+performance_statistics.json
+query_statistics.json
+
+== promtool: check the config, then unit-test the rules
+Checking prometheus.yml
+  SUCCESS: 2 rule files found
+ SUCCESS: prometheus.yml is valid prometheus config file syntax
+
+Checking rules.yml
+  SUCCESS: 10 rules found
+
+Checking alerts.yml
+  SUCCESS: 4 rules found
+
+Checking cost.yml
+  SUCCESS: 2 rules found
+
+  SUCCESS
+
+
+== the collector, then vLLM with its traces pointed at it
+ch15-otel ready after ~1s
+models: 8 file(s), 693 MiB, into /models
+  ok      hf/SmolLM2-360M-Instruct/config.json
+  ok      hf/SmolLM2-360M-Instruct/generation_config.json
+  ok      hf/SmolLM2-360M-Instruct/merges.txt
+  ok      hf/SmolLM2-360M-Instruct/model.safetensors
+  ok      hf/SmolLM2-360M-Instruct/special_tokens_map.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer_config.json
+  ok      hf/SmolLM2-360M-Instruct/vocab.json
+ch15-vllm ready after ~59s
+
+== Prometheus and Grafana
+ch15-prom ready after ~1s
+ch15-grafana ready after ~7s
+
+== traffic: 48 requests sharing a 256-token prefix
+
+== Prometheus: the target, the recorded series, the alerts
+up 1
+vllm:ttft_seconds:p99_5m                2.397
+vllm:itl_seconds:p99_5m                 0.277
+vllm:prefix_cache_hit_ratio:rate5m      0.653
+vllm:prefix_cache_hit_ratio:rate1h      0.653
+vllm:preemptions:rate5m                 0.000
+vllm:generation_tokens:rate5m           5.346
+vllm:ttft_slow:ratio_rate5m             0.146
+vllm:ttft_slow:ratio_rate1h             0.146
+vllm:itl_slow:ratio_rate5m              0.036
+vllm:itl_slow:ratio_rate1h              0.036
+firing  TTFTBudgetBurn
+
+== Grafana: vLLM's dashboards, panel by panel
+ dashboard                 panels  with data
+ Performance Statistics        16         16
+ Query Statistics_New4         14         14
+ vLLM                          12         12
+
+== traces
+spans received: 61, service.name vllm
+    48  llm_request
+     2  Worker init
+     1  Initialize model
+     1  Load weights
+     1  Load model
+     1  Loading (CPU)
+     1  Executor init
+     1  Prepare model
+     1  AsyncMPClient init
+     1  Overall Loading
+     1  Warmup (CPU)
+     1  Allocate KV cache
+     1  EngineCoreProc init
+one llm_request span:
+  gen_ai.latency.e2e                       1.976
+  gen_ai.latency.time_in_model_decode      0.654
+  gen_ai.latency.time_in_model_inference   1.935
+  gen_ai.latency.time_in_model_prefill     1.281
+  gen_ai.latency.time_in_queue             0.001
+  gen_ai.latency.time_to_first_token       1.325
+  gen_ai.request.id                        cmpl-bench-00871b8e-0-0
+  gen_ai.request.max_tokens                32
+  gen_ai.request.n                         1
+  gen_ai.request.temperature               1
+  gen_ai.request.top_p                     1
+  gen_ai.usage.completion_tokens           32
+  gen_ai.usage.prompt_tokens               384
+
+== done
+manifest: measured/ch15/machine.json

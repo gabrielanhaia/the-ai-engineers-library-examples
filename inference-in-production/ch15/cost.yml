@@ -1,0 +1,15 @@
+# ch15/cost.yml
+# $ per million output tokens as a fleet quantity: what the serving
+# units cost per hour over the output tokens they made in it. The
+# price is chapter 5's: one Nebius node of eight B200s at the list
+# price of $7.15 per GPU-hour (read 2026-09-19). Tested, never fed
+# laptop tokens: a laptop's tokens times a GPU's price means nothing.
+groups:
+  - name: fleet-cost
+    rules:
+      - record: fleet:usd_per_hour
+        expr: vector(8 * 7.15)
+      - record: fleet:usd_per_million_output_tokens:rate5m
+        expr: >
+          fleet:usd_per_hour
+          / (sum(rate(vllm:generation_tokens_total[5m])) * 3600 / 1e6)

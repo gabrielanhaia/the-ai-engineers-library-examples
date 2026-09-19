@@ -1,0 +1,9 @@
+# ch15/grafana/datasource.yml
+apiVersion: 1
+datasources:
+  - name: Prometheus
+    type: prometheus
+    uid: prometheus
+    access: proxy
+    url: http://ch15-prom:9090
+    isDefault: true

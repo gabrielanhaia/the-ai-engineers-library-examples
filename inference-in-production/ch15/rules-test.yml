@@ -1,0 +1,82 @@
+# ch15/rules-test.yml
+# promtool test rules: synthetic series in, expected values and
+# alerts out. Run: promtool test rules rules-test.yml
+rule_files: [rules.yml, alerts.yml, cost.yml]
+evaluation_interval: 1m
+
+tests:
+  - name: hit ratio 0.9 for an hour, then 0.1
+    interval: 1m
+    input_series:
+      - series: vllm:prefix_cache_queries_total{model_name="smollm2"}
+        values: 0+1000x80
+      - series: vllm:prefix_cache_hits_total{model_name="smollm2"}
+        values: 0+900x60 54100+100x19
+    promql_expr_test:
+      - expr: round(vllm:prefix_cache_hit_ratio:rate5m, 0.001)
+        eval_time: 30m
+        exp_samples:
+          - labels: '{model_name="smollm2"}'
+            value: 0.9
+    alert_rule_test:
+      - eval_time: 60m
+        alertname: PrefixHitRateDropped
+        exp_alerts: []
+      - eval_time: 80m
+        alertname: PrefixHitRateDropped
+        exp_alerts:
+          - exp_labels: {severity: ticket, model_name: smollm2}
+            exp_annotations: {summary: "smollm2: prefix hits halved"}
+
+  - name: TTFT, 99.5% within 1 s, then 80%
+    interval: 1m
+    input_series:
+      - series: >-
+          vllm:time_to_first_token_seconds_bucket{
+          model_name="smollm2", le="1.0"}
+        values: 0+995x60 60500+800x59
+      - series: >-
+          vllm:time_to_first_token_seconds_count{model_name="smollm2"}
+        values: 0+1000x120
+    alert_rule_test:
+      - eval_time: 60m
+        alertname: TTFTBudgetBurn
+        exp_alerts: []
+      - eval_time: 120m
+        alertname: TTFTBudgetBurn
+        exp_alerts:
+          - exp_labels: {severity: page, model_name: smollm2}
+            exp_annotations:
+              summary: "smollm2: TTFT budget burning"
+
+  - name: KV cache full while preempting, for 5 minutes
+    interval: 1m
+    input_series:
+      - series: vllm:kv_cache_usage_perc{model_name="smollm2"}
+        values: 0.99x20
+      - series: vllm:num_preemptions_total{model_name="smollm2"}
+        values: 0+2x20
+    alert_rule_test:
+      - eval_time: 3m
+        alertname: KVCacheFullAndPreempting
+        exp_alerts: []
+      - eval_time: 15m
+        alertname: KVCacheFullAndPreempting
+        exp_alerts:
+          - exp_labels: {severity: page, model_name: smollm2}
+            exp_annotations:
+              summary: "smollm2: KV full, preempting"
+
+  # Chapter 5's worked example: 89,856.3 output tok/s (MLPerf v6.1,
+  # gpt-oss-120b, Server) on a node that lists at $57.20 an hour.
+  - name: $/M at chapter 5's cited rate
+    interval: 1m
+    input_series:
+      - series: vllm:generation_tokens_total{model_name="gpt-oss"}
+        values: 0+5391378x10
+    promql_expr_test:
+      - expr: fleet:usd_per_million_output_tokens:rate5m
+        eval_time: 10m
+        exp_samples:
+          - labels: fleet:usd_per_million_output_tokens:rate5m
+            value: 0.17682554132419084

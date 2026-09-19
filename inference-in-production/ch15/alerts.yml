@@ -1,0 +1,42 @@
+# ch15/alerts.yml
+# Alerts that earn their page. The burn-rate pair is Vol. 1's
+# multi-window method applied to the SLIs in rules.yml: an SLO of
+# 99% leaves a 1% budget, and a burn of 14.4 times that rate over
+# both 1 h and 5 m spends 2% of a 30-day budget in an hour.
+groups:
+  - name: vllm-alerts
+    rules:
+      - alert: TTFTBudgetBurn
+        expr: >
+          vllm:ttft_slow:ratio_rate1h > 14.4 * 0.01
+          and vllm:ttft_slow:ratio_rate5m > 14.4 * 0.01
+        labels: {severity: page}
+        annotations:
+          summary: "{{ $labels.model_name }}: TTFT budget burning"
+      - alert: ITLBudgetBurn
+        expr: >
+          vllm:itl_slow:ratio_rate1h > 14.4 * 0.01
+          and vllm:itl_slow:ratio_rate5m > 14.4 * 0.01
+        labels: {severity: page}
+        annotations:
+          summary: "{{ $labels.model_name }}: ITL budget burning"
+      # The cache is full and the engine is evicting running
+      # requests to recompute them later: tail TTFT is next.
+      - alert: KVCacheFullAndPreempting
+        expr: >
+          max by (model_name) (vllm:kv_cache_usage_perc) > 0.95
+          and vllm:preemptions:rate5m > 0
+        for: 5m
+        labels: {severity: page}
+        annotations:
+          summary: "{{ $labels.model_name }}: KV full, preempting"
+      # Half the hit rate of the last hour: prompts changed, or
+      # routing stopped sending a prefix to where it is cached.
+      - alert: PrefixHitRateDropped
+        expr: >
+          vllm:prefix_cache_hit_ratio:rate5m
+          < 0.5 * vllm:prefix_cache_hit_ratio:rate1h
+        for: 10m
+        labels: {severity: ticket}
+        annotations:
+          summary: "{{ $labels.model_name }}: prefix hits halved"

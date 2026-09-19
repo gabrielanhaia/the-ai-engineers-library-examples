@@ -1,0 +1,8 @@
+# ch15/grafana/dashboards.yml
+# Load every dashboard JSON in the folder: vLLM's own three.
+apiVersion: 1
+providers:
+  - name: vllm
+    type: file
+    options:
+      path: /scratch/ch15/grafana/dashboards

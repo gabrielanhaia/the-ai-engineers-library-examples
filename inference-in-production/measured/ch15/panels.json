@@ -1,0 +1,188 @@
+[
+ {
+  "dashboard": "Performance Statistics",
+  "uid": "performance-statistics",
+  "panels": [
+   {
+    "title": "E2E Latency over Time",
+    "data": true
+   },
+   {
+    "title": "E2E Latency (P99)",
+    "data": true
+   },
+   {
+    "title": "E2E Latency (P90)",
+    "data": true
+   },
+   {
+    "title": "E2E Latency (Avg)",
+    "data": true
+   },
+   {
+    "title": "E2E Latency (P50)",
+    "data": true
+   },
+   {
+    "title": "TTFT Over Time",
+    "data": true
+   },
+   {
+    "title": "TTFT (P99)",
+    "data": true
+   },
+   {
+    "title": "TTFT (P90)",
+    "data": true
+   },
+   {
+    "title": "TTFT (Avg)",
+    "data": true
+   },
+   {
+    "title": "TTFT (P50)",
+    "data": true
+   },
+   {
+    "title": "ITL (Time Per Output Token) Over Time",
+    "data": true
+   },
+   {
+    "title": "ITL (P90)",
+    "data": true
+   },
+   {
+    "title": "ITL (P99)",
+    "data": true
+   },
+   {
+    "title": "ITL (Avg)",
+    "data": true
+   },
+   {
+    "title": "ITL (P50)",
+    "data": true
+   },
+   {
+    "title": "TPS (Tokens Per Second) Over Time",
+    "data": true
+   }
+  ]
+ },
+ {
+  "dashboard": "Query Statistics_New4",
+  "uid": "query-statistics4",
+  "panels": [
+   {
+    "title": "Successful Requests Over Time",
+    "data": true
+   },
+   {
+    "title": "Requests Avg Rate",
+    "data": true
+   },
+   {
+    "title": "p50 Latency",
+    "data": true
+   },
+   {
+    "title": "p90 Latency",
+    "data": true
+   },
+   {
+    "title": "p99 Latency",
+    "data": true
+   },
+   {
+    "title": "Input Token Size Distribution",
+    "data": true
+   },
+   {
+    "title": "Input Token Size p90",
+    "data": true
+   },
+   {
+    "title": "Input Token Size p50",
+    "data": true
+   },
+   {
+    "title": "Input Token Size Avg",
+    "data": true
+   },
+   {
+    "title": "Input Token Size p99",
+    "data": true
+   },
+   {
+    "title": "Input Tokens Over Time",
+    "data": true
+   },
+   {
+    "title": "Input Tokens/Sec Avg",
+    "data": true
+   },
+   {
+    "title": "Output Tokens Over Time",
+    "data": true
+   },
+   {
+    "title": "Output Tokens/Sec Avg",
+    "data": true
+   }
+  ]
+ },
+ {
+  "dashboard": "vLLM",
+  "uid": "b281712d-8bff-41ef-9f3f-71ad43c05e9b",
+  "panels": [
+   {
+    "title": "E2E Request Latency",
+    "data": true
+   },
+   {
+    "title": "Token Throughput",
+    "data": true
+   },
+   {
+    "title": "Inter Token Latency",
+    "data": true
+   },
+   {
+    "title": "Scheduler State",
+    "data": true
+   },
+   {
+    "title": "Time To First Token Latency",
+    "data": true
+   },
+   {
+    "title": "Cache Utilization",
+    "data": true
+   },
+   {
+    "title": "Request Prompt Length",
+    "data": true
+   },
+   {
+    "title": "Request Generation Length",
+    "data": true
+   },
+   {
+    "title": "Finish Reason",
+    "data": true
+   },
+   {
+    "title": "Queue Time",
+    "data": true
+   },
+   {
+    "title": "Requests Prefill and Decode Time",
+    "data": true
+   },
+   {
+    "title": "Max Generation Token in Sequence Group",
+    "data": true
+   }
+  ]
+ }
+]

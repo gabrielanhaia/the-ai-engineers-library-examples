@@ -1,0 +1,10 @@
+vllm:ttft_seconds:p99_5m                2.397
+vllm:itl_seconds:p99_5m                 0.277
+vllm:prefix_cache_hit_ratio:rate5m      0.653
+vllm:prefix_cache_hit_ratio:rate1h      0.653
+vllm:preemptions:rate5m                 0.000
+vllm:generation_tokens:rate5m           5.346
+vllm:ttft_slow:ratio_rate5m             0.146
+vllm:ttft_slow:ratio_rate1h             0.146
+vllm:itl_slow:ratio_rate5m              0.036
+vllm:itl_slow:ratio_rate1h              0.036

@@ -1,0 +1,46 @@
+
+== the bound (DERIVED from inputs/, not measured)
+Llama-3.1-8B, 2 B/value, on H100 (3.35 TB/s), L = 4,096
+W = 16.06 GB, KV = 131,072 B/token, 0.537 GB/sequence
+DERIVED upper bounds (roofline model):
+    B   step (ms)   aggregate tok/s   per-user tok/s
+    1        4.95               202              202
+    2        5.11               391              196
+    4        5.44               736              184
+    8        6.08             1,317              165
+   16        7.36             2,174              136
+   30        9.60             3,124              104
+   64       15.05             4,252               66
+  128       25.31             5,058               40
+  256       45.82             5,587               22
+ceiling BW / (L x k) = 6,240 tok/s; half of it at B = W / (L x k) = 30
+
+== the laptop: vLLM CPU backend, 64 tokens in, 64 out
+models: 8 file(s), 693 MiB, into /models
+  ok      hf/SmolLM2-360M-Instruct/config.json
+  ok      hf/SmolLM2-360M-Instruct/generation_config.json
+  ok      hf/SmolLM2-360M-Instruct/merges.txt
+  ok      hf/SmolLM2-360M-Instruct/model.safetensors
+  ok      hf/SmolLM2-360M-Instruct/special_tokens_map.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer_config.json
+  ok      hf/SmolLM2-360M-Instruct/vocab.json
+ch08-vllm ready after ~59s
+ conc  output tok/s  x conc 1  TTFT p50  TPOT mean  TPOT p99
+    1          32.6       1.0    148 ms      29 ms     39 ms
+    2          65.1       2.0    253 ms      28 ms     31 ms
+    4          90.8       2.8    368 ms      39 ms     50 ms
+    8         121.5       3.7    785 ms      55 ms     71 ms
+   16         157.2       4.8   1410 ms      82 ms    124 ms
+   32         183.2       5.6   2719 ms     136 ms    179 ms
+   64         265.9       8.1   4431 ms     181 ms    253 ms
+  128         272.9       8.4   5216 ms     391 ms    500 ms
+preemptions during the sweep: 0
+
+== the offline corner: 256 requests in one file, run-batch
+Running batch: 100% Completed | 256/256 [01:10<00:00,  3.62req/s]
+requests 256 of 256, prompt 73 tokens each, 16,384 output tokens
+elapsed 70 s, output 234.1 tok/s
+
+== done
+manifest: measured/ch08/machine.json

@@ -1,0 +1,14 @@
+# ch15/prometheus.yml
+# Scrape the engine every 5 s and evaluate the rules as often.
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+rule_files:
+  - rules.yml
+  - alerts.yml
+
+scrape_configs:
+  - job_name: vllm
+    static_configs:
+      - targets: ["ch15-vllm:8000"]

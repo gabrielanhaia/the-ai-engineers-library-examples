@@ -1,0 +1,40 @@
+
+== prediction, from the model's config
+models: 8 file(s), 693 MiB, into /models
+  ok      hf/SmolLM2-360M-Instruct/config.json
+  ok      hf/SmolLM2-360M-Instruct/generation_config.json
+  ok      hf/SmolLM2-360M-Instruct/merges.txt
+  ok      hf/SmolLM2-360M-Instruct/model.safetensors
+  ok      hf/SmolLM2-360M-Instruct/special_tokens_map.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer_config.json
+  ok      hf/SmolLM2-360M-Instruct/vocab.json
+KV per token  2 x 32 x 5 x 64 x 2 B = 40,960 B
+cache         1 GiB / 40,960 B = 26,214 tokens
+per request   1,792 in + 256 out = 2,048 tokens
+fits          26,214 / 2,048 = 12.80 requests
+prediction    preemption starts at 13 concurrent requests
+
+== vLLM CPU backend, 1 GiB of KV cache
+ch09-vllm ready after ~61s
+GPU KV cache size: 26,112 tokens, Maximum concurrency for 2,048
+  tokens per request: 12.75x
+block_size="128" num_gpu_blocks="204"
+
+== load: one batch of long requests per concurrency
+concurrency 4: 40 s
+concurrency 8: 56 s
+concurrency 12: 73 s
+concurrency 13: 84 s
+concurrency 16: 96 s
+
+== result
+ conc  predicted  peak running  peak KV use  preemptions  counter
+    4  fits                  4         0.32            0        0
+    8  fits                  8         0.63            0        0
+   12  fits                 12         0.95            0        0
+   13  overflows            13         0.96            1        1
+   16  overflows            13         0.97            1        2
+
+== done
+manifest: measured/ch09/machine.json

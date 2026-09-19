@@ -1,0 +1,7 @@
+{
+ "requests": 256,
+ "output_tokens": 16384,
+ "prompt_tokens_mean": 72.5703125,
+ "seconds": 70,
+ "output_tok_s": 234.05714285714285
+}

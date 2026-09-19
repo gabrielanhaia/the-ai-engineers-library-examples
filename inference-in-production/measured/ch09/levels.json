@@ -1,0 +1,47 @@
+[
+ {
+  "concurrency": 4,
+  "predicted": "fits",
+  "peak_running": 4,
+  "peak_kv_usage": 0.3152709359605911,
+  "preemptions": 0,
+  "counter_after": 0,
+  "seconds": 39.8
+ },
+ {
+  "concurrency": 8,
+  "predicted": "fits",
+  "peak_running": 8,
+  "peak_kv_usage": 0.6305418719211823,
+  "preemptions": 0,
+  "counter_after": 0,
+  "seconds": 56.0
+ },
+ {
+  "concurrency": 12,
+  "predicted": "fits",
+  "peak_running": 12,
+  "peak_kv_usage": 0.9458128078817734,
+  "preemptions": 0,
+  "counter_after": 0,
+  "seconds": 73.0
+ },
+ {
+  "concurrency": 13,
+  "predicted": "overflows",
+  "peak_running": 13,
+  "peak_kv_usage": 0.9605911330049262,
+  "preemptions": 1,
+  "counter_after": 1,
+  "seconds": 84.4
+ },
+ {
+  "concurrency": 16,
+  "predicted": "overflows",
+  "peak_running": 13,
+  "peak_kv_usage": 0.9704433497536946,
+  "preemptions": 1,
+  "counter_after": 2,
+  "seconds": 96.0
+ }
+]

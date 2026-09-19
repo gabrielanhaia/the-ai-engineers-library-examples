@@ -1,0 +1,7 @@
+{
+ "kv_bytes_per_token": 40960,
+ "cache_tokens": 26214.4,
+ "request_tokens": 2048,
+ "fits": 12.8,
+ "first_preempting": 13
+}

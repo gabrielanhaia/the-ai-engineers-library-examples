@@ -1,0 +1,26 @@
+# ch15/otel-collector.yml
+# The trace bridge: vLLM sends OTLP over gRPC to this collector,
+# which writes every span to a file (and a one-line log per batch).
+# In Vol. 1's stack the same pipeline ends in ClickHouse instead.
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+
+exporters:
+  file:
+    path: /scratch/ch15/spans.jsonl
+  debug:
+    verbosity: basic
+
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [file, debug]

@@ -1,0 +1,42 @@
+
+== vLLM CPU backend
+models: 8 file(s), 693 MiB, into /models
+  ok      hf/SmolLM2-360M-Instruct/config.json
+  ok      hf/SmolLM2-360M-Instruct/generation_config.json
+  ok      hf/SmolLM2-360M-Instruct/merges.txt
+  ok      hf/SmolLM2-360M-Instruct/model.safetensors
+  ok      hf/SmolLM2-360M-Instruct/special_tokens_map.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer.json
+  ok      hf/SmolLM2-360M-Instruct/tokenizer_config.json
+  ok      hf/SmolLM2-360M-Instruct/vocab.json
+ch04-vllm ready after ~61s
+
+== sweep: GuideLLM, 128 tokens in, 64 out, 60 s a point
+GuideLLM's report: measured/ch04/guidellm.html
+
+== loops: closed at concurrency 4, then open at its rate
+closed loop: 1.10 req/s; open loop sent at that rate
+
+== cache: one command twice, then a new seed
+
+== results
+ strategy      req/s  in flight  TTFT p50  TTFT p99  TPOT p50
+ synchronous    0.37        1.0    294 ms   1474 ms     34 ms
+ throughput     1.60       28.0   4451 ms   7394 ms    253 ms
+ poisson 0.68   0.97       10.6    418 ms   3085 ms    218 ms
+ poisson 0.98   1.15       12.7    766 ms   3637 ms    150 ms
+ poisson 1.29   1.18       13.6    721 ms   4215 ms    206 ms
+ poisson 1.60   1.68       24.0   1947 ms   4865 ms    232 ms
+
+ loop     rate req/s  peak running  TTFT p50  TTFT p99
+ closed         1.10             4    811 ms   1218 ms
+ open           1.02            16    328 ms   2098 ms
+
+ run       seed  hit rate  TTFT p50  total tok/s
+ first        0      0.00   4557 ms        571.5
+ again        0      0.88    935 ms       1207.2
+ new-seed     1      0.00   3188 ms        526.6
+
+
+== done
+manifest: measured/ch04/machine.json

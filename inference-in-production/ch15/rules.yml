@@ -1,0 +1,60 @@
+# ch15/rules.yml
+# Recording rules over vLLM's metrics. Every name is copied from a
+# live scrape of vLLM 0.29.0, where counters carry _total.
+groups:
+  - name: vllm-serving
+    rules:
+      - record: vllm:ttft_seconds:p99_5m
+        expr: >
+          histogram_quantile(0.99, sum by (le, model_name) (
+            rate(vllm:time_to_first_token_seconds_bucket[5m])))
+      - record: vllm:itl_seconds:p99_5m
+        expr: >
+          histogram_quantile(0.99, sum by (le, model_name) (
+            rate(vllm:inter_token_latency_seconds_bucket[5m])))
+      - record: vllm:prefix_cache_hit_ratio:rate5m
+        expr: >
+          sum by (model_name) (rate(vllm:prefix_cache_hits_total[5m]))
+          / sum by (model_name) (
+            rate(vllm:prefix_cache_queries_total[5m]))
+      - record: vllm:prefix_cache_hit_ratio:rate1h
+        expr: >
+          sum by (model_name) (rate(vllm:prefix_cache_hits_total[1h]))
+          / sum by (model_name) (
+            rate(vllm:prefix_cache_queries_total[1h]))
+      - record: vllm:preemptions:rate5m
+        expr: >
+          sum by (model_name) (rate(vllm:num_preemptions_total[5m]))
+      - record: vllm:generation_tokens:rate5m
+        expr: >
+          sum by (model_name) (rate(vllm:generation_tokens_total[5m]))
+
+  # The SLIs the burn-rate alerts read: the share of first tokens
+  # (TTFT) and of token gaps (ITL) that missed the target. Targets
+  # 1 s and 100 ms, both bucket bounds vLLM exports.
+  - name: vllm-slo
+    rules:
+      - record: vllm:ttft_slow:ratio_rate5m
+        expr: >
+          1 - sum by (model_name) (rate(
+            vllm:time_to_first_token_seconds_bucket{le="1.0"}[5m]))
+          / sum by (model_name) (rate(
+            vllm:time_to_first_token_seconds_count[5m]))
+      - record: vllm:ttft_slow:ratio_rate1h
+        expr: >
+          1 - sum by (model_name) (rate(
+            vllm:time_to_first_token_seconds_bucket{le="1.0"}[1h]))
+          / sum by (model_name) (rate(
+            vllm:time_to_first_token_seconds_count[1h]))
+      - record: vllm:itl_slow:ratio_rate5m
+        expr: >
+          1 - sum by (model_name) (rate(
+            vllm:inter_token_latency_seconds_bucket{le="0.1"}[5m]))
+          / sum by (model_name) (rate(
+            vllm:inter_token_latency_seconds_count[5m]))
+      - record: vllm:itl_slow:ratio_rate1h
+        expr: >
+          1 - sum by (model_name) (rate(
+            vllm:inter_token_latency_seconds_bucket{le="0.1"}[1h]))
+          / sum by (model_name) (rate(
+            vllm:inter_token_latency_seconds_count[1h]))

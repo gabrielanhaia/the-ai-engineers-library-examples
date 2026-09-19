@@ -1,0 +1,58 @@
+{
+ "chapter": "08",
+ "outputs": {
+  "bound.py": "Llama-3.1-8B, 2 B/value, on H100 (3.35 TB/s), L = 4,096\nW = 16.06 GB, KV = 131,072 B/token, 0.537 GB/sequence\nDERIVED upper bounds (roofline model):\n    B   step (ms)   aggregate tok/s   per-user tok/s\n    1        4.95               202              202\n    2        5.11               391              196\n    4        5.44               736              184\n    8        6.08             1,317              165\n   16        7.36             2,174              136\n   30        9.60             3,124              104\n   64       15.05             4,252               66\n  128       25.31             5,058               40\n  256       45.82             5,587               22\nceiling BW / (L x k) = 6,240 tok/s; half of it at B = W / (L x k) = 30\n"
+ },
+ "numbers": [
+  {
+   "key": "weights_gb",
+   "value": 16.060522496,
+   "shown": "16.06 GB"
+  },
+  {
+   "key": "kv_per_sequence_gb",
+   "value": 0.536870912,
+   "shown": "0.537 GB"
+  },
+  {
+   "key": "b1.tok_s",
+   "value": 201.83892239279504,
+   "shown": "202"
+  },
+  {
+   "key": "b64.tok_s",
+   "value": 4252.2588405146735,
+   "shown": "4,252"
+  },
+  {
+   "key": "b64.per_user",
+   "value": 66.44154438304177,
+   "shown": "66"
+  },
+  {
+   "key": "b64.step_ms",
+   "value": 15.050824138507464,
+   "shown": "15.05 ms"
+  },
+  {
+   "key": "ceiling",
+   "value": 6239.861249923706,
+   "shown": "6,240"
+  },
+  {
+   "key": "half_batch",
+   "value": 29.915054321289062,
+   "shown": "30"
+  },
+  {
+   "key": "b64.share_of_ceiling",
+   "value": 0.6814668900797538,
+   "shown": "68%"
+  },
+  {
+   "key": "b128.tok_s",
+   "value": 5057.796695970605,
+   "shown": "5,058"
+  }
+ ]
+}

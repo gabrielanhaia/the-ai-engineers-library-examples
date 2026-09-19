@@ -2,17 +2,17 @@
 
 Real causes, most common first. Entries are added as the labs are written and tested.
 
-## Inference in Production
+## Inference Engineering in Practice
 
 **`permission denied ... /var/run/docker.sock`.** The lab runner starts each engine as a sibling
 container through the Docker socket. On Linux, run Compose as a user in the `docker` group (or with
 rootless Docker, point the mount at your socket). Docker Desktop and OrbStack need nothing.
 
 **A lab behaves like an old version after `git pull`.** The runner image is built once and reused.
-Rebuild it: `docker compose build inference-in-production`.
+Rebuild it: `docker compose build inference-engineering-in-practice`.
 
 **`no ch07/run.sh in this checkout`.** That lab has not landed yet, or you are on an older checkout.
-`docker compose run --rm inference-in-production list` shows the labs present.
+`docker compose run --rm inference-engineering-in-practice list` shows the labs present.
 
 **`FAIL: vllm not ready after ...` or the vLLM container exits.** vLLM on the CPU needs about 4 GiB
 of memory for the SmolLM2-360M labs. On Docker Desktop, raise the VM's memory limit; close other
@@ -22,7 +22,7 @@ containers. Only one vLLM engine runs at a time.
 allowed to move memory between NUMA nodes, and a laptop has one node.
 
 **A crashed lab left containers behind** (`Conflict. The container name "/aiel-..." is already in
-use`). `docker compose run --rm inference-in-production clean` removes every lab container.
+use`). `docker compose run --rm inference-engineering-in-practice clean` removes every lab container.
 
 **`models: ... BAD ... sha256`.** A download was corrupted or cut short. The file was deleted; run
 the lab again to fetch it again. Behind a proxy or mirror, set `HF_ENDPOINT`.

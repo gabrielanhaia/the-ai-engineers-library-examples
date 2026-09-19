@@ -9,7 +9,7 @@ Runnable code for the books in **The AI Engineer's Library** by Gabriel Anhaia.
 
 | Book | Directory | Status |
 |---|---|---|
-| *Inference Engineering in Practice* | [`inference-in-production/`](inference-in-production/) | Being written — this fills in as the book is drafted. |
+| *Inference Engineering in Practice* | [`inference-engineering-in-practice/`](inference-engineering-in-practice/) | Being written — this fills in as the book is drafted. |
 
 Each book has its own directory, and each directory stands on its own: you can start with any
 book without running the others.
@@ -18,7 +18,7 @@ Each book is one Docker Compose service, and every example runs with one command
 toolchain beyond Docker:
 
 ```sh
-docker compose run --rm inference-in-production ch00
+docker compose run --rm inference-engineering-in-practice ch00
 ```
 
 The book's directory README lists its labs and what each needs.

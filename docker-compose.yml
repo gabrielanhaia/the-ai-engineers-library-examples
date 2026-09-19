@@ -1,6 +1,6 @@
 # One service per book. The books print the run command exactly:
 #
-#   docker compose run --rm inference-in-production chNN
+#   docker compose run --rm inference-engineering-in-practice chNN
 #
 # Profiles:
 #   cpu      the default: the lab runner. Naming the service on the
@@ -16,13 +16,13 @@
 name: the-ai-engineers-library
 
 services:
-  inference-in-production:
+  inference-engineering-in-practice:
     profiles: [cpu]
     build:
-      context: ./inference-in-production
+      context: ./inference-engineering-in-practice
     init: true
     volumes:
-      - ./inference-in-production:/lab
+      - ./inference-engineering-in-practice:/lab
       # The lab starts engines as sibling containers.
       - /var/run/docker.sock:/var/run/docker.sock
       - models:/models
@@ -37,9 +37,9 @@ services:
   apple:
     profiles: [apple]
     build:
-      context: ./inference-in-production
+      context: ./inference-engineering-in-practice
     volumes:
-      - ./inference-in-production:/lab
+      - ./inference-engineering-in-practice:/lab
     command: ["apple"]
     network_mode: none
 
@@ -47,7 +47,7 @@ services:
     profiles: [screens]
     image: prom/prometheus:v3.14.0@sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0
     volumes:
-      - ./inference-in-production/screens/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./inference-engineering-in-practice/screens/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     ports: ["127.0.0.1:9090:9090"]
     networks: [lab]
 
@@ -58,7 +58,7 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
     volumes:
-      - ./inference-in-production/screens/grafana-datasource.yml:/etc/grafana/provisioning/datasources/prometheus.yml:ro
+      - ./inference-engineering-in-practice/screens/grafana-datasource.yml:/etc/grafana/provisioning/datasources/prometheus.yml:ro
     ports: ["127.0.0.1:3000:3000"]
     depends_on: [prometheus]
     networks: [lab]

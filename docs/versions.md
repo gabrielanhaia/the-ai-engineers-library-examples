@@ -1,14 +1,14 @@
 # Versions
 
 Every pinned dependency, why it is pinned there, and when the pin was last verified against the
-upstream release. An undated pin is not a pin. `inference-in-production/scripts/check_pins.py` fails
+upstream release. An undated pin is not a pin. `inference-engineering-in-practice/scripts/check_pins.py` fails
 CI if the repository uses a digest, package version or model revision that is not written here.
 
 Images are pinned by tag **and** digest; the digest is the pin, the tag is for humans. The lab
-images live in [`inference-in-production/images.env`](../inference-in-production/images.env), the
-model revisions in [`inference-in-production/models.lock.json`](../inference-in-production/models.lock.json).
+images live in [`inference-engineering-in-practice/images.env`](../inference-engineering-in-practice/images.env), the
+model revisions in [`inference-engineering-in-practice/models.lock.json`](../inference-engineering-in-practice/models.lock.json).
 
-## Inference in Production — images and tools
+## Inference Engineering in Practice — images and tools
 
 All verified 2026-09-19 against the registry (digest resolved with `docker buildx imagetools
 inspect` or the registry API) and the upstream release page.
@@ -34,20 +34,20 @@ inspect` or the registry API) and the upstream release page.
 | actions/checkout | `3d3c42e5aac5ba805825da76410c181273ba90b1` (v7.0.1) | CI | Latest release (2026-07-20), pinned by commit. | 2026-09-19 |
 | actions/upload-artifact | `043fb46d1a93c77aae656e7c1c64a875d1fc6a0a` (v7.0.1) | CI at-latest job | Latest release (2026-04-10), pinned by commit. | 2026-09-19 |
 | actions/download-artifact | `3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c` (v8.0.1) | CI at-latest job | Latest release (2026-03-11), pinned by commit. | 2026-09-19 |
-| STREAM-style bandwidth test | `inference-in-production/ch02/bandwidth.py`, standard-library Python in the runner (3.13.15, pinned above) | ch02 | No external tool to pin: one process per CPU copies its share of two 512 MiB arrays at once, counting two bytes per byte copied (read and write) and keeping the best of 10 trials, as STREAM's Copy kernel does. | 2026-09-19 |
+| STREAM-style bandwidth test | `inference-engineering-in-practice/ch02/bandwidth.py`, standard-library Python in the runner (3.13.15, pinned above) | ch02 | No external tool to pin: one process per CPU copies its share of two 512 MiB arrays at once, counting two bytes per byte copied (read and write) and keeping the best of 10 trials, as STREAM's Copy kernel does. | 2026-09-19 |
 | WikiText-2 (raw) test text | `ggml-org/ci` dataset @ `927b3642933080f1b0e811e2f916e14c292992f9`, `wikitext-2-raw-v1.zip`, 4,721,645 bytes, sha256 `ef7edb566e3e2b2d31b29c1fdb0c89a4cc683597484c3dc2517919c615435a11` | ch11 | The file llama.cpp's own `scripts/get-wikitext-2.sh` fetches (from `main`; pinned here to its commit). CC BY-SA 3.0: downloaded at run time and checked, never committed. | 2026-09-19 |
 
 Not pinned yet, because no lab uses them yet (each gets a row when its lab lands): AIPerf, and the
 structured-output libraries for ch17.
 
-## Inference in Production — the kind-based labs (ch14, ch16, ch18)
+## Inference Engineering in Practice — the kind-based labs (ch14, ch16, ch18)
 
 The kind labs run through the same command as every other lab (`docker compose run --rm
-inference-in-production ch14`): the runner downloads kind, kubectl and istioctl once into
+inference-engineering-in-practice ch14`): the runner downloads kind, kubectl and istioctl once into
 `.work/tools/`, checks each against its SHA-256, and creates the cluster's node as a sibling container
 on the host's Docker (`lib/kind.sh`). Images are pinned in
-[`images.env`](../inference-in-production/images.env) like every other image; the downloaded binaries and
-upstream manifests are pinned by URL and SHA-256 in [`tools.env`](../inference-in-production/tools.env),
+[`images.env`](../inference-engineering-in-practice/images.env) like every other image; the downloaded binaries and
+upstream manifests are pinned by URL and SHA-256 in [`tools.env`](../inference-engineering-in-practice/tools.env),
 which `scripts/check_pins.py` also reads. The manifests the book prints name images by tag;
 `pin_images` (in `lib/kind.sh`) swaps each tag for the digest below before applying them. All
 verified 2026-09-19 against the release page, the release asset's own `.sha256`/digest, and the
@@ -65,7 +65,7 @@ registry (`docker buildx imagetools inspect`).
 | llm-d-inference-sim | `ghcr.io/llm-d/llm-d-inference-sim:v0.11.2@sha256:32144df791330a0006b747edfdf2b114a0fe728e023a9d1b3463eeb48d32abb9` (arm64 `sha256:ce569791376be239b2431fc3513a1498d6e70e05f2cc31f46970d38f055644b5`, amd64 `sha256:351d413e80602d227c262883079d8beb17bea91d0bc7ecd642b2d8d8e59bd7ea`) | ch03, ch14, ch16, ch18 | Latest release (2026-08-31), the book's pin. Its timings are its configuration; every result it produces is labeled simulated. | 2026-09-19 |
 | KEDA | v2.20.2 (2026-07-31). Manifest `keda-2.20.2.yaml`, `sha256:9bae123eb64fab8f96c67bbd576bb5819e4794df346c5aaa402a01c68b0557ab`; `ghcr.io/kedacore/keda:2.20.2@sha256:fe74c7b8849586a67ad2201bcb89e7f5ac221ff90399ecaa8fd28427f1ef11e6` (arm64 `sha256:19ddecf229490d4ef550ce3d5ee10677c5ccf4027455494b8f8ac566f1fa5e26`, amd64 `sha256:6c2ded1ae8ab5a6b3452e1ff64468ce76de30b2983fd7d5783719c325f806393`); `ghcr.io/kedacore/keda-metrics-apiserver:2.20.2@sha256:27286536a8a775aeeee37a7e343f8ecebb27ebf680ee1181a4f99e82eefb253b` (arm64 `sha256:1a6343daca2e703d57d3995de693d1a34e0004831026d0757f44d4d5d82e6086`, amd64 `sha256:3b6c694aed71a5480760062de91e53288e9b8b67d4b6c7e5eac49459e75b96d2`); `ghcr.io/kedacore/keda-admission-webhooks:2.20.2@sha256:41f74102aba7959c6e8d08b433ab8a5fd6cae7c5646c78f7fe3de40a52df3439` (arm64 `sha256:1a3d060789637a1464e999e07a60a22d781df890110ee8ed6c76fbb7676a0e20`, amd64 `sha256:c915db826c054e6b76ef9f9904a2a620db931e0244f3f6fc815d81682f9e5365`) | ch16 | Latest release, the book's pin. `lib/kind.sh` swaps the manifest's three image tags for these digests. | 2026-09-19 |
 
-## Inference in Production — models
+## Inference Engineering in Practice — models
 
 Every lab model is ungated and Apache-2.0 (per its model card), pinned by Hugging Face commit SHA,
 and checked by size and SHA-256 on download (`scripts/fetch_models.py`). Per-file sizes and hashes
@@ -82,7 +82,7 @@ are in `models.lock.json`. Every file downloaded and verified on 2026-09-19.
 | `qwen3.5-0.8b-hf` (`qwen35`; not in `all`) | `Qwen/Qwen3.5-0.8B` @ `2fc06364715b967f1860aea9cf38778875588b17` | BF16 safetensors, tokenizer, configs (10 files) | 1,769,905,646 | apache-2.0 | the hybrid-attention sidebar |
 
 `all` = `gguf` + `hf` + `lora`: 26 files, 2,788 MiB. `docker compose run --rm
-inference-in-production models list` prints the current totals.
+inference-engineering-in-practice models list` prints the current totals.
 
 **KV bytes per token for SmolLM2-360M-Instruct, from its config at the pinned SHA** [CRIT L5]:
 32 layers, 5 KV heads, head_dim 64 (hidden 960 / 15 heads), BF16, so
@@ -102,7 +102,7 @@ and its real output, trimmed to the lines that answer the question.
 ### a. vLLM CPU on linux/arm64 in OrbStack: **yes**, and SmolLM2-360M serves with a 1 GiB KV cache
 
 ```sh
-docker compose run --rm -e LAB=checka inference-in-production shell -c '
+docker compose run --rm -e LAB=checka inference-engineering-in-practice shell -c '
 . /lab/lib/lab.sh
 VLLM_CPU_KVCACHE_SPACE=1 start_vllm vllm \
   /models/hf/SmolLM2-360M-Instruct \
@@ -217,7 +217,7 @@ adapters converted to GGUF first).
 ### e. `vllm run-batch` at v0.29.0: **exists, and works on CPU**
 
 ```sh
-docker compose run --rm -e LAB=checke inference-in-production shell -c '
+docker compose run --rm -e LAB=checke inference-engineering-in-practice shell -c '
 . /lab/lib/lab.sh
 run_tool "$VLLM_CPU_IMAGE" --entrypoint vllm -- --help
 run_tool "$VLLM_CPU_IMAGE" --entrypoint vllm \

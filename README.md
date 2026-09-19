@@ -2,9 +2,14 @@
 
 Runnable code for the books in **The AI Engineer's Library** by Gabriel Anhaia.
 
+<p align="center">
+  <img src="docs/covers/inference-engineering-in-practice.jpg" width="240"
+       alt="Cover of Inference Engineering in Practice by Gabriel Anhaia">
+</p>
+
 | Book | Directory | Status |
 |---|---|---|
-| *Inference in Production* | [`inference-in-production/`](inference-in-production/) | Being written — this fills in as the book is drafted. |
+| *Inference Engineering in Practice* | [`inference-in-production/`](inference-in-production/) | Being written — this fills in as the book is drafted. |
 
 Each book has its own directory, and each directory stands on its own: you can start with any
 book without running the others.

@@ -1,0 +1,25 @@
+
+== break-even, three scenarios
+request  gpt-oss-120b, 5,000 in / 1,250 out
+node     8 x B200, $57.20 an hour, $41,756 a month
+         89,856.3 output tokens/s, MLPerf Server
+         at 100%: $0.1768 per million output tokens,
+         $0.000221 per request, 188.9M requests a month
+
+                      API   break-even    requests   per s
+              per request    U, 1 node     a month
+base: one node, list prices ($41,756 a month)
+  together       $0.00150        14.7%       27.8M    10.6
+  baseten       $0.001125        19.6%       37.1M    14.1
+API price halved ($41,756 a month)
+  together       $0.00075        29.5%       55.7M    21.2
+  baseten      $0.0005625        39.3%       74.2M    28.2
+two nodes + half an engineer ($89,178 a month)
+  together       $0.00150        31.5%       59.5M    22.6
+  baseten       $0.001125        42.0%       79.3M    30.2
+
+== every DERIVED number in chapter 6
+61 numbers, recomputed from inputs/: measured/ch06/derived.json
+
+== done
+manifest: measured/ch06/machine.json

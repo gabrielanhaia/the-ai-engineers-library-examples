@@ -1,0 +1,61 @@
+# inputs/example-a.toml
+# Worked example A: gpt-oss-120b on one Nebius node of eight
+# B200s, and the prices it is held against. Each table names
+# its source and the day it was read. One number, one place:
+# change it here and every figure built on it moves.
+
+[shape]  # mean request of MLPerf's gpt-oss-120b set
+model = "gpt-oss-120b"
+input_tokens = 5000
+output_tokens = 1250
+url = "https://mlcommons.org/2026/03/mlperf-inference-gpt-oss/"
+checked = 2026-09-19
+
+[node]  # MLPerf Inference v6.1, closed division
+system = "Nebius B200 n1 (8x B200-SXM-180GB, TensorRT)"
+model = "gpt-oss-120b"
+gpu = "B200"
+gpus = 8
+tokens = "output"   # tokens/s of the whole node
+server = 89856.3    # Server scenario, at the bound below
+offline = 88491.0   # Offline scenario: no latency bound
+ttft_ms = 3000      # the Server bound: p99 TTFT
+tpot_ms = 80        # and p99 TPOT
+url = """https://github.com/mlcommons/inference_results_v6.1\
+/blob/main/summary.csv"""
+rules = """https://github.com/mlcommons/inference_policies\
+/blob/master/inference_rules.adoc"""
+checked = 2026-09-19
+
+[nebius]  # on-demand list price, $ per GPU-hour
+B200 = 7.15
+H200 = 4.50
+B300 = 7.85
+"RTX PRO 6000" = 1.80
+url = "https://nebius.com/prices"
+checked = 2026-09-19
+
+[together]  # serverless gpt-oss-120b, $ per million tokens
+input = 0.15
+output = 0.60
+url = "https://www.together.ai/pricing"
+checked = 2026-09-19
+
+[baseten]  # Model APIs, GPT OSS 120B, $ per million tokens
+input = 0.10
+output = 0.50
+url = "https://www.baseten.co/pricing/"
+checked = 2026-09-19
+
+[fireworks]  # serverless gpt-oss-120b, $ per million tokens
+input = 0.15
+output = 0.60
+batch = 0.5  # "billed at 50% of serverless pricing"
+url = "https://docs.fireworks.ai/serverless/pricing"
+checked = 2026-09-19
+
+[staff]  # US median wage, software developers, May 2025
+usd_per_year = 135980
+url = """https://www.bls.gov/ooh/computer-and-information-\
+technology/software-developers.htm"""
+checked = 2026-09-19

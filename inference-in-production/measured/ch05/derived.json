@@ -1,0 +1,303 @@
+{
+ "chapter": "05",
+ "outputs": {
+  "cost.py": "gpt-oss-120b, MLPerf v6.1 closed, Server\n  system   Nebius B200 n1 (8x B200-SXM-180GB, TensorRT)\n  unit     8 x $7.15 = $57.20 an hour\n  tokens   89,856.3/s x 3,600 = 323.48 million an hour\n  per unit $57.20 / 323.48 = $0.1768 per million\n  per GPU  $7.15 / 40.44 = $0.1768 per million (unit check)\n\n$0.177 per million output tokens\n  tokens   output only; each request's prefill is included\n  latency  p99 TTFT <= 3,000 ms, p99 TPOT <= 80 ms\n           (a floor of 12.5 tokens/s per user)\n  load     100% utilization; divide by your average\n  request  5,000 in / 1,250 out: $0.00022\n  inputs   MLPerf v6.1 summary.csv; nebius.B200, 2026-09-19\n"
+ },
+ "numbers": [
+  {
+   "key": "deepseek.cost",
+   "value": 87072.0,
+   "shown": "$87,072"
+  },
+  {
+   "key": "deepseek.margin",
+   "value": 5.454738607129732,
+   "shown": "545%"
+  },
+  {
+   "key": "deepseek.all_tokens",
+   "value": 776000000000.0,
+   "shown": "776 billion"
+  },
+  {
+   "key": "deepseek.total_over_output",
+   "value": 4.619047619047619,
+   "shown": "4.6 times"
+  },
+  {
+   "key": "deepseek.peak_over_average",
+   "value": 1.2260198456449836,
+   "shown": "1.23 times"
+  },
+  {
+   "key": "a.node_per_hour",
+   "value": 57.2,
+   "shown": "$57.20"
+  },
+  {
+   "key": "a.tokens_per_hour",
+   "value": 323482680.0,
+   "shown": "323.48 million"
+  },
+  {
+   "key": "a.usd_per_m",
+   "value": 0.17682554132419084,
+   "shown": "$0.177"
+  },
+  {
+   "key": "a.per_gpu_tok_s",
+   "value": 11232.0375,
+   "shown": "11,232"
+  },
+  {
+   "key": "a.per_gpu_m_per_hour",
+   "value": 40.435335,
+   "shown": "40.44"
+  },
+  {
+   "key": "a.wrong_low",
+   "value": 0.022103192665523855,
+   "shown": "$0.022"
+  },
+  {
+   "key": "a.wrong_high",
+   "value": 1.4146043305935267,
+   "shown": "$1.41"
+  },
+  {
+   "key": "a.wrong_ratio",
+   "value": 64.0,
+   "shown": "by 64"
+  },
+  {
+   "key": "a.request",
+   "value": 0.00022103192665523855,
+   "shown": "$0.00022"
+  },
+  {
+   "key": "lambda.single_gpu_premium",
+   "value": 0.07518796992481191,
+   "shown": "7.5% more"
+  },
+  {
+   "key": "aws.p5_per_gpu",
+   "value": 6.88,
+   "shown": "$6.88"
+  },
+  {
+   "key": "aws.gb200_per_gpu",
+   "value": 10.582,
+   "shown": "$10.582"
+  },
+  {
+   "key": "infx.total_over_output",
+   "value": 9.0,
+   "shown": "= 9×"
+  },
+  {
+   "key": "together.request",
+   "value": 0.0015,
+   "shown": "$0.00150"
+  },
+  {
+   "key": "together.per_m_output",
+   "value": 1.2,
+   "shown": "$1.20"
+  },
+  {
+   "key": "floor.gpt_oss_server",
+   "value": 12.5,
+   "shown": "12.5"
+  },
+  {
+   "key": "three.rtx.node",
+   "value": 14.4,
+   "shown": "$14.40"
+  },
+  {
+   "key": "three.rtx.m_per_hour",
+   "value": 53.223479999999995,
+   "shown": "53.22"
+  },
+  {
+   "key": "three.rtx.usd_per_m",
+   "value": 0.27055728035821786,
+   "shown": "$0.271"
+  },
+  {
+   "key": "three.b300.node",
+   "value": 62.8,
+   "shown": "$62.80"
+  },
+  {
+   "key": "three.b300.m_per_hour",
+   "value": 389.2464,
+   "shown": "389.25"
+  },
+  {
+   "key": "three.b300.usd_per_m",
+   "value": 0.16133739451411752,
+   "shown": "$0.161"
+  },
+  {
+   "key": "b.node",
+   "value": 36.0,
+   "shown": "$36.00"
+  },
+  {
+   "key": "b.Server.m_per_hour",
+   "value": 122.50584,
+   "shown": "122.51"
+  },
+  {
+   "key": "b.Server.usd_per_m",
+   "value": 0.29386354152585703,
+   "shown": "$0.294"
+  },
+  {
+   "key": "b.Interactive.m_per_hour",
+   "value": 83.08764000000001,
+   "shown": "83.09"
+  },
+  {
+   "key": "b.Interactive.usd_per_m",
+   "value": 0.4332774405435032,
+   "shown": "$0.433"
+  },
+  {
+   "key": "b.floors",
+   "value": 5.0,
+   "shown": "from 5 to 25"
+  },
+  {
+   "key": "b.throughput_cut",
+   "value": 0.32176588479373713,
+   "shown": "32%"
+  },
+  {
+   "key": "b.cost_ratio",
+   "value": 1.4744171335231089,
+   "shown": "1.47 times"
+  },
+  {
+   "key": "gb200.per_gpu_price",
+   "value": 10.5,
+   "shown": "$10.50"
+  },
+  {
+   "key": "gb200.Server.per_gpu",
+   "value": 12486.180555555555,
+   "shown": "12,486"
+  },
+  {
+   "key": "gb200.Server.m_per_hour",
+   "value": 44.95025,
+   "shown": "44.95"
+  },
+  {
+   "key": "gb200.Server.usd_per_m",
+   "value": 0.23359158180432812,
+   "shown": "$0.234"
+  },
+  {
+   "key": "gb200.Interactive.per_gpu",
+   "value": 8683.402777777777,
+   "shown": "8,683"
+  },
+  {
+   "key": "gb200.Interactive.m_per_hour",
+   "value": 31.26025,
+   "shown": "31.26"
+  },
+  {
+   "key": "gb200.Interactive.usd_per_m",
+   "value": 0.3358898281363713,
+   "shown": "$0.336"
+  },
+  {
+   "key": "gb200.cost_ratio",
+   "value": 1.437936356874945,
+   "shown": "1.44 times"
+  },
+  {
+   "key": "util.peak_sized.u",
+   "value": 0.5882352941176471,
+   "shown": "58.8%"
+  },
+  {
+   "key": "util.peak_sized.usd_per_m",
+   "value": 0.7365716489239554,
+   "shown": "$0.74"
+  },
+  {
+   "key": "util.conversation_70.u",
+   "value": 0.4117647058823529,
+   "shown": "41.2%"
+  },
+  {
+   "key": "util.conversation_70.usd_per_m",
+   "value": 1.0522452127485078,
+   "shown": "$1.05"
+  },
+  {
+   "key": "util.coding_70.u",
+   "value": 0.25,
+   "shown": "25%"
+  },
+  {
+   "key": "util.coding_70.usd_per_m",
+   "value": 1.7331097621740128,
+   "shown": "$1.73"
+  },
+  {
+   "key": "util.two_nodes.u",
+   "value": 0.04332774405435032,
+   "shown": "4.3%"
+  },
+  {
+   "key": "util.two_nodes.usd_per_m",
+   "value": 10.0,
+   "shown": "$10.00"
+  },
+  {
+   "key": "util.two_nodes.times",
+   "value": 23.079900000000002,
+   "shown": "23 times"
+  },
+  {
+   "key": "opus.small_answer",
+   "value": 0.0625,
+   "shown": "$0.0625"
+  },
+  {
+   "key": "opus.long_answer",
+   "value": 0.2525,
+   "shown": "$0.2525"
+  },
+  {
+   "key": "ratio.opus",
+   "value": 5.0,
+   "shown": "a ratio of five"
+  },
+  {
+   "key": "ratio.together",
+   "value": 4.0,
+   "shown": "a ratio of four"
+  },
+  {
+   "key": "ratio.gemini",
+   "value": 6.0,
+   "shown": "a ratio of six"
+  },
+  {
+   "key": "ratio.fast_mode",
+   "value": 2.0,
+   "shown": "twice the price"
+  },
+  {
+   "key": "ratio.r1_cost",
+   "value": 13.075221238938052,
+   "shown": "cost ratio of 13"
+  }
+ ]
+}

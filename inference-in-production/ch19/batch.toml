@@ -1,0 +1,33 @@
+# ch19/batch.toml
+# A hypothetical: a nightly summarization batch. Every workload
+# and staffing figure here is this plan's assumption; every rate
+# and price is read from inputs/ by name.
+
+title = "nightly summarization batch"
+documents = 2500000         # requests a night
+window_h = 10               # due by morning: the batch's bound
+shape = "example-a"         # documents of MLPerf's shape
+rate = "example-a"          # MLPerf v6.1 Offline: no latency bound
+survive_node_loss = false   # a failed night finishes late
+engineers = 0.5             # of one engineer's time
+apis = ["fireworks"]        # at its batch price
+batch = true
+
+levers = [
+  "the Offline corner (ch 8): along the frontier; no",
+  "  bound, yet Offline is within 2% of Server here",
+  "fill the idle hours (ch 6): raises utilization; the",
+  "  node is paid for all day",
+  "prefix caching (ch 10): shifts the frontier, if the",
+  "  documents share a prompt",
+]
+
+engine = [
+  "the stack the rate was measured on (TensorRT-LLM with",
+  "Dynamo); any other is measured at this shape (ch 4)",
+]
+
+gate = [
+  "ch 18's performance gate at 5,000 in / 1,250 out,",
+  "failing on a throughput drop; ch 11's eval on a sample",
+]

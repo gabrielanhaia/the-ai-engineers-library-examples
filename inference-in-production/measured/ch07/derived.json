@@ -1,0 +1,358 @@
+{
+ "chapter": "07",
+ "numbers": [
+  {
+   "key": "fit.1.hbm",
+   "value": 73.60000000000001,
+   "shown": "73.6 GB"
+  },
+  {
+   "key": "fit.1.weights",
+   "value": 16060522496,
+   "shown": "16.06 GB"
+  },
+  {
+   "key": "fit.1.left",
+   "value": 57539477504.0,
+   "shown": "57.54 GB"
+  },
+  {
+   "key": "fit.1.tokens",
+   "value": 438991.0,
+   "shown": "≈ 439K"
+  },
+  {
+   "key": "fit.2.hbm",
+   "value": 73.60000000000001,
+   "shown": "73.6 GB"
+  },
+  {
+   "key": "fit.2.weights",
+   "value": 70553706496,
+   "shown": "70.55 GB"
+  },
+  {
+   "key": "fit.2.left",
+   "value": 3046293504.0,
+   "shown": "3.05 GB"
+  },
+  {
+   "key": "fit.2.tokens",
+   "value": 18593.0,
+   "shown": "≈ 18.6K"
+  },
+  {
+   "key": "fit.3.hbm",
+   "value": 165.6,
+   "shown": "165.6 GB"
+  },
+  {
+   "key": "fit.3.weights",
+   "value": 70553706496,
+   "shown": "70.55 GB"
+  },
+  {
+   "key": "fit.3.left",
+   "value": 95046293504.0,
+   "shown": "95.05 GB"
+  },
+  {
+   "key": "fit.3.tokens",
+   "value": 580116.0,
+   "shown": "≈ 580K"
+  },
+  {
+   "key": "fit.4.hbm",
+   "value": 165.6,
+   "shown": "165.6 GB"
+  },
+  {
+   "key": "fit.4.weights",
+   "value": 141107412992,
+   "shown": "141.11 GB"
+  },
+  {
+   "key": "fit.4.left",
+   "value": 24492587008.0,
+   "shown": "24.49 GB"
+  },
+  {
+   "key": "fit.4.tokens",
+   "value": 74745.0,
+   "shown": "≈ 75K"
+  },
+  {
+   "key": "fit.5.hbm",
+   "value": 22.080000000000002,
+   "shown": "22.08 GB"
+  },
+  {
+   "key": "fit.5.weights",
+   "value": 17583185920,
+   "shown": "17.58 GB"
+  },
+  {
+   "key": "fit.5.left",
+   "value": 4496814080.0,
+   "shown": "4.50 GB"
+  },
+  {
+   "key": "fit.5.tokens",
+   "value": 27446.0,
+   "shown": "≈ 27K"
+  },
+  {
+   "key": "fit.6.hbm",
+   "value": 44.160000000000004,
+   "shown": "44.16 GB"
+  },
+  {
+   "key": "fit.6.weights",
+   "value": 17583185920,
+   "shown": "17.58 GB"
+  },
+  {
+   "key": "fit.6.left",
+   "value": 26576814080.0,
+   "shown": "26.58 GB"
+  },
+  {
+   "key": "fit.6.tokens",
+   "value": 162212.0,
+   "shown": "≈ 162K"
+  },
+  {
+   "key": "fit.8b.tokens",
+   "value": 438991.0,
+   "shown": "≈ 438,991 tokens"
+  },
+  {
+   "key": "fit.8b.chats",
+   "value": 53.0,
+   "shown": "about 53"
+  },
+  {
+   "key": "fit.70b_b200.bf16_kv",
+   "value": 290058.0,
+   "shown": "290K"
+  },
+  {
+   "key": "fit.granite.ratio",
+   "value": 5.910223712016323,
+   "shown": "6 times"
+  },
+  {
+   "key": "oss.active_bf16",
+   "value": 10200000000.0,
+   "shown": "10.2 GB"
+  },
+  {
+   "key": "oss.total_bf16",
+   "value": 234000000000.0,
+   "shown": "234 GB"
+  },
+  {
+   "key": "oss.mxfp4_floor",
+   "value": 62156250000.0,
+   "shown": "≈ 62.2 GB"
+  },
+  {
+   "key": "oss.left_on_h100",
+   "value": 11443750000.000015,
+   "shown": "≈ 11.4 GB"
+  },
+  {
+   "key": "oss20.bf16",
+   "value": 41800000000.0,
+   "shown": "41.8 GB"
+  },
+  {
+   "key": "support.decode",
+   "value": 19.96,
+   "shown": "19.96 s"
+  },
+  {
+   "key": "support.w",
+   "value": 20.96,
+   "shown": "20.96 s"
+  },
+  {
+   "key": "support.batch",
+   "value": 419.20000000000005,
+   "shown": "419.2 sequences"
+  },
+  {
+   "key": "support.context",
+   "value": 2250.0,
+   "shown": "2,250 tokens"
+  },
+  {
+   "key": "support.kv_tokens",
+   "value": 943200.0000000001,
+   "shown": "943,200 tokens"
+  },
+  {
+   "key": "support.kv_per_token",
+   "value": 131072,
+   "shown": "131,072 bytes"
+  },
+  {
+   "key": "support.kv_gb",
+   "value": 123627110400.00002,
+   "shown": "123.6 GB"
+  },
+  {
+   "key": "support.cards",
+   "value": 2.148563410183808,
+   "shown": "2.15 cards"
+  },
+  {
+   "key": "support.replicas",
+   "value": 3,
+   "shown": "three H100 replicas"
+  },
+  {
+   "key": "support.each_seqs",
+   "value": 139.73333333333335,
+   "shown": "about 140 sequences"
+  },
+  {
+   "key": "support.each_tokens",
+   "value": 314400.00000000006,
+   "shown": "314,400 tokens"
+  },
+  {
+   "key": "support.each_share",
+   "value": 0.7161878033946028,
+   "shown": "72%"
+  },
+  {
+   "key": "support.step_kv",
+   "value": 41209036800.00001,
+   "shown": "41.21 GB"
+  },
+  {
+   "key": "support.step_bytes",
+   "value": 57269559296.00001,
+   "shown": "57.27 GB"
+  },
+  {
+   "key": "support.step_ms",
+   "value": 0.01709539083462687,
+   "shown": "17.1 ms"
+  },
+  {
+   "key": "support.out_tok_s",
+   "value": 10000,
+   "shown": "10,000 output tokens"
+  },
+  {
+   "key": "support.per_replica",
+   "value": 3333.3333333333335,
+   "shown": "3,333 per replica"
+  },
+  {
+   "key": "oss.peak_rps",
+   "value": 68.0,
+   "shown": "68 requests a second"
+  },
+  {
+   "key": "oss.peak_tok_s",
+   "value": 85000.0,
+   "shown": "85,000 output"
+  },
+  {
+   "key": "oss.per_gpu",
+   "value": 11232,
+   "shown": "11,232"
+  },
+  {
+   "key": "oss.edge",
+   "value": 7.567663817663818,
+   "shown": "≈ 7.6 GPUs"
+  },
+  {
+   "key": "oss.run_at",
+   "value": 7862.4,
+   "shown": "7,862.4"
+  },
+  {
+   "key": "oss.gpus",
+   "value": 10.810948310948312,
+   "shown": "≈ 10.8"
+  },
+  {
+   "key": "oss.bought",
+   "value": 16,
+   "shown": "16 GPUs"
+  },
+  {
+   "key": "oss.average",
+   "value": 50000,
+   "shown": "50,000 output tokens"
+  },
+  {
+   "key": "oss.capacity",
+   "value": 179712,
+   "shown": "179,712"
+  },
+  {
+   "key": "oss.util",
+   "value": 0.27822293447293445,
+   "shown": "≈ 27.8%"
+  },
+  {
+   "key": "oss.fleet_hour",
+   "value": 114.4,
+   "shown": "$114.40"
+  },
+  {
+   "key": "oss.tokens_hour",
+   "value": 180000000,
+   "shown": "180 million"
+  },
+  {
+   "key": "oss.per_m",
+   "value": 0.6355555555555555,
+   "shown": "$0.636"
+  },
+  {
+   "key": "valley.rps",
+   "value": 20.606060606060606,
+   "shown": "≈ 20.6 requests"
+  },
+  {
+   "key": "valley.tok_s",
+   "value": 25757.575757575756,
+   "shown": "about 25,760"
+  },
+  {
+   "key": "valley.util",
+   "value": 0.1433269662436329,
+   "shown": "14.3%"
+  },
+  {
+   "key": "valley.tokens_hour",
+   "value": 92727272.72727272,
+   "shown": "92.7 million"
+  },
+  {
+   "key": "valley.per_m",
+   "value": 1.2337254901960786,
+   "shown": "$1.23"
+  },
+  {
+   "key": "gb200.ratio",
+   "value": 1.437936356874945,
+   "shown": "≈ 1.44 times"
+  },
+  {
+   "key": "h200.more_bandwidth",
+   "value": 0.4328358208955223,
+   "shown": "43% more bandwidth"
+  }
+ ],
+ "outputs": {
+  "capacity.py": "fit: KV budget <= HBM x 0.92 - weights (decimal GB),\nan upper bound: activations and workspace are left out\nmodel              GPU   HBMx0.92  weights  for KV  KV tokens\n8B BF16            H100     73.60    16.06   57.54    438,991\n70B FP8, FP8 KV    H100     73.60    70.55    3.05     18,593\n70B FP8, FP8 KV    B200    165.60    70.55   95.05    580,116\n70B BF16           B200    165.60   141.11   24.49     74,745\ngranite-8b BF16    L4       22.08    17.58    4.50     27,446\ngranite-8b BF16    L40S     44.16    17.58   26.58    162,212\n\nsupport assistant: Llama-3.1-8B on H100\n  peak       20 requests/s (the busiest hour)\n  shape      2,000 in / 500 out; SLO TTFT <= 1,000 ms, TPOT <= 40 ms\n  W          <= 1 + 499 x 0.04 = 20.96 s in service\n  running    20 x 20.96 = 419.2 sequences\n  KV needed  419.2 x (2,000 + 500 / 2) = 943,200 tokens\n             x 131,072 B = 123.6 GB\n  memory     943,200 / 438,991 = 2.15 -> 3 H100\n             each 139.7 seqs, 314,400 tokens (72% of fit)\n  step       >= (16.06 + 41.21) GB / 3.35 TB/s = 17.1 ms\n  throughput no cited rate at this SLO: measure one\n  fleet      3 H100, the memory count\n\na product: gpt-oss-120b on B200\n  average    40 requests/s x 1.7 (conversation) = 68 at peak\n  shape      5,000 in / 1,250 out; SLO TTFT <= 3,000 ms, TPOT <= 80 ms\n  memory     no KV shape in inputs/: not counted\n  rate       89,856.3 / 8 = 11,232.0 output tokens/s per GPU\n             Nebius B200 n1 (8x B200-SXM-180GB, TensorRT)\n             at p99 TTFT <= 3,000 ms, TPOT <= 80 ms\n  throughput 85,000 / (0.70 x 11,232.0) = 10.81 -> 11 GPUs\n  fleet      16 B200, bought 8 at a time\n  load       40.0 requests/s: 50,000 / 179,712.6 = 27.8%\n             16 x $7.15 = $114.40 / 180.00M = $0.636 per M out\n  valley     20.6 requests/s: 25,758 / 179,712.6 = 14.3%\n             16 x $7.15 = $114.40 / 92.73M = $1.23 per M out\n"
+ }
+}

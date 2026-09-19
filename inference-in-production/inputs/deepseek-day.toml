@@ -1,0 +1,20 @@
+# inputs/deepseek-day.toml
+# DeepSeek's published day of V3/R1 inference, 27 February
+# 12:00 to 28 February 12:00 (UTC+8). Its cost and revenue are
+# DeepSeek's own theoretical figures.
+
+peak_nodes = 278
+average_nodes = 226.75
+gpus_per_node = 8          # H800
+input_tokens = 608e9
+cache_hit_tokens = 342e9   # input tokens served from disk KV
+output_tokens = 168e9
+prefill_tok_s = 73.7e3     # input tokens/s per prefill node
+decode_tok_s = 14.8e3      # output tokens/s per decode node
+usd_per_gpu_hour = 2       # DeepSeek's assumed rental price
+cost_usd = 87072
+revenue_usd = 562027       # at R1 list prices, theoretical
+url = """https://github.com/deepseek-ai/open-infra-index/blob\
+/main/202502OpenSourceWeek/day_6_one_more_thing_deepseekV3R1_\
+inference_system_overview.md"""
+checked = 2026-09-19

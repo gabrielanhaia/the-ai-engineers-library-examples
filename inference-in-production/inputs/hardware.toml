@@ -1,0 +1,39 @@
+# inputs/hardware.toml
+# Accelerator memory and bandwidth as the datasheets print them,
+# in decimal units (GB, TB/s), and the engine's memory fraction.
+
+[H100]  # H100 SXM
+hbm_gb = 80
+tb_s = 3.35
+url = "https://www.nvidia.com/en-us/data-center/h100/"
+checked = 2026-09-19
+
+[H200]  # H200 SXM
+hbm_gb = 141
+tb_s = 4.8
+url = "https://www.nvidia.com/en-us/data-center/h200/"
+checked = 2026-09-19
+
+[B200]  # per GPU of a DGX B200: 1,440 GB and 64 TB/s for 8
+hbm_gb = 180
+tb_s = 8.0
+url = "https://www.nvidia.com/en-us/data-center/dgx-b200/"
+checked = 2026-09-19
+
+[L4]
+hbm_gb = 24
+tb_s = 0.3
+url = "https://www.nvidia.com/en-us/data-center/l4/"
+checked = 2026-09-19
+
+[L40S]
+hbm_gb = 48
+tb_s = 0.864
+url = "https://www.nvidia.com/en-us/data-center/l40s/"
+checked = 2026-09-19
+
+[engine]  # vLLM v0.29.0 --gpu-memory-utilization default
+memory_fraction = 0.92
+url = """https://github.com/vllm-project/vllm/blob/v0.29.0\
+/vllm/config/cache.py"""
+checked = 2026-09-19

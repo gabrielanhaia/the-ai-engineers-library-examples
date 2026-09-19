@@ -1,0 +1,21 @@
+# inputs/mlperf-rules.toml
+# MLPerf Inference latency bounds (99th percentile) for the
+# benchmarks and scenarios the calculators price. Offline has
+# no bound. MLPerf counts output tokens only: LoadGen takes the
+# number of tokens the system generated for each sample.
+
+url = """https://github.com/mlcommons/inference_policies\
+/blob/master/inference_rules.adoc"""
+commit = "ff7edba545fded369e7e7e3d5a2f0bab4a95eece"
+tokens = "output"
+tokens_url = """https://github.com/mlcommons/inference\
+/blob/master/loadgen/logging.cc"""
+checked = 2026-09-19
+
+[gpt-oss-120b]
+Server = {ttft_ms = 3000, tpot_ms = 80}
+Interactive = {ttft_ms = 2000, tpot_ms = 20}
+
+[llama2-70b-99]  # "Conversational" in the rules is Server
+Server = {ttft_ms = 2000, tpot_ms = 200}
+Interactive = {ttft_ms = 450, tpot_ms = 40}

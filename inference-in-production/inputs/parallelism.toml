@@ -1,0 +1,22 @@
+# inputs/parallelism.toml
+# Tensor parallelism's traffic, and the per-phase rates and
+# request shapes behind a P:D ratio.
+
+[megatron]  # Megatron-style TP, forward pass of one layer
+all_reduces_per_layer = 2  # after attention, after the MLP
+url = "https://arxiv.org/abs/1909.08053"
+checked = 2026-09-19
+
+[sglang]  # DeepSeek on 96 H100s (12 nodes), 2,000-token inputs
+prefill_tok_s = 52300  # input tokens/s per prefill node
+decode_tok_s = 22300   # output tokens/s per decode node
+url = "https://www.lmsys.org/blog/2025-05-05-large-scale-ep/"
+checked = 2026-09-19
+
+[inferencex]  # standard shapes, input/output in thousands
+summarization = {input_k = 8, output_k = 1}
+chat = {input_k = 1, output_k = 1}
+reasoning = {input_k = 1, output_k = 8}
+url = """https://newsletter.semianalysis.com/p/inferencemax-open\
+-source-inference"""
+checked = 2026-09-19

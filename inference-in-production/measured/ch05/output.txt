@@ -1,0 +1,40 @@
+
+== worked example A
+gpt-oss-120b, MLPerf v6.1 closed, Server
+  system   Nebius B200 n1 (8x B200-SXM-180GB, TensorRT)
+  unit     8 x $7.15 = $57.20 an hour
+  tokens   89,856.3/s x 3,600 = 323.48 million an hour
+  per unit $57.20 / 323.48 = $0.1768 per million
+  per GPU  $7.15 / 40.44 = $0.1768 per million (unit check)
+
+$0.177 per million output tokens
+  tokens   output only; each request's prefill is included
+  latency  p99 TTFT <= 3,000 ms, p99 TPOT <= 80 ms
+           (a floor of 12.5 tokens/s per user)
+  load     100% utilization; divide by your average
+  request  5,000 in / 1,250 out: $0.00022
+  inputs   MLPerf v6.1 summary.csv; nebius.B200, 2026-09-19
+
+== another shape: 20,000 in / 500 out at 41.2% utilization
+gpt-oss-120b, MLPerf v6.1 closed, Server
+  system   Nebius B200 n1 (8x B200-SXM-180GB, TensorRT)
+  unit     8 x $7.15 = $57.20 an hour
+  tokens   89,856.3/s x 3,600 = 323.48 million an hour
+  per unit $57.20 / 323.48 = $0.1768 per million
+  per GPU  $7.15 / 40.44 = $0.1768 per million (unit check)
+
+$0.429 per million output tokens
+  tokens   output only; each request's prefill is included
+  latency  p99 TTFT <= 3,000 ms, p99 TPOT <= 80 ms
+           (a floor of 12.5 tokens/s per user)
+  load     41.2% utilization: $0.1768 / 0.412
+  request  20,000 in / 500 out: $0.00021
+  WARNING  measured on MLPerf's gpt-oss-120b set, not your shape:
+           measure yours before you price it (chapter 4)
+  inputs   MLPerf v6.1 summary.csv; nebius.B200, 2026-09-19
+
+== every DERIVED number in chapter 5
+59 numbers, recomputed from inputs/: measured/ch05/derived.json
+
+== done
+manifest: measured/ch05/machine.json

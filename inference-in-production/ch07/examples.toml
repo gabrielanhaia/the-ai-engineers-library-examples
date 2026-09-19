@@ -1,0 +1,43 @@
+# ch07/examples.toml
+# Chapter 7's worked examples. Every workload figure here is the
+# example's assumption, not a measurement. Models, GPUs, rates,
+# prices and traffic shapes come from inputs/ by name. Copy this
+# file, put in your forecast, and pass it to the calculator.
+
+# The fit table: label, model, bytes per weight, bytes per KV
+# value, GPU.
+fit = [
+  ["8B BF16", "llama-3_1-8b", 2, 2, "H100"],
+  ["70B FP8, FP8 KV", "llama-3_1-70b", 1, 1, "H100"],
+  ["70B FP8, FP8 KV", "llama-3_1-70b", 1, 1, "B200"],
+  ["70B BF16", "llama-3_1-70b", 2, 2, "B200"],
+  ["granite-8b BF16", "granite-4_2-8b", 2, 2, "L4"],
+  ["granite-8b BF16", "granite-4_2-8b", 2, 2, "L40S"],
+]
+
+[[workload]]
+title = "support assistant"
+model = "llama-3_1-8b"
+weight_bytes = 2
+kv_bytes = 2
+gpu = "H100"
+unit = 1             # GPUs per replica you can rent
+peak_rps = 20        # the busiest hour of the forecast
+input_tokens = 2000
+output_tokens = 500
+ttft_ms = 1000       # the SLO
+tpot_ms = 40
+
+[[workload]]
+title = "a product"
+model = "gpt-oss-120b"
+gpu = "B200"
+unit = 8             # B200s come as 8-GPU nodes
+average_rps = 40
+pattern = "conversation"  # inputs/traffic.toml
+shape = "example-a"       # MLPerf's request shape
+ttft_ms = 3000
+tpot_ms = 80
+rate = "example-a"   # MLPerf v6.1 Server, inputs/example-a.toml
+peak_load = 0.70     # run at 70% of the rate at peak: assumed
+price = "nebius"

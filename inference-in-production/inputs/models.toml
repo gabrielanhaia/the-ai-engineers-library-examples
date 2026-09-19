@@ -1,0 +1,76 @@
+# inputs/models.toml
+# Model shapes: parameter counts (total, as stored) and the
+# attention shape that sets KV bytes per token. KV per token =
+# 2 (K and V) x layers x KV heads x head_dim x bytes per value.
+
+[llama-3_1-8b]
+name = "Llama-3.1-8B"
+params = 8030261248
+layers = 32
+kv_heads = 8
+head_dim = 128
+url = "https://huggingface.co/api/models/unsloth/Meta-Llama-3.1-8B"
+revision = "e9a141a2091ea561b96483212645a2a05e6f99fc"
+checked = 2026-09-19
+
+[llama-3_1-70b]
+name = "Llama-3.1-70B"
+params = 70553706496
+layers = 80
+kv_heads = 8
+head_dim = 128  # hidden 8,192 / 64 attention heads
+url = "https://huggingface.co/api/models/unsloth/Meta-Llama-3.1-70B"
+revision = "1b7306651142d0cc65d993076a250a6a82cf046c"
+checked = 2026-09-19
+
+[granite-4_2-8b]
+name = "granite-4.2-8b"
+params = 8791592960
+layers = 40
+kv_heads = 8
+head_dim = 128  # hidden 4,096 / 32 attention heads
+url = "https://huggingface.co/api/models/ibm-granite/granite-4.2-8b"
+revision = "f8de16cdcdbc6c779ca517604e050d82cc119e44"
+checked = 2026-09-19
+
+[deepseek-r1]  # MLA: the equivalent of one KV head
+name = "DeepSeek-R1"
+kv_heads = 1
+url = """https://github.com/vllm-project/vllm/blob/v0.29.0\
+/docs/serving/context_parallel_deployment.md"""
+checked = 2026-09-19
+
+[qwen3-235b-a22b]
+name = "Qwen3-235B-A22B"
+kv_heads = 4
+url = """https://huggingface.co/Qwen/Qwen3-235B-A22B/raw/main\
+/config.json"""
+revision = "8efa61729e24bd65b1d152b5ab5409052aa80e65"
+checked = 2026-09-19
+
+[gpt-oss-120b]  # model card: 117B total, 5.1B active
+# No KV shape here: its layers alternate full and sliding-window
+# attention, so KV per token is not one number. Read the engine's
+# startup line ("GPU KV cache size") instead.
+name = "gpt-oss-120b"
+params = 117e9
+active = 5.1e9
+url = "https://huggingface.co/openai/gpt-oss-120b"
+checked = 2026-09-19
+
+[gpt-oss-20b]
+name = "gpt-oss-20b"
+params = 20.9e9
+url = "https://openai.com/index/introducing-gpt-oss/"
+checked = 2026-09-19
+
+[llama-3-405b]  # the Llama 3 paper's flagship, in BF16
+name = "Llama 3 405B"
+params = 405e9
+url = "https://arxiv.org/abs/2407.21783"
+checked = 2026-09-19
+
+[mxfp4]  # OCP MX: FP4 values, one 8-bit scale per 32
+bits_per_value = 4.25
+url = "https://arxiv.org/html/2310.10537"
+checked = 2026-09-19

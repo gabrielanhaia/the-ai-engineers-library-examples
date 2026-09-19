@@ -3,7 +3,8 @@
 
 A file the book prints announces itself: its first line (or the line
 after a shebang) is a comment holding its own path, e.g.
-`# ch01/run.sh` or `// ch14/route.yaml`. For every such file:
+`# ch01/run.sh`, `// ch14/route.yaml` or `# inputs/prices.toml`.
+For every such file:
 
   1. the path in the comment is the file's real path, and
   2. no line is longer than 70 characters (the print limit).
@@ -21,7 +22,8 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIMIT = 70
 PATH_COMMENT = re.compile(
-    r"^\s*(?:#|//|--|;|<!--)\s*(ch\d\d/[A-Za-z0-9._/-]+)\s*(?:-->)?\s*$")
+    r"^\s*(?:#|//|--|;|<!--)\s*((?:ch\d\d|inputs)/[A-Za-z0-9._/-]+)"
+    r"\s*(?:-->)?\s*$")
 FENCE = re.compile(r"^(```|~~~)")
 
 
@@ -37,7 +39,8 @@ def printed_path(lines):
 
 def check_repo():
     problems, count = [], 0
-    for path in sorted(ROOT.glob("ch[0-9][0-9]/**/*")):
+    paths = [*ROOT.glob("ch[0-9][0-9]/**/*"), *ROOT.glob("inputs/**/*")]
+    for path in sorted(paths):
         if not path.is_file():
             continue
         try:

@@ -1,0 +1,36 @@
+# ch19/chat.toml
+# A hypothetical: an internal chat assistant. Every workload and
+# staffing figure here is this plan's assumption; every rate and
+# price is read from inputs/ by name.
+
+title = "internal chat assistant"
+average_rps = 20            # requests/s, averaged over the week
+pattern = "conversation"    # peak and valley, inputs/traffic.toml
+shape = "example-a"         # MLPerf's gpt-oss-120b request shape
+ttft_ms = 3000              # the SLO: MLPerf's Server bound,
+tpot_ms = 80                # 12.5 tokens/s per user at worst
+rate = "example-a"          # MLPerf v6.1 Server, 8 x B200
+peak_load = 0.70            # 30% headroom at the peak
+survive_node_loss = true    # the peak still fits, one node down
+engineers = 0.5             # of one engineer's time
+apis = ["together", "baseten"]
+
+levers = [
+  "prefix caching (ch 10): shifts the frontier; skips",
+  "  the shared system prompt's prefill; watch hit rate",
+  "autoscaling (ch 16): raises utilization in the",
+  "  valley; watch cold starts",
+  "batch what can wait (ch 6, ch 8): raises utilization,",
+  "  or pays half the API's price",
+]
+
+engine = [
+  "buying: the provider's. Pin provider, model, version;",
+  "an endpoint is not the weights (ch 17). Serving: the",
+  "engine the rate was measured on, or measure yours (ch 4)",
+]
+
+gate = [
+  "ch 17's verifier on the endpoint before any switch;",
+  "ch 18's quality gate; an alert on the SLO (ch 15)",
+]

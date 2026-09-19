@@ -1,0 +1,153 @@
+{
+ "chapter": "13",
+ "numbers": [
+  {
+   "key": "405b.weights",
+   "value": 810000000000.0,
+   "shown": "810 GB"
+  },
+  {
+   "key": "405b.box",
+   "value": 640000000000.0,
+   "shown": "640 GB"
+  },
+  {
+   "key": "405b.over",
+   "value": 170000000000.0,
+   "shown": "170 GB"
+  },
+  {
+   "key": "all_reduces.llama-3_1-70b",
+   "value": 160,
+   "shown": "= 160 all-reduces"
+  },
+  {
+   "key": "all_reduces.llama-3_1-8b",
+   "value": 64,
+   "shown": "64 all-reduces"
+  },
+  {
+   "key": "floor.tp1.gb",
+   "value": 70.553706496,
+   "shown": "70.55 GB"
+  },
+  {
+   "key": "floor.tp1.ms",
+   "value": 21.060807909253732,
+   "shown": "21.06 ms"
+  },
+  {
+   "key": "floor.tp2.gb",
+   "value": 35.276853248,
+   "shown": "35.28 GB"
+  },
+  {
+   "key": "floor.tp2.ms",
+   "value": 10.530403954626866,
+   "shown": "10.53 ms"
+  },
+  {
+   "key": "kv.tp1.gb",
+   "value": 3.046293504,
+   "shown": "3.05 GB"
+  },
+  {
+   "key": "kv.tp1.tokens",
+   "value": 18593,
+   "shown": "about 18.6K tokens"
+  },
+  {
+   "key": "kv.replicas.gb",
+   "value": 6.092587008,
+   "shown": "6.1 GB of KV"
+  },
+  {
+   "key": "kv.tp2.gb",
+   "value": 76.646293504,
+   "shown": "= 76.65 GB"
+  },
+  {
+   "key": "kv.tp2.tokens",
+   "value": 467811,
+   "shown": "about 468K tokens"
+  },
+  {
+   "key": "kv.tp2.chats",
+   "value": 57,
+   "shown": "about 57 concurrent"
+  },
+  {
+   "key": "kv.ratio",
+   "value": 12.580254234097596,
+   "shown": "= 12.6 times"
+  },
+  {
+   "key": "kv.freed",
+   "value": 70.553706496,
+   "shown": "= 70.55 GB"
+  },
+  {
+   "key": "kv.8b.left",
+   "value": 57.539477504,
+   "shown": "= 57.5 GB of KV"
+  },
+  {
+   "key": "kv.8b.weights",
+   "value": 16060522496,
+   "shown": "16.06 GB of weights"
+  },
+  {
+   "key": "copies.deepseek-r1",
+   "value": 8,
+   "shown": "-dcp 8"
+  },
+  {
+   "key": "copies.qwen3-235b-a22b",
+   "value": 2,
+   "shown": "-dcp 2"
+  },
+  {
+   "key": "copies.llama-3_1-70b",
+   "value": 1,
+   "shown": "stores it once"
+  },
+  {
+   "key": "move.bytes",
+   "value": 1342177280,
+   "shown": "= 1.34 GB"
+  },
+  {
+   "key": "pd.base",
+   "value": 0.42638623326959846,
+   "shown": "= 0.426"
+  },
+  {
+   "key": "pd.summarization",
+   "value": 3.411089866156788,
+   "shown": "= 3.41"
+  },
+  {
+   "key": "pd.chat.decode_nodes",
+   "value": 2.3452914798206277,
+   "shown": "every 2.3 decode nodes"
+  },
+  {
+   "key": "pd.reasoning",
+   "value": 0.053298279158699814,
+   "shown": "= 0.053"
+  },
+  {
+   "key": "pd.reasoning.decode_nodes",
+   "value": 18.76233183856502,
+   "shown": "every 19 decode nodes"
+  },
+  {
+   "key": "pd.swing",
+   "value": 64.0,
+   "shown": "factor of 64"
+  }
+ ],
+ "outputs": {
+  "layout.py": "KV copies at TP 8: TP / KV heads, never below 1\nmodel              KV heads  copies      -dcp\nDeepSeek-R1               1       8    1 to 8\nQwen3-235B-A22B           4       2    1 to 2\nLlama-3.1-70B             8       1    1 to 1\n\nLlama-3.1-70B in FP8 (70.55 GB) on H100: 80 x 0.92\n= 73.60 GB per GPU; FP8 KV is 163,840 bytes a token\nlayout         GPUs   KV GB   KV tokens  8K chats\nTP=1              1    3.05      18,593         2\ntwo replicas      2    6.09      37,186         4\nTP=2              2   76.65     467,811        57\nTP=2 holds 12.6x the KV of two replicas; the 70.55 GB\nbetween them is the second copy of the weights, now KV\nLlama-3.1-8B in BF16 leaves 57.54 GB on one H100; TP=2 frees\nonly the second copy of its 16.06 GB of weights\n\nP:D = (ISL / R_prefill) : (OSL / R_decode)\nper node: 52,300 input, 22,300 output tokens/s (SGLang)\nshape                ISL:OSL     P:D  prefill : decode\nsummarization 8k/1k      8:1    3.41           3.4 : 1\nchat 1k/1k               1:1   0.426           1 : 2.3\nreasoning 1k/8k          1:8   0.053          1 : 18.8\nthe right ratio moves 64x across the three shapes\nan 8K prompt's KV to move: 8,192 x 163,840 B = 1.34 GB\n"
+ }
+}

@@ -1,0 +1,79 @@
+# inputs/prices.toml
+# List prices beyond worked example A's (example-a.toml), each
+# with its source and the day it was read. GPU prices are per
+# hour of the unit named; token prices per million tokens.
+
+[coreweave]  # GB200 NVL72 on demand, one 4-GPU instance
+"GB200" = 42.00
+gpus = 4
+url = "https://www.coreweave.com/pricing"
+checked = 2026-09-19
+
+[aws]  # EC2 on demand, US East (N. Virginia), Linux
+"p5.48xlarge" = 55.04        # 8 x H100
+"p5.4xlarge" = 6.88          # 1 x H100
+"p6-b200.48xlarge" = 113.9328  # 8 x B200
+url = "https://aws.amazon.com/ec2/pricing/on-demand/"
+checked = 2026-09-19
+
+[aws_capacity_blocks]  # per UltraServer or instance hour
+"p6e-gb200x72" = 761.904     # 72 x GB200
+"p5.48xlarge" = 41.528       # 8 x H100
+url = "https://aws.amazon.com/ec2/capacityblocks/pricing/"
+checked = 2026-09-19
+
+[lambda]  # on demand, $ per GPU-hour
+"H100 x8" = 3.99
+"H100 x1" = 4.29
+"B200 x8" = 6.69
+url = "https://lambda.ai/pricing"
+checked = 2026-09-19
+
+[nebius_reserved]  # "up to 35% less" than on demand
+discount_up_to = 0.35
+url = "https://nebius.com/prices"
+checked = 2026-09-19
+
+[baseten_dedicated]  # $ per GPU-minute
+B200 = 0.16633
+url = "https://www.baseten.co/pricing/"
+checked = 2026-09-19
+
+[fireworks_dedicated]  # on-demand deployments, $ per GPU-hour
+B200 = 13.00
+url = "https://fireworks.ai/pricing"
+checked = 2026-09-19
+
+[fireworks_cached]  # gpt-oss-120b cached input, per million
+input = 0.015
+url = "https://docs.fireworks.ai/serverless/pricing"
+checked = 2026-09-19
+
+[semianalysis_tco]  # modeled ownership cost, $ per chip-hour
+B200 = 1.73
+url = """https://inferencex.semianalysis.com/compare-per-dollar\
+/gptoss-120b-b200-vs-h100"""
+checked = 2026-09-19
+
+[semianalysis_r1]  # DeepSeek R1, Crusoe on OpenRouter
+price_input = 1.35
+price_output = 5.40
+cost_input = 0.226   # estimated provider cost, at most
+cost_output = 2.955
+url = """https://newsletter.semianalysis.com/p/inferencex-v2\
+-nvidia-blackwell-vs"""
+checked = 2026-09-19
+
+[anthropic]  # Claude Opus 5
+input = 5
+output = 25
+fast_input = 10
+fast_output = 50
+url = "https://platform.claude.com/docs/en/about-claude/pricing"
+checked = 2026-09-19
+
+[gemini]  # Gemini 3.1 Pro Preview, prompts up to 200k tokens
+input = 2.00
+output = 12.00
+url = "https://ai.google.dev/gemini-api/docs/pricing"
+checked = 2026-09-19

@@ -1,0 +1,16 @@
+# inputs/traffic.toml
+# Diurnal load shapes measured on Microsoft Azure production
+# LLM traces (DynamoLLM): the peak as a multiple of the average
+# load and of the valley load.
+
+[conversation]
+peak_to_average = 1.7
+peak_to_valley = 3.3
+url = "https://arxiv.org/abs/2408.00741"
+checked = 2026-09-19
+
+[coding]
+peak_to_average = 2.8
+peak_to_valley = 34.6
+url = "https://arxiv.org/abs/2408.00741"
+checked = 2026-09-19

@@ -1,0 +1,313 @@
+{
+ "chapter": "06",
+ "numbers": [
+  {
+   "key": "at_100",
+   "value": 0.17682554132419084,
+   "shown": "$0.1768"
+  },
+  {
+   "key": "together.input",
+   "value": 0.00075,
+   "shown": "$0.00075 +"
+  },
+  {
+   "key": "together.request",
+   "value": 0.0015,
+   "shown": "$0.00150"
+  },
+  {
+   "key": "baseten.input",
+   "value": 0.0005,
+   "shown": "$0.00050"
+  },
+  {
+   "key": "baseten.output",
+   "value": 0.000625,
+   "shown": "$0.000625"
+  },
+  {
+   "key": "baseten.request",
+   "value": 0.001125,
+   "shown": "$0.001125"
+  },
+  {
+   "key": "self.request",
+   "value": 0.00022103192665523855,
+   "shown": "$0.000221"
+  },
+  {
+   "key": "times.together",
+   "value": 6.78634993006993,
+   "shown": "6.8 times"
+  },
+  {
+   "key": "times.baseten",
+   "value": 5.089762447552447,
+   "shown": "5.1 times"
+  },
+  {
+   "key": "together.all_in",
+   "value": 1.2,
+   "shown": "$1.20"
+  },
+  {
+   "key": "wrong_floor",
+   "value": 0.2947092355403181,
+   "shown": "29.5%"
+  },
+  {
+   "key": "u.together",
+   "value": 0.14735461777015904,
+   "shown": "**14.7%**"
+  },
+  {
+   "key": "u.baseten",
+   "value": 0.1964728236935454,
+   "shown": "**19.6%**"
+  },
+  {
+   "key": "month.node",
+   "value": 41756.0,
+   "shown": "$41,756"
+  },
+  {
+   "key": "month.tokens",
+   "value": 236142356400.0,
+   "shown": "236.1 billion"
+  },
+  {
+   "key": "month.requests",
+   "value": 188913885.12,
+   "shown": "188.9 million"
+  },
+  {
+   "key": "month.api_bill",
+   "value": 283370.82768,
+   "shown": "about $283,371"
+  },
+  {
+   "key": "even.together",
+   "value": 27837333.333333332,
+   "shown": "27.8 million"
+  },
+  {
+   "key": "even.baseten",
+   "value": 37116444.44444445,
+   "shown": "37.1 million"
+  },
+  {
+   "key": "seconds",
+   "value": 2628000,
+   "shown": "2,628,000"
+  },
+  {
+   "key": "even.together.rps",
+   "value": 10.592592592592592,
+   "shown": "10.6 requests per"
+  },
+  {
+   "key": "even.together.tok_s",
+   "value": 13240.740740740739,
+   "shown": "13,241 output tokens"
+  },
+  {
+   "key": "two_nodes",
+   "value": 83512.0,
+   "shown": "$83,512"
+  },
+  {
+   "key": "even.halved",
+   "value": 55674666.666666664,
+   "shown": "55.7 million"
+  },
+  {
+   "key": "aws.b200_per_gpu",
+   "value": 14.2416,
+   "shown": "$14.24"
+  },
+  {
+   "key": "floor.aws",
+   "value": 0.29350566775321635,
+   "shown": "**29.4%**"
+  },
+  {
+   "key": "floor.tco",
+   "value": 0.03565363478914337,
+   "shown": "**3.6%**"
+  },
+  {
+   "key": "speed.server",
+   "value": 12.5,
+   "shown": "= 12.5 tokens"
+  },
+  {
+   "key": "speed.interactive",
+   "value": 50.0,
+   "shown": "50 tokens per second"
+  },
+  {
+   "key": "pair.gb200",
+   "value": 1.437936356874945,
+   "shown": "= 1.44"
+  },
+  {
+   "key": "pair.llama",
+   "value": 1.4744171335231089,
+   "shown": "= 1.47"
+  },
+  {
+   "key": "floor.interactive",
+   "value": 0.21188656224512253,
+   "shown": "21.2%"
+  },
+  {
+   "key": "redundancy.rps",
+   "value": 21.185185185185183,
+   "shown": "21.2 per second"
+  },
+  {
+   "key": "wage.month",
+   "value": 11331.666666666666,
+   "shown": "$11,330"
+  },
+  {
+   "key": "wage.half",
+   "value": 5665.833333333333,
+   "shown": "$5,666"
+  },
+  {
+   "key": "honest.month",
+   "value": 89177.83333333333,
+   "shown": "$89,178"
+  },
+  {
+   "key": "honest.even",
+   "value": 59451888.88888889,
+   "shown": "59.5 million"
+  },
+  {
+   "key": "honest.rps",
+   "value": 22.62248435650262,
+   "shown": "22.6 per second"
+  },
+  {
+   "key": "honest.u",
+   "value": 0.31470364844343995,
+   "shown": "31.5%"
+  },
+  {
+   "key": "team.requests",
+   "value": 43800000,
+   "shown": "43.8 million"
+  },
+  {
+   "key": "team.api",
+   "value": 65700.0,
+   "shown": "$65,700"
+  },
+  {
+   "key": "team.saving",
+   "value": 23944.0,
+   "shown": "$23,944"
+  },
+  {
+   "key": "team.u",
+   "value": 0.23185167131668377,
+   "shown": "23.2%"
+  },
+  {
+   "key": "team.honest_extra",
+   "value": 23477.83333333333,
+   "shown": "$23,478"
+  },
+  {
+   "key": "margin.input",
+   "value": 0.8325925925925926,
+   "shown": "83%"
+  },
+  {
+   "key": "margin.output",
+   "value": 0.45277777777777783,
+   "shown": "45%"
+  },
+  {
+   "key": "baseten.dedicated_hour",
+   "value": 9.979800000000001,
+   "shown": "$9.98"
+  },
+  {
+   "key": "baseten.dedicated_ratio",
+   "value": 1.395776223776224,
+   "shown": "1.40"
+  },
+  {
+   "key": "fireworks.dedicated_ratio",
+   "value": 1.8181818181818181,
+   "shown": "1.82"
+  },
+  {
+   "key": "coding.u",
+   "value": 0.25,
+   "shown": "= 25%"
+  },
+  {
+   "key": "offline.gap",
+   "value": 0.015194260168736151,
+   "shown": "within 2%"
+  },
+  {
+   "key": "offline.per_m",
+   "value": 0.17955372737214959,
+   "shown": "$0.1796"
+  },
+  {
+   "key": "offline.request",
+   "value": 0.00022444215921518698,
+   "shown": "$0.000224"
+  },
+  {
+   "key": "batch.request",
+   "value": 0.00075,
+   "shown": "$0.00075 for this"
+  },
+  {
+   "key": "batch.floor",
+   "value": 0.29925621228691596,
+   "shown": "29.9%"
+  },
+  {
+   "key": "h200.month",
+   "value": 26280.0,
+   "shown": "$26,280"
+  },
+  {
+   "key": "h200.two",
+   "value": 52560.0,
+   "shown": "$52,560"
+  },
+  {
+   "key": "llmflation.halving",
+   "value": 3.612359947967774,
+   "shown": "3.6 months"
+  },
+  {
+   "key": "reserved.floor",
+   "value": 0.19156100310120674,
+   "shown": "19.2%"
+  },
+  {
+   "key": "stack.requests",
+   "value": 118903777.77777778,
+   "shown": "118.9 million"
+  },
+  {
+   "key": "stack.rps",
+   "value": 45.24496871300524,
+   "shown": "45.2 per"
+  }
+ ],
+ "outputs": {
+  "breakeven.py": "request  gpt-oss-120b, 5,000 in / 1,250 out\nnode     8 x B200, $57.20 an hour, $41,756 a month\n         89,856.3 output tokens/s, MLPerf Server\n         at 100%: $0.1768 per million output tokens,\n         $0.000221 per request, 188.9M requests a month\n\n                      API   break-even    requests   per s\n              per request    U, 1 node     a month\nbase: one node, list prices ($41,756 a month)\n  together       $0.00150        14.7%       27.8M    10.6\n  baseten       $0.001125        19.6%       37.1M    14.1\nAPI price halved ($41,756 a month)\n  together       $0.00075        29.5%       55.7M    21.2\n  baseten      $0.0005625        39.3%       74.2M    28.2\ntwo nodes + half an engineer ($89,178 a month)\n  together       $0.00150        31.5%       59.5M    22.6\n  baseten       $0.001125        42.0%       79.3M    30.2\n"
+ }
+}

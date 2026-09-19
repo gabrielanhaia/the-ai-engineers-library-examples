@@ -55,6 +55,16 @@ jobs:
       - name: compose file is valid
         run: docker compose config -q
 
+  derived-data:
+    # Recomputes every DERIVED number (each chNN/derived.py) from
+    # inputs/ and fails on any difference from measured/chNN/
+    # derived.json. Standard-library Python: no Docker, no model.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: every DERIVED number, recomputed from inputs/
+        run: python3 inference-in-production/scripts/check_derived.py
+
   discover:
     # A lab joins CI when it has a test.sh. No labs yet is a pass.
     runs-on: ubuntu-24.04

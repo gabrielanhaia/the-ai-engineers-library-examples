@@ -1,0 +1,74 @@
+# One service per book. The books print the run command exactly:
+#
+#   docker compose run --rm inference-in-production chNN
+#
+# Profiles:
+#   cpu      the default: the lab runner. Naming the service on the
+#            command line enables its profile, so no flag is needed.
+#   apple    Apple silicon. Metal is not reachable from a container,
+#            so this service only prints the native commands:
+#              docker compose run --rm apple
+#   screens  the capture stack (Prometheus + Grafana):
+#              docker compose --profile screens up -d
+#
+# There is no GPU profile: nothing here needs a GPU.
+
+name: the-ai-engineers-library
+
+services:
+  inference-in-production:
+    profiles: [cpu]
+    build:
+      context: ./inference-in-production
+    init: true
+    volumes:
+      - ./inference-in-production:/lab
+      # The lab starts engines as sibling containers.
+      - /var/run/docker.sock:/var/run/docker.sock
+      - models:/models
+      - scratch:/scratch
+    environment:
+      AIEL_IMAGES_FILE: ${AIEL_IMAGES_FILE:-/lab/images.env}
+      # Recorded in measured/chNN/machine.json; the container cannot
+      # see the host's CPU model.
+      AIEL_MACHINE: ${AIEL_MACHINE:-}
+    networks: [lab]
+
+  apple:
+    profiles: [apple]
+    build:
+      context: ./inference-in-production
+    volumes:
+      - ./inference-in-production:/lab
+    command: ["apple"]
+    network_mode: none
+
+  prometheus:
+    profiles: [screens]
+    image: prom/prometheus:v3.14.0@sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0
+    volumes:
+      - ./inference-in-production/screens/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports: ["127.0.0.1:9090:9090"]
+    networks: [lab]
+
+  grafana:
+    profiles: [screens]
+    image: grafana/grafana:13.2.2@sha256:ac461fb352abc50da10a51c7d02462e9c05488f11f53f14b3ad79a8145f638a0
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - ./inference-in-production/screens/grafana-datasource.yml:/etc/grafana/provisioning/datasources/prometheus.yml:ro
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [prometheus]
+    networks: [lab]
+
+volumes:
+  models:
+    name: aiel-models
+  scratch:
+    name: aiel-scratch
+
+networks:
+  lab:
+    name: aiel-inference

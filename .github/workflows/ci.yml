@@ -1,32 +1,203 @@
 name: ci
 
+# Pushes, pull requests and the nightly run test every lab at the
+# pins in docs/versions.md; they must pass. The weekly run tests the
+# same labs against the newest releases; it may fail, and when it
+# does it opens an issue with the version diff. Either way it commits
+# docs/latest-status.md, which also keeps GitHub from disabling the
+# schedule after 60 days without a push.
+
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "23 3 * * *"  # nightly, at the pins
+    - cron: "47 4 * * 1"  # weekly (Monday), at latest
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pins (must pass) or latest (early warning)"
+        type: choice
+        options: [pins, latest]
+        default: pins
+
+permissions:
+  contents: read
+
+env:
+  # Lint tools, pinned like everything else (docs/versions.md).
+  SHELLCHECK: koalaman/shellcheck:v0.11.0@sha256:61862eba1fcf09a484ebcc6feea46f1782532571a34ed51fedf90dd25f925a8d
+  ACTIONLINT: rhysd/actionlint:1.7.12@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
 
 jobs:
-  secrets:
-    runs-on: ubuntu-latest
+  lint:
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - run: python3 scripts/check_secrets.py
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: secret scan
+        run: python3 scripts/check_secrets.py
+      - name: every pin is recorded in docs/versions.md
+        run: python3 inference-in-production/scripts/check_pins.py
+      - name: printed files (header path, 70-character lines)
+        run: python3 inference-in-production/scripts/check_printed.py
+      - name: shell scripts parse and pass shellcheck
+        run: |
+          mapfile -t files < <(find inference-in-production \
+            -name '*.sh' -type f)
+          files+=(inference-in-production/bin/lab)
+          for f in "${files[@]}"; do bash -n "$f"; done
+          # SC1091: run.sh sources /lab/lib/lab.sh, a path that
+          # exists only inside the runner container.
+          docker run --rm -v "$PWD:/mnt" -w /mnt "$SHELLCHECK" \
+            -s bash -e SC1091 "${files[@]}"
+      - name: workflow files pass actionlint
+        run: docker run --rm -v "$PWD:/repo" -w /repo "$ACTIONLINT"
+      - name: compose file is valid
+        run: docker compose config -q
 
-  books:
-    # Discovers every book directory that has a manifest and runs its
-    # tests against the pinned versions. Skips cleanly while no book has
-    # code yet, so an empty repository is a passing repository.
-    runs-on: ubuntu-latest
+  discover:
+    # A lab joins CI when it has a test.sh. No labs yet is a pass.
+    runs-on: ubuntu-24.04
+    outputs:
+      labs: ${{ steps.find.outputs.labs }}
     steps:
-      - uses: actions/checkout@v4
-      - name: find books with code
-        id: find
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - id: find
         run: |
-          books=$(for d in */; do [ -f "$d/pyproject.toml" ] && echo "${d%/}"; done)
-          echo "books=$(echo $books)" >> "$GITHUB_OUTPUT"
-          echo "books with code: ${books:-none}"
-      - name: test pinned
-        if: steps.find.outputs.books != ''
+          cd inference-in-production
+          labs=$(for d in ch[0-9][0-9]; do
+                   if [ -f "$d/test.sh" ]; then echo "$d"; fi
+                 done | jq -Rsc 'split("\n") | map(select(. != ""))')
+          echo "labs=$labs" >> "$GITHUB_OUTPUT"
+          echo "labs with a test.sh: $labs"
+
+  cpu-labs:
+    needs: [lint, discover]
+    if: >-
+      needs.discover.outputs.labs != '[]' &&
+      github.event.schedule != '47 4 * * 1' &&
+      inputs.mode != 'latest'
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+        lab: ${{ fromJSON(needs.discover.outputs.labs) }}
+    runs-on: ${{ matrix.runner }}
+    name: ${{ matrix.lab }} (${{ matrix.runner }})
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: build the lab runner
+        run: docker compose build inference-in-production
+      - name: run the lab's test
+        run: >-
+          docker compose run --rm -T
+          inference-in-production test ${{ matrix.lab }}
+      - name: disk and leftovers
+        if: always()
         run: |
-          for b in ${{ steps.find.outputs.books }}; do
-            echo "== $b"; (cd "$b" && make test)
+          docker compose run --rm -T inference-in-production clean
+          docker system df
+          df -h /
+
+  latest-labs:
+    needs: [discover]
+    if: >-
+      github.event.schedule == '47 4 * * 1' ||
+      inputs.mode == 'latest'
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    env:
+      AIEL_IMAGES_FILE: /lab/images.latest.env
+      GITHUB_TOKEN: ${{ github.token }}
+      LABS: ${{ needs.discover.outputs.labs }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - name: resolve the newest releases
+        run: |
+          cd inference-in-production
+          python3 scripts/resolve_latest.py \
+            --env-out images.latest.env --md-out ../diff.md
+          python3 scripts/fetch_models.py relock --latest
+      - name: run every lab against latest
+        run: |
+          docker compose build inference-in-production
+          : > lab-status.md
+          for lab in $(echo "$LABS" | jq -r '.[]'); do
+            if docker compose run --rm -T inference-in-production \
+                 test "$lab"; then r=pass; else r=FAIL; fi
+            echo "| $lab | ${{ matrix.runner }} | $r |" >> lab-status.md
           done
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        if: always()
+        with:
+          name: latest-${{ matrix.runner }}
+          path: |
+            diff.md
+            lab-status.md
+          if-no-files-found: ignore
+
+  latest-report:
+    needs: [latest-labs]
+    if: always() && needs.latest-labs.result != 'skipped'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+        with:
+          path: latest
+      - name: write docs/latest-status.md
+        id: status
+        env:
+          LABS_RESULT: ${{ needs.latest-labs.result }}
+        run: |
+          RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+          RUN_URL="$RUN_URL/actions/runs/$GITHUB_RUN_ID"
+          diff=$(find latest -name diff.md 2>/dev/null | head -n 1)
+          {
+            echo "# At-latest status"
+            echo
+            echo "Written by the weekly CI job. Not a pin: the pins"
+            echo "are in [versions.md](versions.md)."
+            echo
+            echo "Run: $(date -u +%Y-%m-%dT%H:%MZ), [log]($RUN_URL)"
+            echo
+            echo "## Versions"
+            echo
+            if [ -n "$diff" ]; then cat "$diff"
+            else echo "The resolver failed; see the log."; fi
+            echo
+            echo "## Labs"
+            echo
+            echo "| Lab | Runner | Result |"
+            echo "|---|---|---|"
+            cat latest/*/lab-status.md 2>/dev/null || true
+          } > docs/latest-status.md
+          cat docs/latest-status.md
+          if grep -q '| FAIL |' docs/latest-status.md ||
+             [ "$LABS_RESULT" != success ]; then
+            echo "failed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: commit the status (keeps the schedule alive)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/latest-status.md
+          git commit -m "At-latest status $(date -u +%Y-%m-%d)" \
+            || echo "status unchanged"
+          git pull --rebase
+          git push
+      - name: open an issue with the version diff
+        if: steps.status.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "At-latest run failed $(date -u +%Y-%m-%d)" \
+            --body-file docs/latest-status.md

@@ -1,0 +1,7 @@
+# Third-party Python packages for the lab runner, installed with
+# pip --require-hashes. Every entry is an exact == pin with its
+# hashes, and docs/versions.md records it.
+#
+# There are none yet: the shared scripts (lib/, scripts/) use the
+# standard library only. Engines and benchmark tools run from their
+# own pinned images (images.env), not from here.

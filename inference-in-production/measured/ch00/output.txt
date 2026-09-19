@@ -1,0 +1,31 @@
+
+== model
+models: 1 file(s), 138 MiB, into /models
+  ok      gguf/SmolLM2-135M-Instruct-Q8_0.gguf
+
+== llama.cpp server
+llama ready after ~1s
+
+== one streamed request
+The primary colors are:
+
+1. Red: A warm, fiery hue that is often associated with fire, blood, and passion.
+2. Blue:
+
+== server timings (last chunk)
+{
+  "cache_n": 0,
+  "prompt_n": 35,
+  "prompt_ms": 125.098,
+  "prompt_per_token_ms": 3.5742285714285713,
+  "prompt_per_second": 279.78065196885643,
+  "predicted_n": 32,
+  "predicted_ms": 464.305,
+  "predicted_per_token_ms": 14.977580645161291,
+  "predicted_per_second": 66.76645739330827
+}
+
+== done
+manifest: measured/ch00/machine.json
+chunks: 34
+raw stream: measured/ch00/stream.sse

@@ -1,0 +1,22 @@
+# ch03/slo.toml
+# The lab's SLO, with every part an SLO needs: where TTFT is
+# measured, the TPOT formula, the share of requests that must meet
+# both targets, and the window that share is counted over. The
+# targets are for one CPU replica serving a small model; they are
+# not a GPU tier.
+
+[ttft]
+measured_at = "client: request sent -> first chunk with text"
+target_ms = 500
+
+[tpot]
+formula = "(e2e - ttft) / (output_tokens - 1)"
+exempt = "requests with one output token or fewer"
+target_ms = 25
+
+[attainment]
+share = 0.90       # of requests meeting BOTH targets
+window = "all requests at one offered rate"
+
+[goodput]
+replicas = 1       # goodput is reported per replica

@@ -1,0 +1,50 @@
+[
+  {
+    "format": "f16",
+    "bytes": 725553792,
+    "predicted_tok_s": 217.35121742703262,
+    "file": "/models/gguf/SmolLM2-360M-Instruct-f16.gguf",
+    "threads": 4,
+    "measured_tok_s": 113.224,
+    "runs_tok_s": [
+      113.224,
+      111.458,
+      114.126,
+      114.082,
+      108.909
+    ],
+    "ratio": 0.5209264587533798
+  },
+  {
+    "format": "Q8_0",
+    "bytes": 386405280,
+    "predicted_tok_s": 408.120717191028,
+    "file": "/models/gguf/SmolLM2-360M-Instruct-Q8_0.gguf",
+    "threads": 6,
+    "measured_tok_s": 207.536,
+    "runs_tok_s": [
+      208.113,
+      207.127,
+      207.536,
+      207.923,
+      204.764
+    ],
+    "ratio": 0.5085162091951807
+  },
+  {
+    "format": "Q4_K_M",
+    "bytes": 270590880,
+    "predicted_tok_s": 582.7986516027444,
+    "file": "/models/gguf/SmolLM2-360M-Instruct-Q4_K_M.gguf",
+    "threads": 6,
+    "measured_tok_s": 225.098,
+    "runs_tok_s": [
+      224.668,
+      225.098,
+      217.319,
+      225.162,
+      226.034
+    ],
+    "ratio": 0.38623630885377297
+  }
+]

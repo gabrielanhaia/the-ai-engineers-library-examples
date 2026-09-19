@@ -1,0 +1,34 @@
+
+== model
+models: 1 file(s), 138 MiB, into /models
+  ok      gguf/SmolLM2-135M-Instruct-Q8_0.gguf
+
+== llama.cpp server (build b10964)
+llama ready after ~1s
+
+== one streamed request
+A token is a small, self-contained unit of information that serves as a unique identifier, a code, or a message in a digital communication system.
+
+== server timings (last chunk)
+{
+  "cache_n": 0,
+  "prompt_n": 39,
+  "prompt_ms": 19.041,
+  "prompt_per_token_ms": 0.48823076923076925,
+  "prompt_per_second": 2048.2117535843704,
+  "predicted_n": 32,
+  "predicted_ms": 200.184,
+  "predicted_per_token_ms": 6.457548387096774,
+  "predicted_per_second": 154.8575310714143
+}
+
+== first token at the client
+{
+  "client_ttft_ms": 28.05,
+  "server_prompt_ms": 19.041
+}
+
+== done
+manifest: measured/ch01/machine.json
+chunks: 33
+raw stream: measured/ch01/stream.sse

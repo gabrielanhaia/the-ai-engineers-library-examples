@@ -1,0 +1,12 @@
+# ch03/queries.promql
+# Two SLO queries on vLLM's own histograms. The series names are
+# copied from a live scrape of vLLM 0.29.0 (CPU), not from its docs.
+
+# p99 server-side TTFT: from arrival at the engine to first token.
+histogram_quantile(0.99,
+  sum by (le) (rate(vllm:time_to_first_token_seconds_bucket[1m])))
+
+# p90 TPOT: per request, (e2e - ttft) / (output tokens - 1).
+histogram_quantile(0.90,
+  sum by (le) (
+    rate(vllm:request_time_per_output_token_seconds_bucket[1m])))

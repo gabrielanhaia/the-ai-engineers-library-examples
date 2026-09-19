@@ -1,0 +1,258 @@
+{
+ "label": "f16",
+ "written": "2026-09-19",
+ "all": {
+  "correct": 39,
+  "n": 40
+ },
+ "date_number": {
+  "correct": 20,
+  "n": 20
+ },
+ "fact": {
+  "correct": 19,
+  "n": 20
+ },
+ "items": [
+  {
+   "id": "d01",
+   "kind": "date",
+   "reply": "Apollo 11 landed on the Moon on July 20, 1969.",
+   "correct": true
+  },
+  {
+   "id": "d02",
+   "kind": "date",
+   "reply": "World War II ended in 1945.",
+   "correct": true
+  },
+  {
+   "id": "d03",
+   "kind": "date",
+   "reply": "The Berlin Wall fell on November 9, 1989.",
+   "correct": true
+  },
+  {
+   "id": "d04",
+   "kind": "date",
+   "reply": "Christopher Columbus first reached the Americas in 1492.",
+   "correct": true
+  },
+  {
+   "id": "d05",
+   "kind": "date",
+   "reply": "The United States Declaration of Independence was adopted on July 4, 1776.",
+   "correct": true
+  },
+  {
+   "id": "d06",
+   "kind": "date",
+   "reply": "The Titanic sank on April 15, 1912.",
+   "correct": true
+  },
+  {
+   "id": "d07",
+   "kind": "date",
+   "reply": "World War I began on July 28, 1914.",
+   "correct": true
+  },
+  {
+   "id": "d08",
+   "kind": "date",
+   "reply": "The French Revolution began in 1789.",
+   "correct": true
+  },
+  {
+   "id": "d09",
+   "kind": "date",
+   "reply": "Yuri Gagarin became the first human in space on April 12, 1961.",
+   "correct": true
+  },
+  {
+   "id": "d10",
+   "kind": "date",
+   "reply": "The Soviet Union dissolved in 1991.",
+   "correct": true
+  },
+  {
+   "id": "n01",
+   "kind": "number",
+   "reply": "7 * 8 = 56",
+   "correct": true
+  },
+  {
+   "id": "n02",
+   "kind": "number",
+   "reply": "12 times 12 is 144.",
+   "correct": true
+  },
+  {
+   "id": "n03",
+   "kind": "number",
+   "reply": "There are 366 days in a leap year.",
+   "correct": true
+  },
+  {
+   "id": "n04",
+   "kind": "number",
+   "reply": "One hour is equal to 60 minutes.",
+   "correct": true
+  },
+  {
+   "id": "n05",
+   "kind": "number",
+   "reply": "A hexagon has 6 sides.",
+   "correct": true
+  },
+  {
+   "id": "n06",
+   "kind": "number",
+   "reply": "100 divided by 4 equals 25.",
+   "correct": true
+  },
+  {
+   "id": "n07",
+   "kind": "number",
+   "reply": "A spider has eight legs.",
+   "correct": true
+  },
+  {
+   "id": "n08",
+   "kind": "number",
+   "reply": "15 + 27 = 42",
+   "correct": true
+  },
+  {
+   "id": "n09",
+   "kind": "number",
+   "reply": "One day is equal to 24 hours.",
+   "correct": true
+  },
+  {
+   "id": "n10",
+   "kind": "number",
+   "reply": "The square root of 81 is 9.",
+   "correct": true
+  },
+  {
+   "id": "f01",
+   "kind": "fact",
+   "reply": "Paris",
+   "correct": true
+  },
+  {
+   "id": "f02",
+   "kind": "fact",
+   "reply": "Tokyo",
+   "correct": true
+  },
+  {
+   "id": "f03",
+   "kind": "fact",
+   "reply": "Rome",
+   "correct": true
+  },
+  {
+   "id": "f04",
+   "kind": "fact",
+   "reply": "Berlin",
+   "correct": true
+  },
+  {
+   "id": "f05",
+   "kind": "fact",
+   "reply": "The capital of Spain is Madrid.",
+   "correct": true
+  },
+  {
+   "id": "f06",
+   "kind": "fact",
+   "reply": "The capital of Canada is Ottawa.",
+   "correct": true
+  },
+  {
+   "id": "f07",
+   "kind": "fact",
+   "reply": "The chemical symbol for gold is Au.",
+   "correct": true
+  },
+  {
+   "id": "f08",
+   "kind": "fact",
+   "reply": "Mars",
+   "correct": true
+  },
+  {
+   "id": "f09",
+   "kind": "fact",
+   "reply": "The largest ocean on Earth is the Pacific Ocean.",
+   "correct": true
+  },
+  {
+   "id": "f10",
+   "kind": "fact",
+   "reply": "William Shakespeare.",
+   "correct": true
+  },
+  {
+   "id": "f11",
+   "kind": "fact",
+   "reply": "Plants take in carbon dioxide from the air for photosynthesis.",
+   "correct": true
+  },
+  {
+   "id": "f12",
+   "kind": "fact",
+   "reply": "The largest planet in the Solar System is Jupiter.",
+   "correct": true
+  },
+  {
+   "id": "f13",
+   "kind": "fact",
+   "reply": "Portuguese",
+   "correct": true
+  },
+  {
+   "id": "f14",
+   "kind": "fact",
+   "reply": "Leonardo da Vinci.",
+   "correct": true
+  },
+  {
+   "id": "f15",
+   "kind": "fact",
+   "reply": "Mount Everest is the highest mountain on Earth above sea level.",
+   "correct": true
+  },
+  {
+   "id": "f16",
+   "kind": "fact",
+   "reply": "Oxygen",
+   "correct": true
+  },
+  {
+   "id": "f17",
+   "kind": "fact",
+   "reply": "H2O",
+   "correct": true
+  },
+  {
+   "id": "f18",
+   "kind": "fact",
+   "reply": "The elephant is the largest mammal on Earth.",
+   "correct": false
+  },
+  {
+   "id": "f19",
+   "kind": "fact",
+   "reply": "The longest river in South America is the Amazon River, which is approximately 6,490 kilometers long.",
+   "correct": true
+  },
+  {
+   "id": "f20",
+   "kind": "fact",
+   "reply": "Blue and yellow paint make green.",
+   "correct": true
+  }
+ ]
+}

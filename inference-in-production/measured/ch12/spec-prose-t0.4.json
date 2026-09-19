@@ -1,0 +1,143 @@
+{
+ "task": "prose",
+ "temperature": 0.4,
+ "wall_s": 11.795719851998001,
+ "requests": [
+  {
+   "prompt": "Write a short story about a lighthouse keeper who finds a letter.",
+   "text": "Once upon a time, in a small village nestled by a sea, lived a lighthouse keeper named Jack. He was a hard-working man, always keeping the lighthouse lit and the sea calm. Jack was a man of his word, and he was known for his honesty and integrity.\n\nOne day, while Jack was out on his rounds, he stumbled upon a letter. It was a letter from a woman named Sarah, who had been a lighthouse keeper for over 20 years. She had written to him, expressing her gratitude for his service and asking for his advice.\n\nJack was touched by Sarah's kind words and",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 43,
+    "prompt_ms": 47.744,
+    "prompt_per_token_ms": 1.1103255813953488,
+    "prompt_per_second": 900.6367292225202,
+    "predicted_n": 128,
+    "predicted_ms": 1438.866,
+    "predicted_per_token_ms": 11.329653543307087,
+    "predicted_per_second": 88.26395230688611,
+    "draft_n": 197,
+    "draft_n_accepted": 77
+   }
+  },
+  {
+   "prompt": "Describe a walk through a forest in autumn.",
+   "text": "A walk through a forest in autumn is a sensory experience that's full of colors and scents. As you walk, the leaves on the trees turn a beautiful golden brown, and the air is filled with the sweet fragrance of blooming flowers. The trees themselves begin to change colors, with the leaves turning a brilliant orange, red, and yellow.\n\nAs you walk, the sounds of nature become more pronounced. The leaves crunching beneath your feet, the birds chirping, and the rustling of leaves create a symphony of sounds that are both soothing and invigorating. The air is crisp and cool, carrying the scent of damp earth",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 39,
+    "prompt_ms": 58.438,
+    "prompt_per_token_ms": 1.4984102564102564,
+    "prompt_per_second": 667.3739689927787,
+    "predicted_n": 128,
+    "predicted_ms": 1405.185,
+    "predicted_per_token_ms": 11.064448818897638,
+    "predicted_per_second": 90.37955856346318,
+    "draft_n": 204,
+    "draft_n_accepted": 76
+   }
+  },
+  {
+   "prompt": "Write a letter to a friend about a weekend trip to the sea.",
+   "text": "Dear [Friend's Name],\n\nIt was a wonderful weekend that I just had to share with you. We decided to take a trip to the sea and it was really a fantastic experience. We went to a beautiful beach that was perfect for swimming and sunbathing. The sun was shining and the sand was warm, it was a perfect day to relax and enjoy the ocean.\n\nWe also went to a nearby island that was full of beautiful beaches and coral reefs. The coral reefs were really cool and I saw some really interesting sea creatures. It was amazing to see.\n\nWe also went to the beach and we",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 44,
+    "prompt_ms": 48.507,
+    "prompt_per_token_ms": 1.1024318181818182,
+    "prompt_per_second": 907.085575277795,
+    "predicted_n": 128,
+    "predicted_ms": 1384.945,
+    "predicted_per_token_ms": 10.90507874015748,
+    "predicted_per_second": 91.7003924343566,
+    "draft_n": 190,
+    "draft_n_accepted": 79
+   }
+  },
+  {
+   "prompt": "Explain in a few paragraphs why people enjoy music.",
+   "text": "Music has a way of evoking emotions, evoking memories, and evoking a sense of connection to our past. It's a universal language that speaks to the human experience in ways that words alone cannot. Music is an expression of our inner world, a reflection of our thoughts, feelings, and experiences. It's a way for us to process and release our emotions, to tap into our inner selves, and to find a sense of calm and peace. Music has the power to transport us to different times and places, to evoke nostalgia and to create a sense of familiarity. It's a way to connect with others, to share our",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 40,
+    "prompt_ms": 43.85,
+    "prompt_per_token_ms": 1.09625,
+    "prompt_per_second": 912.200684150513,
+    "predicted_n": 128,
+    "predicted_ms": 1115.714,
+    "predicted_per_token_ms": 8.785149606299212,
+    "predicted_per_second": 113.82845424544284,
+    "draft_n": 166,
+    "draft_n_accepted": 85
+   }
+  },
+  {
+   "prompt": "Describe an ideal slow Sunday morning.",
+   "text": "An ideal slow Sunday morning would start with a gentle morning routine, such as waking up with a warm cup of tea or coffee, followed by a short meditation or yoga session to set a calm and peaceful tone for the day. After that, you would head to the kitchen to prepare breakfast, perhaps something simple like a bowl of oatmeal or scrambled eggs, and then head out to the garden to start a small garden or a pot of flowers.\n\nOnce you're in the garden, you would spend some time reading or reading the newspaper, which would help you relax and get ready for the rest of the day. After that, you would",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 37,
+    "prompt_ms": 40.25,
+    "prompt_per_token_ms": 1.087837837837838,
+    "prompt_per_second": 919.2546583850932,
+    "predicted_n": 128,
+    "predicted_ms": 1359.932,
+    "predicted_per_token_ms": 10.708125984251968,
+    "predicted_per_second": 93.38702229229108,
+    "draft_n": 207,
+    "draft_n_accepted": 75
+   }
+  },
+  {
+   "prompt": "Write a paragraph about a city at night.",
+   "text": "As the sun sets and the city awakens, the sky transforms into a canvas of vibrant hues - from the deep blues and purples of the evening sky to the fiery oranges and pinks of the setting sun. The streets come alive with the sounds of car horns and chatter, and the smell of street food wafts through the air, enticing passersby to indulge in the city's culinary delights. The buildings, adorned with twinkling lights and colorful decorations, cast a magical glow over the urban landscape, creating a sense of enchantment and wonder. As the night wears on, the city transforms into a dazzling spectacle, with",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 39,
+    "prompt_ms": 43.992,
+    "prompt_per_token_ms": 1.128,
+    "prompt_per_second": 886.5248226950356,
+    "predicted_n": 128,
+    "predicted_ms": 1287.281,
+    "predicted_per_token_ms": 10.136070866141733,
+    "predicted_per_second": 98.65755806230341,
+    "draft_n": 174,
+    "draft_n_accepted": 82
+   }
+  },
+  {
+   "prompt": "Tell a short fable about a fox and a crow.",
+   "text": "Once upon a time, there lived a wise old fox named Felix. Felix lived in a village surrounded by dense forests. Felix loved to roam the forest, enjoying the fresh air and the beautiful sights. One day, Felix heard a strange noise coming from the nearby village. He cautiously approached the village and saw a group of crows. The crows were busy gathering food and Felix was curious. He asked the crows, \"Why are you all gathering food?\" The crows replied, \"We are gathering food because we are hungry.\" Felix was amazed by their intelligence and asked, \"How do you know what to gather and what not to gather?\" The",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 42,
+    "prompt_ms": 46.51,
+    "prompt_per_token_ms": 1.1073809523809524,
+    "prompt_per_second": 903.0316061062138,
+    "predicted_n": 128,
+    "predicted_ms": 2061.601,
+    "predicted_per_token_ms": 16.23307874015748,
+    "predicted_per_second": 61.60260884623164,
+    "draft_n": 212,
+    "draft_n_accepted": 73
+   }
+  },
+  {
+   "prompt": "Write a product description for a handmade wooden chair.",
+   "text": "Hi there, I'm SmolLM, your AI assistant for crafting and designing. I can help you create a product description for a handmade wooden chair.\n\nA handmade wooden chair is a unique and beautiful piece of furniture. It's made from a single piece of wood that's carefully selected and shaped to fit your needs and style.\n\nHere's a product description for a handmade wooden chair:\n\n\"Meet the 'Handmade Wooden Chair', crafted from a single piece of sustainably-sourced, beautifully-selected wood. This chair is a one-of-a-kind piece that reflects your personal style and personality",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 40,
+    "prompt_ms": 43.762,
+    "prompt_per_token_ms": 1.09405,
+    "prompt_per_second": 914.0350075407888,
+    "predicted_n": 128,
+    "predicted_ms": 1323.705,
+    "predicted_per_token_ms": 10.42287401574803,
+    "predicted_per_second": 95.94282714048825,
+    "draft_n": 192,
+    "draft_n_accepted": 79
+   }
+  }
+ ]
+}

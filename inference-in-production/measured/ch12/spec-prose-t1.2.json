@@ -1,0 +1,143 @@
+{
+ "task": "prose",
+ "temperature": 1.2,
+ "wall_s": 13.310429231001763,
+ "requests": [
+  {
+   "prompt": "Write a short story about a lighthouse keeper who finds a letter.",
+   "text": "Once upon a time, in a small town on the rocky coast, a lighthouse keeper named Emmett had a peculiar problem: he couldn't find his trusty letters in the mailbox. He searched everywhere, even digging his pocket into his old uniform, but couldn't find his letters anywhere. \n\nOne day, while walking along the coast, Emmett spotted a lighthouse on a rocky headland. The lighthouse was perched atop a rocky slope, with its tower disappearing into the sea. It was the perfect place to find his letters, but Emmett was unsure if the lighthouse keeper lived there. He decided to enter the lighthouse",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 43,
+    "prompt_ms": 86.046,
+    "prompt_per_token_ms": 2.0010697674418605,
+    "prompt_per_second": 499.7327011133579,
+    "predicted_n": 128,
+    "predicted_ms": 1930.333,
+    "predicted_per_token_ms": 15.199472440944882,
+    "predicted_per_second": 65.79175717350321,
+    "draft_n": 265,
+    "draft_n_accepted": 60
+   }
+  },
+  {
+   "prompt": "Describe a walk through a forest in autumn.",
+   "text": "In the heart of autumn, the forest comes alive with the sweet scent of damp earth and the gentle rustle of leaves in the wind. The sunlight filters through the trees, casting dappled shadows on the ground, and casting the leaves into a vibrant tapestry of colors - fiery oranges, warm reds, and deep purples.\n\nThe air is filled with the earthy smell of decaying leaves and the sweet scent of blooming flowers. Birds sing their morning melodies, and the chirping of crickets adds a soothing background melody. As you walk through the forest, the sounds become more pronounced - the rustling of twigs, the chattering of",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 39,
+    "prompt_ms": 43.603,
+    "prompt_per_token_ms": 1.118025641025641,
+    "prompt_per_second": 894.4338692291814,
+    "predicted_n": 128,
+    "predicted_ms": 1472.971,
+    "predicted_per_token_ms": 11.5981968503937,
+    "predicted_per_second": 86.22029897397844,
+    "draft_n": 213,
+    "draft_n_accepted": 73
+   }
+  },
+  {
+   "prompt": "Write a letter to a friend about a weekend trip to the sea.",
+   "text": "Dear [Friend's Name],\n\nThis letter is to reminisce about a fantastic weekend that I had at the seaside with my family. We had an adventure of a week, and the memories will always be cherished. Here's the story of how it started and the adventures we had along the way.\n\nFirst of all, I want to start with a bit of background information about my family and our travels. We are a family with three children: [Friend's Name], [Friend's Mother], [Friend's Father], and we all love going to the beach and swimming in the sea. We have",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 44,
+    "prompt_ms": 48.174,
+    "prompt_per_token_ms": 1.0948636363636364,
+    "prompt_per_second": 913.3557520654294,
+    "predicted_n": 128,
+    "predicted_ms": 1754.85,
+    "predicted_per_token_ms": 13.81771653543307,
+    "predicted_per_second": 72.37085790808332,
+    "draft_n": 254,
+    "draft_n_accepted": 63
+   }
+  },
+  {
+   "prompt": "Explain in a few paragraphs why people enjoy music.",
+   "text": "Music is a universal language that connects people on a deep, emotional level. It is a universal language that allows us to express our thoughts, emotions, and feelings, and to bond with others on a profound level. We may be from different cultures or speak different languages, but our love for music transcends these barriers. Music has a unique power to evoke a universal response from people, it speaks to us on a primal level, and it has the ability to heal, comfort, and inspire us.",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 40,
+    "prompt_ms": 43.952,
+    "prompt_per_token_ms": 1.0988,
+    "prompt_per_second": 910.0837277029486,
+    "predicted_n": 101,
+    "predicted_ms": 1064.831,
+    "predicted_per_token_ms": 10.648309999999999,
+    "predicted_per_second": 93.91161602169736,
+    "draft_n": 164,
+    "draft_n_accepted": 59
+   }
+  },
+  {
+   "prompt": "Describe an ideal slow Sunday morning.",
+   "text": "A slow Sunday morning would be ideal because it allows you to relax, unwind, and prepare for the rest of the day. Here are some thoughts about what a slow Sunday morning could look like:\n\nAs the sun begins to rise, you wake up to the quiet hum of the house. You stretch gently, feeling the morning light on your skin, and take a few deep breaths. The air is fresh and clean, filled with the scent of woodsmoke from the fireplace and the sweet scent of flowers. Your mind starts to stir, but not too much - perhaps just the promise of a more peaceful morning and a chance to",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 37,
+    "prompt_ms": 41.083,
+    "prompt_per_token_ms": 1.1103513513513512,
+    "prompt_per_second": 900.6158264975782,
+    "predicted_n": 128,
+    "predicted_ms": 1526.218,
+    "predicted_per_token_ms": 12.017464566929135,
+    "predicted_per_second": 83.21222787308234,
+    "draft_n": 233,
+    "draft_n_accepted": 68
+   }
+  },
+  {
+   "prompt": "Write a paragraph about a city at night.",
+   "text": "As the city lights twinkle like tiny fireflies across the sky, a tapestry of vibrant colors dances through the night air, casting an ethereal glow over the bustling streets and towering skyscrapers. Neon signs and billboards pierce the sky like a thousand lanterns, casting long shadows that stretch and twist across the urban landscape. The city's historic architecture stands proud and tall, its weathered stones and ornate facades a testament to the ingenuity and craftsmanship that has shaped the city's identity over the centuries. In the heart of the city, bustling streets hum with the hum of activity, from street performers to car horns and the chatter of pedestrians",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 39,
+    "prompt_ms": 43.394,
+    "prompt_per_token_ms": 1.1126666666666667,
+    "prompt_per_second": 898.7417615338526,
+    "predicted_n": 128,
+    "predicted_ms": 1590.029,
+    "predicted_per_token_ms": 12.519913385826772,
+    "predicted_per_second": 79.87275703776471,
+    "draft_n": 253,
+    "draft_n_accepted": 63
+   }
+  },
+  {
+   "prompt": "Tell a short fable about a fox and a crow.",
+   "text": "Once upon a time, there were two very different animals. There was the clever fox, with a big nose and sharp teeth, who loved to trick people into making mistakes. And then there was the wise and ancient crow, with a black beak and a big heart, who had seen all the tricks of the fox.\n\nThe fox, thinking he could trick the crow into believing a big, fat piece of meat was coming for him, decided to present his friends with a clever plan. He pretended to be very hungry, and called out for the crow.\n\nThe crow, being a kind and wise bird, thought the",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 42,
+    "prompt_ms": 45.833,
+    "prompt_per_token_ms": 1.0912619047619048,
+    "prompt_per_second": 916.3703008749155,
+    "predicted_n": 128,
+    "predicted_ms": 1783.329,
+    "predicted_per_token_ms": 14.04196062992126,
+    "predicted_per_second": 71.21512631712937,
+    "draft_n": 251,
+    "draft_n_accepted": 63
+   }
+  },
+  {
+   "prompt": "Write a product description for a handmade wooden chair.",
+   "text": "As a highly skilled artisan, we pride ourselves on creating handmade wooden chairs that are crafted with a deep respect for nature. Our wooden chair is a special piece of furniture that was made from the finest woods such as cedar, maple and walnut. We carefully select the wood to ensure a beautiful and unique look. Our chairs are carefully assembled by hand, using a traditional method that makes each chair a one-of-a-kind creation. We also incorporate natural finishing materials, such as beeswax and walnut varnish, which provide a beautiful, natural look. Our wooden chair is not only functional, but also a stunning piece of art, perfect",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 40,
+    "prompt_ms": 42.902,
+    "prompt_per_token_ms": 1.0725500000000001,
+    "prompt_per_second": 932.3574658524078,
+    "predicted_n": 128,
+    "predicted_ms": 1755.786,
+    "predicted_per_token_ms": 13.825086614173228,
+    "predicted_per_second": 72.33227739599245,
+    "draft_n": 260,
+    "draft_n_accepted": 61
+   }
+  }
+ ]
+}

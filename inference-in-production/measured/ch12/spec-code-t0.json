@@ -1,0 +1,143 @@
+{
+ "task": "code",
+ "temperature": 0.0,
+ "wall_s": 6.526355312002124,
+ "requests": [
+  {
+   "prompt": "Write a Python function that returns the factorial of n.",
+   "text": "Here's a simple implementation of the factorial function in Python:\n\n```python\ndef factorial(n):\n    if n < 0:\n        raise ValueError(\"Factorial is not defined for negative numbers\")\n    elif n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n - 1)\n```\n\nYou can use this function like this:\n\n```python\nprint(factorial(5))  # Output: 120\n```\n\nThis function uses recursion to calculate the factorial. However, it's worth noting",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 42,
+    "prompt_ms": 73.39,
+    "prompt_per_token_ms": 1.7473809523809525,
+    "prompt_per_second": 572.2850524594631,
+    "predicted_n": 128,
+    "predicted_ms": 827.199,
+    "predicted_per_token_ms": 6.5133779527559055,
+    "predicted_per_second": 153.5301662598722,
+    "draft_n": 118,
+    "draft_n_accepted": 96
+   }
+  },
+  {
+   "prompt": "Write a Python function that checks whether a string is a palindrome.",
+   "text": "Here's a Python function that checks whether a string is a palindrome:\n\n```python\ndef is_palindrome(s):\n    s = ''.join(c for c in s if c.isalnum()).lower()\n    return s == s[::-1]\n```\n\nThis function works by first removing any non-alphanumeric characters from the string and converting it to lowercase. It then checks whether the resulting string is equal to its reverse (`s[::-1]`). If they are equal, the function returns `True`, indicating that the string is a palindrome; otherwise, it",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 45,
+    "prompt_ms": 50.472,
+    "prompt_per_token_ms": 1.1216,
+    "prompt_per_second": 891.5834522111269,
+    "predicted_n": 128,
+    "predicted_ms": 714.248,
+    "predicted_per_token_ms": 5.6240000000000006,
+    "predicted_per_second": 177.8093883357041,
+    "draft_n": 105,
+    "draft_n_accepted": 100
+   }
+  },
+  {
+   "prompt": "Write a JavaScript function that returns the sum of an array of numbers.",
+   "text": "function sumArray(arr) {\n    return arr.reduce((a, b) => a + b, 0);\n}",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 45,
+    "prompt_ms": 49.23,
+    "prompt_per_token_ms": 1.0939999999999999,
+    "prompt_per_second": 914.0767824497258,
+    "predicted_n": 28,
+    "predicted_ms": 163.836,
+    "predicted_per_token_ms": 6.0680000000000005,
+    "predicted_per_second": 164.79894528675015,
+    "draft_n": 24,
+    "draft_n_accepted": 21
+   }
+  },
+  {
+   "prompt": "Write a Python class for a stack with push, pop and peek methods.",
+   "text": "```python\nclass Stack:\n    def __init__(self):\n        self.items = []\n\n    def push(self, item):\n        self.items.append(item)\n\n    def pop(self):\n        if not self.is_empty():\n            return self.items.pop()\n        else:\n            raise IndexError(\"Stack is empty\")\n\n    def peek(self):\n        if not self.is_empty():\n            return self.items[-1]\n        else:\n            raise IndexError(\"Stack is empty\")\n\n    def is_empty(self):\n        return len(self.items) == 0\n\n    def size(self",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 45,
+    "prompt_ms": 48.556,
+    "prompt_per_token_ms": 1.079022222222222,
+    "prompt_per_second": 926.7649724029988,
+    "predicted_n": 128,
+    "predicted_ms": 864.06,
+    "predicted_per_token_ms": 6.803622047244094,
+    "predicted_per_second": 146.98053375922967,
+    "draft_n": 102,
+    "draft_n_accepted": 101
+   }
+  },
+  {
+   "prompt": "Write a SQL query that returns the ten most recent rows of an orders table.",
+   "text": "Here's a SQL query that returns the ten most recent rows of an orders table:\n\n```sql\nSELECT *\nFROM orders\nORDER BY ROW_NUMBER() OVER (ORDER BY RAND() DESC LIMIT 10)\nLIMIT 10;\n```\n\nThis query uses the `ROW_NUMBER()` function to generate a sequence number for each row in the orders table, starting from 1. The `ORDER BY RAND()` function is then used to sort the rows in descending order based on the generated sequence number. Finally, the `LIMIT 10` clause is used to",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 46,
+    "prompt_ms": 51.566,
+    "prompt_per_token_ms": 1.121,
+    "prompt_per_second": 892.0606601248884,
+    "predicted_n": 128,
+    "predicted_ms": 977.83,
+    "predicted_per_token_ms": 7.699448818897638,
+    "predicted_per_second": 129.87942689424543,
+    "draft_n": 142,
+    "draft_n_accepted": 91
+   }
+  },
+  {
+   "prompt": "Write a Python function that merges two sorted lists into one sorted list.",
+   "text": "Here's a Python function that merges two sorted lists into one sorted list:\n\n```python\ndef merge_sorted_lists(list1, list2):\n    return sorted(list1 + list2)\n\n# Example usage:\nlist1 = [1, 3, 5]\nlist2 = [2, 4, 6]\nprint(merge_sorted_lists(list1, list2))  # Output: [1, 2, 3, 4, 5, 6]\n```\n\nThis function uses the built-in `sorted` function",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 45,
+    "prompt_ms": 48.882,
+    "prompt_per_token_ms": 1.0862666666666667,
+    "prompt_per_second": 920.5842641463116,
+    "predicted_n": 128,
+    "predicted_ms": 759.235,
+    "predicted_per_token_ms": 5.978228346456693,
+    "predicted_per_second": 167.27363727963015,
+    "draft_n": 104,
+    "draft_n_accepted": 101
+   }
+  },
+  {
+   "prompt": "Write a Bash script that counts the lines in every .txt file in a directory.",
+   "text": "#!/bin/bash\n\n# Set the directory path\nDIR=\"$1\"\n\n# Check if the directory exists\nif [ ! -d \"$DIR\" ]; then\n    echo \"Error: The directory does not exist.\"\n    exit 1\nfi\n\n# Initialize a variable to store the total number of lines\nLINES=0\n\n# Loop through all files in the directory\nfor file in \"$DIR\"/*; do\n    # Check if the file is a .txt file\n    if [ -f \"$file\" ]; then\n        # Check if the file is a regular file\n        if [ -",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 47,
+    "prompt_ms": 52.304,
+    "prompt_per_token_ms": 1.1128510638297873,
+    "prompt_per_second": 898.5928418476599,
+    "predicted_n": 128,
+    "predicted_ms": 977.586,
+    "predicted_per_token_ms": 7.697527559055119,
+    "predicted_per_second": 129.91184407305343,
+    "draft_n": 156,
+    "draft_n_accepted": 88
+   }
+  },
+  {
+   "prompt": "Write a Python function that returns the first n Fibonacci numbers.",
+   "text": "Here's a Python function that returns the first n Fibonacci numbers:\n\n```python\ndef first_n_fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib_sequence = [0, 1]\n        while len(fib_sequence) < n:\n            fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])\n        return fib_sequence\n```\n\nYou can use this function like this:",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 43,
+    "prompt_ms": 47.955,
+    "prompt_per_token_ms": 1.1152325581395348,
+    "prompt_per_second": 896.6739651756856,
+    "predicted_n": 128,
+    "predicted_ms": 773.427,
+    "predicted_per_token_ms": 6.089976377952756,
+    "predicted_per_second": 164.20424939910296,
+    "draft_n": 101,
+    "draft_n_accepted": 101
+   }
+  }
+ ]
+}

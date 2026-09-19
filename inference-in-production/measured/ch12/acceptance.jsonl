@@ -1,0 +1,8 @@
+{"task":"code","temperature":0,"k":4,"drafted":852.0,"accepted":699.0,"drafts":216.0,"acceptance":0.8204225352112676,"tokens_per_step":4.236111111111111}
+{"task":"code","temperature":0.4,"k":4,"drafted":780.0,"accepted":642.0,"drafts":198.0,"acceptance":0.823076923076923,"tokens_per_step":4.242424242424242}
+{"task":"code","temperature":0.8,"k":4,"drafted":733.0,"accepted":579.0,"drafts":185.0,"acceptance":0.7899045020463847,"tokens_per_step":4.12972972972973}
+{"task":"code","temperature":1.2,"k":4,"drafted":828.0,"accepted":551.0,"drafts":209.0,"acceptance":0.6654589371980676,"tokens_per_step":3.6363636363636362}
+{"task":"prose","temperature":0,"k":4,"drafted":1457.0,"accepted":644.0,"drafts":369.0,"acceptance":0.4420041180507893,"tokens_per_step":2.745257452574526}
+{"task":"prose","temperature":0.4,"k":4,"drafted":1542.0,"accepted":626.0,"drafts":388.0,"acceptance":0.4059662775616083,"tokens_per_step":2.61340206185567}
+{"task":"prose","temperature":0.8,"k":4,"drafted":1807.0,"accepted":555.0,"drafts":456.0,"acceptance":0.30713890426120644,"tokens_per_step":2.2171052631578947}
+{"task":"prose","temperature":1.2,"k":4,"drafted":1893.0,"accepted":510.0,"drafts":477.0,"acceptance":0.2694136291600634,"tokens_per_step":2.069182389937107}

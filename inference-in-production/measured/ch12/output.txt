@@ -1,0 +1,24 @@
+
+== models: target and draft
+models: 2 file(s), 507 MiB, into /models
+  ok      gguf/SmolLM2-360M-Instruct-Q8_0.gguf
+  ok      gguf/SmolLM2-135M-Instruct-Q8_0.gguf
+
+== llama.cpp (build b10964) with a draft model, k = 4
+llama ready after ~3s
+task    temp  drafted  accepted  acceptance  tokens/step
+code       0      852       699       0.820         4.24
+code     0.4      780       642       0.823         4.24
+code     0.8      733       579       0.790         4.13
+code     1.2      828       551       0.665         3.64
+prose      0     1457       644       0.442         2.75
+prose    0.4     1542       626       0.406         2.61
+prose    0.8     1807       555       0.307         2.22
+prose    1.2     1893       510       0.269         2.07
+
+== the same prompts at temperature 0, with and without a draft
+plain ready after ~1s
+plain 13.9 s, speculative 19.6 s: 0.71x (CPU, not representative)
+
+== done
+manifest: measured/ch12/machine.json

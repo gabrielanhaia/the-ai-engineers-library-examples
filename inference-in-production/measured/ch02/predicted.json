@@ -1,0 +1,17 @@
+[
+  {
+    "format": "f16",
+    "bytes": 725553792,
+    "predicted_tok_s": 217.35121742703262
+  },
+  {
+    "format": "Q8_0",
+    "bytes": 386405280,
+    "predicted_tok_s": 408.120717191028
+  },
+  {
+    "format": "Q4_K_M",
+    "bytes": 270590880,
+    "predicted_tok_s": 582.7986516027444
+  }
+]

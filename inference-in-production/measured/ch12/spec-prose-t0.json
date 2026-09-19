@@ -1,0 +1,143 @@
+{
+ "task": "prose",
+ "temperature": 0.0,
+ "wall_s": 11.306480827999621,
+ "requests": [
+  {
+   "prompt": "Write a short story about a lighthouse keeper who finds a letter.",
+   "text": "Once upon a time, in a small coastal town, there lived a lighthouse keeper named Jack. Jack was a hardworking man who spent his days tending to the lighthouse and ensuring it was always lit. One day, while Jack was out on his rounds, he stumbled upon a letter.\n\nThe letter was addressed to Jack, and it was written in a strange language. Jack, being a curious man, decided to open the letter and read it. As he read, he noticed that the letter was addressed to him, but it was not written in his handwriting.\n\nThe letter was from a woman named Emily, who lived in a",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 43,
+    "prompt_ms": 61.922,
+    "prompt_per_token_ms": 1.4400465116279069,
+    "prompt_per_second": 694.4220147928039,
+    "predicted_n": 128,
+    "predicted_ms": 1344.336,
+    "predicted_per_token_ms": 10.58532283464567,
+    "predicted_per_second": 94.47043001154474,
+    "draft_n": 189,
+    "draft_n_accepted": 79
+   }
+  },
+  {
+   "prompt": "Describe a walk through a forest in autumn.",
+   "text": "A walk through a forest in autumn is a magical experience. The air is filled with the scent of fallen leaves, and the trees are bathed in a warm, golden light. The leaves are turning a brilliant array of colors - fiery reds, fiery oranges, and fiery yellows. The trees themselves are changing, their branches and leaves rustling softly in the breeze.\n\nAs you walk, the forest floor is carpeted with a soft layer of fallen leaves, which have been transformed into a soft, velvety carpet. The leaves are a deep, rich brown, and they add a cozy, comforting feel to the forest.",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 39,
+    "prompt_ms": 43.836,
+    "prompt_per_token_ms": 1.1239999999999999,
+    "prompt_per_second": 889.6797153024912,
+    "predicted_n": 128,
+    "predicted_ms": 1551.932,
+    "predicted_per_token_ms": 12.219937007874016,
+    "predicted_per_second": 81.8334823948472,
+    "draft_n": 195,
+    "draft_n_accepted": 78
+   }
+  },
+  {
+   "prompt": "Write a letter to a friend about a weekend trip to the sea.",
+   "text": "Dear [Friend's Name],\n\nI hope this letter finds you well. I am writing to share with you a wonderful weekend trip I had to the sea. It was a fantastic experience that I hope you will enjoy as much as I did.\n\nI decided to take a trip to the sea because I wanted to go on a relaxing vacation. I packed my favorite beach towel and a good book to read. I also brought a few snacks and some sunscreen to protect my skin from the sun.\n\nI woke up early and started my day by taking a short walk along the beach. The sun was shining brightly, and",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 44,
+    "prompt_ms": 47.14,
+    "prompt_per_token_ms": 1.0713636363636363,
+    "prompt_per_second": 933.3899024183285,
+    "predicted_n": 128,
+    "predicted_ms": 1934.198,
+    "predicted_per_token_ms": 15.229905511811024,
+    "predicted_per_second": 65.66028917411765,
+    "draft_n": 193,
+    "draft_n_accepted": 78
+   }
+  },
+  {
+   "prompt": "Explain in a few paragraphs why people enjoy music.",
+   "text": "Music has a profound impact on our lives, and its appeal can be attributed to a multitude of factors. One of the primary reasons people enjoy music is its ability to evoke emotions and create a sense of connection. Music has the power to transport us to different times and places, allowing us to experience and relive memories in a way that words alone cannot. It can also be a form of escapism, providing a temporary escape from the stresses of everyday life.\n\nMusic also has a profound impact on our brains, particularly on our brain regions responsible for memory, emotion, and creativity. Research has shown that listening to music can increase the",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 40,
+    "prompt_ms": 43.612,
+    "prompt_per_token_ms": 1.0903,
+    "prompt_per_second": 917.1787581399615,
+    "predicted_n": 128,
+    "predicted_ms": 1128.887,
+    "predicted_per_token_ms": 8.888874015748032,
+    "predicted_per_second": 112.50018823850395,
+    "draft_n": 144,
+    "draft_n_accepted": 90
+   }
+  },
+  {
+   "prompt": "Describe an ideal slow Sunday morning.",
+   "text": "An ideal slow Sunday morning would be a time when you can relax, unwind, and enjoy some quiet time with family or friends. Here's a possible description:\n\nImagine waking up to the gentle sound of birds chirping outside your window, the soft glow of the sunrise, and the aroma of freshly brewed coffee wafting from the kitchen. As you slowly open your eyes, you're greeted by the soft light of the morning, and the world is bathed in a warm, golden glow.\n\nYou take a moment to stretch and get your bearings, feeling the gentle breeze on your skin and the soft carpet beneath your",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 37,
+    "prompt_ms": 40.714,
+    "prompt_per_token_ms": 1.1003783783783783,
+    "prompt_per_second": 908.778307216191,
+    "predicted_n": 128,
+    "predicted_ms": 1205.205,
+    "predicted_per_token_ms": 9.4898031496063,
+    "predicted_per_second": 105.3762637891479,
+    "draft_n": 175,
+    "draft_n_accepted": 82
+   }
+  },
+  {
+   "prompt": "Write a paragraph about a city at night.",
+   "text": "As the sun sets and the city comes alive, the sky transforms into a canvas of twinkling stars and a kaleidoscope of colors. The streets are bathed in a soft, ethereal glow, as if the very fabric of the city is being woven with the magic of the night. Neon lights dance across the skyscrapers, casting a mesmerizing pattern of shadows and highlights on the buildings. The air is filled with the sweet scent of street food and the distant hum of car horns, creating a symphony of sounds that pulse through the city. As the night wears on, the city transforms into a vibrant tapestry of lights, where every corner and",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 39,
+    "prompt_ms": 56.281,
+    "prompt_per_token_ms": 1.443102564102564,
+    "prompt_per_second": 692.9514400952364,
+    "predicted_n": 128,
+    "predicted_ms": 1188.441,
+    "predicted_per_token_ms": 9.3578031496063,
+    "predicted_per_second": 106.86268817720021,
+    "draft_n": 175,
+    "draft_n_accepted": 81
+   }
+  },
+  {
+   "prompt": "Tell a short fable about a fox and a crow.",
+   "text": "Once upon a time, there was a fox named Flicka and a crow named Cory. Flicka was a cunning and clever fox who loved to play tricks on the world. One day, Flicka decided to steal a shiny red apple from a nearby tree. She quickly ran to the tree and began to climb up, but she soon realized that she was too heavy and couldn't climb as high as she wanted.\n\nJust as she was about to give up, Cory, the crow, flew up to the tree and began to sing a beautiful song. The song was so beautiful that it made Flicka",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 42,
+    "prompt_ms": 46.269,
+    "prompt_per_token_ms": 1.1016428571428571,
+    "prompt_per_second": 907.7352006743175,
+    "predicted_n": 128,
+    "predicted_ms": 1391.702,
+    "predicted_per_token_ms": 10.958283464566929,
+    "predicted_per_second": 91.25516813225819,
+    "draft_n": 211,
+    "draft_n_accepted": 74
+   }
+  },
+  {
+   "prompt": "Write a product description for a handmade wooden chair.",
+   "text": "\"Our handmade wooden chair is crafted from the finest, sustainably sourced wood and carefully assembled to provide a comfortable and supportive seating experience. The chair is designed to be both functional and beautiful, with a unique, curved design that adds a touch of elegance to any room.\n\nThe chair is made from a single piece of sustainably sourced wood, which is carefully selected and cut to ensure a perfect fit. The wood is then carefully sanded and polished to bring out its natural beauty, creating a smooth, warm surface that is both durable and comfortable to sit on.\n\nThe chair is designed to be adjustable, with a range of ergonomic settings",
+   "timings": {
+    "cache_n": 0,
+    "prompt_n": 40,
+    "prompt_ms": 44.22,
+    "prompt_per_token_ms": 1.1055,
+    "prompt_per_second": 904.5680687471734,
+    "predicted_n": 128,
+    "predicted_ms": 1142.211,
+    "predicted_per_token_ms": 8.993787401574803,
+    "predicted_per_second": 111.18786283795201,
+    "draft_n": 175,
+    "draft_n_accepted": 82
+   }
+  }
+ ]
+}

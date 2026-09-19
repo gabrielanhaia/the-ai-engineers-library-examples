@@ -81,6 +81,14 @@ start_vllm() {
     -- "$@" --port 8000
 }
 
+# start_server NAME IMAGE [docker-run options...] -- [args...]
+#   Any other long-running server from images.env (the llm-d
+#   inference simulator, Prometheus), at http://NAME:PORT on the lab
+#   network, removed when the lab exits like the engines above.
+start_server() {
+  _start "$@"
+}
+
 # run_tool IMAGE [args...]
 # run_tool IMAGE [docker-run options...] -- [args...]
 #   A one-shot container on the lab network (GuideLLM, `vllm bench`,

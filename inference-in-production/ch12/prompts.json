@@ -1,0 +1,23 @@
+{
+  "written": "2026-09-19",
+  "code": [
+    "Write a Python function that returns the factorial of n.",
+    "Write a Python function that checks whether a string is a palindrome.",
+    "Write a JavaScript function that returns the sum of an array of numbers.",
+    "Write a Python class for a stack with push, pop and peek methods.",
+    "Write a SQL query that returns the ten most recent rows of an orders table.",
+    "Write a Python function that merges two sorted lists into one sorted list.",
+    "Write a Bash script that counts the lines in every .txt file in a directory.",
+    "Write a Python function that returns the first n Fibonacci numbers."
+  ],
+  "prose": [
+    "Write a short story about a lighthouse keeper who finds a letter.",
+    "Describe a walk through a forest in autumn.",
+    "Write a letter to a friend about a weekend trip to the sea.",
+    "Explain in a few paragraphs why people enjoy music.",
+    "Describe an ideal slow Sunday morning.",
+    "Write a paragraph about a city at night.",
+    "Tell a short fable about a fox and a crow.",
+    "Write a product description for a handmade wooden chair."
+  ]
+}

@@ -1,0 +1,61 @@
+# ch16/coldstart.yaml
+# One vLLM CPU replica started from nothing: the node pulls the
+# image, vLLM loads SmolLM2-360M from the node's disk, then sizes
+# its KV cache and warms up. The startup probe gives it up to 10
+# minutes; run.sh times each phase.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vllm
+  labels:
+    app: vllm
+spec:
+  # No service links: a Service named vllm would set VLLM_PORT in
+  # the pod, and vLLM reads VLLM_PORT as its own setting and fails.
+  enableServiceLinks: false
+  containers:
+  - name: vllm
+    image: vllm/vllm-openai-cpu:v0.29.0
+    args:                              # after `vllm serve`
+    - /models/hf/SmolLM2-360M-Instruct
+    - --served-model-name=smollm2-360m
+    - --max-model-len=2048
+    env:
+    - name: VLLM_CPU_KVCACHE_SPACE     # GiB of KV cache
+      value: "1"
+    ports:
+    - containerPort: 8000
+    startupProbe:
+      httpGet: {path: /health, port: 8000}
+      periodSeconds: 2
+      failureThreshold: 300
+    readinessProbe:
+      httpGet: {path: /health, port: 8000}
+      periodSeconds: 2
+    volumeMounts:
+    - name: models
+      mountPath: /models
+      readOnly: true
+    - name: shm
+      mountPath: /dev/shm
+  volumes:
+  - name: models
+    hostPath:
+      path: /models
+      type: Directory
+  - name: shm
+    emptyDir:
+      medium: Memory
+      sizeLimit: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm
+spec:
+  type: NodePort
+  selector:
+    app: vllm
+  ports:
+  - port: 8000
+    nodePort: 30081

@@ -1,0 +1,18 @@
+# ch14/inferencepool.yaml
+# The pool: which pods serve the model, on which port, and which
+# endpoint picker chooses among them for each request.
+apiVersion: inference.networking.k8s.io/v1
+kind: InferencePool
+metadata:
+  name: smollm2
+spec:
+  selector:
+    matchLabels:
+      app: smollm2-sim
+  targetPorts:
+  - number: 8000
+  endpointPickerRef:
+    name: smollm2-epp
+    port:
+      number: 9002
+    failureMode: FailClose   # no picker, no routing

@@ -1,0 +1,183 @@
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.06302857999980915, "e2e": 2.1393301429998246, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.0627497850000509, "e2e": 2.141266747003101, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.062372532000154024, "e2e": 2.140436072000739, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.06016325900054653, "e2e": 2.138524760001019, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.06261449299927335, "e2e": 2.140132402000745, "t": 1789843944.15}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.06113851899863221, "e2e": 2.1399193170000217, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.061611607001395896, "e2e": 2.142769013000361, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.06219161299668485, "e2e": 2.1436142299971834, "t": 1789843944.149}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.06394008899951586, "e2e": 2.1479759009998816, "t": 1789843944.155}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.06472322300032829, "e2e": 2.1489417030024924, "t": 1789843944.155}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.05987125499814283, "e2e": 2.144117861000268, "t": 1789843944.155}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 2.1973145449992444, "e2e": 4.289597985, "t": 1789843946.3}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.2003714940001373, "e2e": 4.294079158000386, "t": 1789843946.3}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.199955364998459, "e2e": 4.293951822997769, "t": 1789843946.3}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.1960451580016525, "e2e": 4.290315826998267, "t": 1789843946.301}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 2.199737445997016, "e2e": 4.295592131999001, "t": 1789843946.302}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 2.2009995020016504, "e2e": 4.292214180000883, "t": 1789843946.303}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 2.201207586000237, "e2e": 4.309614280002279, "t": 1789843946.321}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 2.2006718310003635, "e2e": 4.309053231998405, "t": 1789843946.321}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.345999578999908, "e2e": 6.396685414998501, "t": 1789843948.409}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.345108402998449, "e2e": 6.400612081000872, "t": 1789843948.413}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.346898422001686, "e2e": 6.401323213001888, "t": 1789843948.415}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.34695546399962, "e2e": 6.405876594999427, "t": 1789843948.419}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.349706411001534, "e2e": 6.406837397000345, "t": 1789843948.42}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.346204249002767, "e2e": 6.406209057000524, "t": 1789843948.42}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.347525844998017, "e2e": 6.40856008099945, "t": 1789843948.421}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.365259115998924, "e2e": 6.414967108001292, "t": 1789843948.428}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.36632554300013, "e2e": 6.419342570003209, "t": 1789843948.432}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.365756496001268, "e2e": 6.420589375000418, "t": 1789843948.435}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.366528795999329, "e2e": 6.422513936999167, "t": 1789843948.437}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.457661472999462, "e2e": 8.509261235001759, "t": 1789843950.523}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.456850257000042, "e2e": 8.511848928999825, "t": 1789843950.526}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.457894726001541, "e2e": 8.528700689999823, "t": 1789843950.543}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.4802553779991285, "e2e": 8.540444980000757, "t": 1789843950.555}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.35048212699985, "e2e": 6.406582393999997, "t": 1789843950.556}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.349794910998753, "e2e": 6.406956898998033, "t": 1789843950.557}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.485370349000732, "e2e": 8.549615910000284, "t": 1789843950.564}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.573166366000805, "e2e": 10.61647604099926, "t": 1789843952.631}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.437274883999635, "e2e": 8.482368910998048, "t": 1789843952.633}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.438303145001555, "e2e": 8.484424223999667, "t": 1789843952.634}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.452248999998119, "e2e": 8.493035105999297, "t": 1789843952.642}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.461818849998963, "e2e": 8.522051411000575, "t": 1789843952.672}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.471254907999537, "e2e": 8.522753209999792, "t": 1789843952.673}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.463191240000015, "e2e": 8.518412581997836, "t": 1789843952.673}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.44785532899914, "e2e": 8.518378747998213, "t": 1789843952.673}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.460891925002215, "e2e": 8.51855466699999, "t": 1789843952.674}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.316872939998575, "e2e": 6.374138760998903, "t": 1789843952.674}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.315635925999231, "e2e": 6.379770862000441, "t": 1789843952.68}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.390538184001343, "e2e": 8.423793085999932, "t": 1789843954.727}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.391745779001212, "e2e": 8.42808163099835, "t": 1789843954.731}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.391485444000864, "e2e": 8.430959745001019, "t": 1789843954.731}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.537873119999858, "e2e": 10.58188250999956, "t": 1789843954.732}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.433838139997533, "e2e": 8.467831090998516, "t": 1789843954.769}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.413929554997594, "e2e": 8.45150087699949, "t": 1789843954.772}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 5.716839674998482, "e2e": 7.7580064520007, "t": 1789843954.773}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.413656759999867, "e2e": 8.452233677002368, "t": 1789843954.773}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.772859207998408, "e2e": 8.817647315001523, "t": 1789843956.834}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.372619328998553, "e2e": 8.42209394299789, "t": 1789843956.837}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.3709191429989005, "e2e": 8.415772126001684, "t": 1789843956.837}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.372039989000768, "e2e": 8.419268412999372, "t": 1789843956.838}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.370699683000566, "e2e": 8.426918493998528, "t": 1789843956.847}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.421342966001248, "e2e": 8.46291537200159, "t": 1789843956.872}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.394930354999815, "e2e": 8.437118309997459, "t": 1789843956.874}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.396106658001372, "e2e": 8.438885701998515, "t": 1789843956.874}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.399073647997284, "e2e": 8.446067902998038, "t": 1789843956.875}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.398763270000927, "e2e": 8.444271968000976, "t": 1789843956.876}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.4174161330010975, "e2e": 8.468969811001443, "t": 1789843956.882}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.410198890000174, "e2e": 8.465861362001306, "t": 1789843956.886}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.362738766001712, "e2e": 8.415163161000237, "t": 1789843958.959}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.877019846000621, "e2e": 8.940397524002037, "t": 1789843958.959}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.372075613999186, "e2e": 8.435742585999833, "t": 1789843958.959}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.371000811999693, "e2e": 8.43620996699974, "t": 1789843958.962}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 7.914153429999715, "e2e": 9.96617161299946, "t": 1789843958.984}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.313891241999954, "e2e": 6.3654792529996485, "t": 1789843958.999}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.31683081400115, "e2e": 6.382143637001718, "t": 1789843959.013}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.459908174998418, "e2e": 10.50713226500011, "t": 1789843961.063}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.453533315998357, "e2e": 10.500371236001229, "t": 1789843961.065}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.458993415002624, "e2e": 10.508758616000705, "t": 1789843961.065}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.46057526399818, "e2e": 10.508343818997673, "t": 1789843961.066}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.385925718997896, "e2e": 8.439376624999568, "t": 1789843961.074}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.35060826300105, "e2e": 8.402035063998483, "t": 1789843961.074}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.381326462000288, "e2e": 8.431885420999606, "t": 1789843961.074}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.369157249999262, "e2e": 8.41755793700213, "t": 1789843961.09}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.3859715519975, "e2e": 8.434963869996864, "t": 1789843961.109}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.398308515999815, "e2e": 8.447596128000441, "t": 1789843961.122}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.447180914998171, "e2e": 10.482465879998927, "t": 1789843963.157}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.44834463600273, "e2e": 10.483450973999425, "t": 1789843963.157}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 9.099336155002675, "e2e": 11.139031082999281, "t": 1789843963.159}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.104453068001021, "e2e": 12.14151859300182, "t": 1789843963.161}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.419380236999132, "e2e": 8.464116093000484, "t": 1789843963.195}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.486165866997908, "e2e": 10.522859138000058, "t": 1789843963.203}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.434522771000047, "e2e": 8.483486672001163, "t": 1789843963.216}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.158987006998359, "e2e": 10.198367180997593, "t": 1789843963.219}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.4126634989988816, "e2e": 8.464233093996882, "t": 1789843963.233}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.445581064999715, "e2e": 10.483975479000947, "t": 1789843965.256}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.197768540001562, "e2e": 10.239536240002053, "t": 1789843965.261}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.490163451002445, "e2e": 10.53338262500256, "t": 1789843965.261}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 7.195666824998625, "e2e": 9.239053417000832, "t": 1789843965.261}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.44464488900121, "e2e": 10.487973897001211, "t": 1789843965.261}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 9.196468177000497, "e2e": 11.242111751002085, "t": 1789843965.263}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.416462331999355, "e2e": 8.47108104200015, "t": 1789843965.308}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.52982249300112, "e2e": 10.57852026600085, "t": 1789843965.309}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.425117963997764, "e2e": 8.477051978999953, "t": 1789843965.314}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.437034672999289, "e2e": 8.483781593000458, "t": 1789843965.322}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.443366573003004, "e2e": 8.502001117001782, "t": 1789843965.349}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.441180435998831, "e2e": 10.494042377002188, "t": 1789843967.369}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.444618012999854, "e2e": 10.494691216998035, "t": 1789843967.369}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.443188038996595, "e2e": 10.4854829529977, "t": 1789843967.371}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.494114992001414, "e2e": 10.530459093999525, "t": 1789843967.402}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.336258123003063, "e2e": 10.379197960002784, "t": 1789843967.41}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 7.337282690998109, "e2e": 9.379414394999912, "t": 1789843967.411}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.415026524999121, "e2e": 8.45881416300108, "t": 1789843967.418}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.491481382003258, "e2e": 10.5424073030008, "t": 1789843967.418}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.428464165997866, "e2e": 8.470442326997727, "t": 1789843967.429}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.4443182079994585, "e2e": 8.479103710000345, "t": 1789843967.442}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.398553528997581, "e2e": 10.45980197499739, "t": 1789843969.492}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.430425364000257, "e2e": 10.499586976999126, "t": 1789843969.498}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.544423699000617, "e2e": 12.615806336001697, "t": 1789843969.498}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.552734786000656, "e2e": 12.624124465000932, "t": 1789843969.498}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.448035340999922, "e2e": 10.507569853001769, "t": 1789843969.521}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 7.431886977999966, "e2e": 9.503463076001935, "t": 1789843969.536}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.442777901000227, "e2e": 8.504718645999674, "t": 1789843969.538}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.484987897001702, "e2e": 10.525757753002836, "t": 1789843971.591}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.479541963999509, "e2e": 10.52378135699837, "t": 1789843971.598}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.48773946700021, "e2e": 10.542524053998932, "t": 1789843971.605}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.47980063399882, "e2e": 10.548528950999753, "t": 1789843971.623}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.463136292000854, "e2e": 10.532553116001509, "t": 1789843971.623}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.446992204997514, "e2e": 10.51426829799675, "t": 1789843971.624}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.52847906199895, "e2e": 10.57294837399968, "t": 1789843971.638}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.527831930998218, "e2e": 10.573322127998836, "t": 1789843971.639}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.562222074000601, "e2e": 8.626835556002334, "t": 1789843971.661}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.494321535999916, "e2e": 10.533343623999826, "t": 1789843973.691}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 9.62131818999842, "e2e": 11.665587250001408, "t": 1789843973.699}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.576490911997098, "e2e": 12.630141444999026, "t": 1789843973.704}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.474228242001118, "e2e": 10.516321445000358, "t": 1789843973.711}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.499427757000376, "e2e": 10.555252853999264, "t": 1789843973.713}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.55304837299991, "e2e": 12.598386859997845, "t": 1789843973.72}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 7.664204632001201, "e2e": 9.703686682001717, "t": 1789843973.738}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.666512421001244, "e2e": 8.705619593001757, "t": 1789843973.74}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.463739662998705, "e2e": 8.510449747998791, "t": 1789843973.767}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.515804762999323, "e2e": 10.569529421998595, "t": 1789843973.773}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.535154018001776, "e2e": 12.572617256002559, "t": 1789843975.788}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.491273379997438, "e2e": 10.544628326999373, "t": 1789843975.806}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.497740489001444, "e2e": 10.547362688001158, "t": 1789843975.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.535670856999786, "e2e": 12.576166292998096, "t": 1789843975.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.455295416999434, "e2e": 10.518642969000211, "t": 1789843975.827}
+{"cls": "probe", "objective": "batch", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 7.764966776001529, "e2e": 9.815490234999743, "t": 1789843975.851}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.449194394001097, "e2e": 10.502016294001805, "t": 1789843975.851}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.454955027998949, "e2e": 8.501851574001194, "t": 1789843975.872}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.461524348000239, "e2e": 8.515001128998847, "t": 1789843975.886}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.510798334002175, "e2e": 10.573209460002545, "t": 1789843975.888}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.477504483998928, "e2e": 10.514796052997553, "t": 1789843977.886}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.462368075000995, "e2e": 10.503560852001101, "t": 1789843977.906}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.44876522299819, "e2e": 10.487823478000792, "t": 1789843977.906}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.451207957998122, "e2e": 10.491649936000613, "t": 1789843977.91}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.543669316997693, "e2e": 12.593606477999856, "t": 1789843977.916}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.553537836996838, "e2e": 12.611150703996827, "t": 1789843977.921}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.470058281000092, "e2e": 10.5227338040022, "t": 1789843977.964}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.426713938999455, "e2e": 8.465462815998762, "t": 1789843977.986}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.448345001001144, "e2e": 8.495146044999274, "t": 1789843977.994}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.446540980999998, "e2e": 8.499626051001542, "t": 1789843977.998}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.354440928000258, "e2e": 8.410804448998533, "t": 1789843980.002}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.51584877300047, "e2e": 12.578082772000926, "t": 1789843980.007}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.367527192000125, "e2e": 8.423930671000562, "t": 1789843980.022}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.475503797002602, "e2e": 10.531868984002358, "t": 1789843980.03}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.385472837999259, "e2e": 8.44839180299823, "t": 1789843980.087}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.440256374000455, "e2e": 8.494636706000165, "t": 1789843980.1}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.363090466998983, "e2e": 6.412341496001318, "t": 1789843980.104}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.428238414002408, "e2e": 8.481562069002393, "t": 1789843980.105}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.408645248997345, "e2e": 8.46860701499827, "t": 1789843980.108}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.436704471998382, "e2e": 10.481410327000049, "t": 1789843982.104}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.359576150000066, "e2e": 8.405190890000085, "t": 1789843982.109}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.352689994000684, "e2e": 8.405582393999794, "t": 1789843982.117}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.3506646800015005, "e2e": 8.406663697001932, "t": 1789843982.12}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.45490649599742, "e2e": 10.501302161999774, "t": 1789843982.125}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.362734056998306, "e2e": 8.408866677997139, "t": 1789843982.129}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.325490581999475, "e2e": 8.372874257998774, "t": 1789843982.14}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.373958176001906, "e2e": 8.417097099001694, "t": 1789843982.191}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.373726204998093, "e2e": 6.41595290999976, "t": 1789843982.205}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.356799483997747, "e2e": 6.404892626000219, "t": 1789843982.211}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.335876984001516, "e2e": 8.397844855000585, "t": 1789843984.225}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.3685941190015, "e2e": 8.439023496001028, "t": 1789843984.249}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.36535383500086, "e2e": 8.441648273001192, "t": 1789843984.25}

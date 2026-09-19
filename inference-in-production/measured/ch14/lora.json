@@ -1,0 +1,71 @@
+{
+  "kind": "measured (vLLM 0.29.0 CPU, reference laptop)",
+  "max_loras_1": {
+    "same_prompt": {
+      "smollm2-360m": "One tip for staying focused is to eliminate distractions. This can be achieved by turning off notifications on your phone, closing unnecessary",
+      "alpaca": "One tip for staying focused is to eliminate distractions and create a conducive environment for concentration. This can be achieved by turning off",
+      "underdog": "Avoid multitasking, as it can decrease productivity and increase distractions."
+    },
+    "burst_requests": 8,
+    "tokens_each": 64,
+    "burst_s": 20.55,
+    "done_s": {
+      "alpaca": [
+        10.23,
+        10.36
+      ],
+      "underdog": [
+        20.54,
+        20.55
+      ]
+    },
+    "serialized": true,
+    "lora_requests_info_labels": [
+      [
+        "",
+        ""
+      ],
+      [
+        "alpaca",
+        "alpaca"
+      ],
+      [
+        "underdog",
+        "underdog"
+      ]
+    ],
+    "labels_show_both_active": false
+  },
+  "max_loras_2": {
+    "same_prompt": {
+      "smollm2-360m": "One tip for staying focused is to eliminate distractions. This can be achieved by turning off notifications on your phone, closing unnecessary",
+      "alpaca": "One tip for staying focused is to eliminate distractions and create a conducive environment for concentration. This can be achieved by turning off",
+      "underdog": "Avoid multitasking, as it can decrease productivity and increase distractions."
+    },
+    "burst_requests": 8,
+    "tokens_each": 64,
+    "burst_s": 12.32,
+    "done_s": {
+      "alpaca": [
+        12.2,
+        12.32
+      ],
+      "underdog": [
+        12.2,
+        12.32
+      ]
+    },
+    "serialized": false,
+    "lora_requests_info_labels": [
+      [
+        "",
+        ""
+      ],
+      [
+        "alpaca,underdog",
+        "alpaca,underdog"
+      ]
+    ],
+    "labels_show_both_active": true
+  }
+}

@@ -1,0 +1,54 @@
+# ch18/alerts-test.yaml
+# Unit tests for alerts.yaml: `promtool test rules alerts-test.yaml`.
+# Synthetic series, one per case; no GPU and no cluster needed.
+rule_files: [alerts.yaml]
+evaluation_interval: 1m
+tests:
+- interval: 1m
+  input_series:
+  - series: 'DCGM_FI_DEV_XID_ERRORS{Hostname="node-a",gpu="0"}'
+    values: '0 0 79 79 79'
+  - series: 'DCGM_FI_DEV_XID_ERRORS{Hostname="node-a",gpu="1"}'
+    values: '0 0 43 43 43'
+  - series: 'DCGM_FI_DEV_XID_ERRORS{Hostname="node-b",gpu="0"}'
+    values: '0 0 13 13 13'
+  alert_rule_test:
+  - eval_time: 3m
+    alertname: GpuXidRestartMachine
+    exp_alerts:
+    - exp_labels: {severity: critical, action: restart-machine,
+                   Hostname: node-a, gpu: "0"}
+      exp_annotations:
+        summary: "Xid 79 on node-a: cordon and drain, then restart
+          the machine"
+  - eval_time: 3m
+    alertname: GpuXidRestartApp
+    exp_alerts:
+    - exp_labels: {severity: warning, action: restart-app,
+                   Hostname: node-b, gpu: "0"}
+      exp_annotations:
+        summary: "Xid 13 on node-b GPU 0: restart the serving pod"
+  - eval_time: 3m               # Xid 43 on node-a GPU 1: no rule
+    alertname: GpuXidResetGpu
+    exp_alerts: []
+- interval: 1m                  # every first token takes 0.5-1 s
+  input_series:
+  - series: 'vllm:time_to_first_token_seconds_bucket{le="0.5",
+      model_name="smollm2-360m"}'
+    values: '0x20'
+  - series: 'vllm:time_to_first_token_seconds_bucket{le="1.0",
+      model_name="smollm2-360m"}'
+    values: '0+60x20'
+  - series: 'vllm:time_to_first_token_seconds_bucket{le="+Inf",
+      model_name="smollm2-360m"}'
+    values: '0+60x20'
+  alert_rule_test:
+  - eval_time: 4m               # over the SLO, not yet for 5m
+    alertname: TtftP99OverSlo
+    exp_alerts: []
+  - eval_time: 12m
+    alertname: TtftP99OverSlo
+    exp_alerts:
+    - exp_labels: {severity: page, model_name: smollm2-360m}
+      exp_annotations:
+        summary: "smollm2-360m: TTFT p99 is 995ms"

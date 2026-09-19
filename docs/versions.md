@@ -21,6 +21,8 @@ inspect` or the registry API) and the upstream release page.
 | GuideLLM image | `ghcr.io/vllm-project/guidellm:v0.7.4@sha256:97f528d4ac8f692ee2e945bb3ff74c37638766825f5d155d59fcef58efeb823e` | ch04 | GuideLLM 0.7.4 (PyPI 2026-09-16), the book's pin. The official multi-arch image keeps torch out of the runner. `guidellm --version` prints `guidellm version: 0.7.4`. | 2026-09-19 |
 | Prometheus | `prom/prometheus:v3.14.0@sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0` | `screens` profile, ch15 | Latest release (2026-08-18), the book's pin. | 2026-09-19 |
 | Grafana | `grafana/grafana:13.2.2@sha256:ac461fb352abc50da10a51c7d02462e9c05488f11f53f14b3ad79a8145f638a0` | `screens` profile, ch15 | Latest release (2026-09-15), the book's pin. | 2026-09-19 |
+| OpenTelemetry Collector (contrib) | `otel/opentelemetry-collector-contrib:0.161.0@sha256:fd328de2552466ad78385e1b1289c3f2402b1c45f265b252aab1955b42845ac1` (arm64 `sha256:d497a11a3088097e4054ffbfd4b4f5244a8c036dc77c96cf2f14f86113ee9b86`, amd64 `sha256:b5cf983651c32c3ca13f936deb51742015a54d121f388cac248923ddeb8cc9fc`) | ch15 | Latest release (2026-09-16); the collector Vol. 1's trace stack is built on. ch15 uses its OTLP receiver and the contrib `file` exporter. | 2026-09-19 |
+| vLLM's Grafana dashboards | `tools.env` `VLLM_DASHBOARD` (`examples/observability/prometheus_grafana/grafana.json`, `sha256:651f1cf353024072197214df101a6f641839099736939b22b2f46b11c9faf527`), `VLLM_DASHBOARD_PERF` (`dashboards/grafana/performance_statistics.json`, `sha256:507f481a47ed3606826aa373704dd84b28dfc311456398fed73dc992d649c637`), `VLLM_DASHBOARD_QUERY` (`dashboards/grafana/query_statistics.json`, `sha256:459de6707d482b462fc3922b5964a743bd5b2cc1f45365661eb04d7b7fd1faaa`), all at the `v0.29.0` tag | ch15 | The dashboards vLLM ships with the pinned release, fetched at run time and checked by SHA-256. | 2026-09-19 |
 | Lab runner base | `python:3.13.15-slim-trixie@sha256:8d9d0b8bcf6506481eae4907c18f5e3e7902e629f5f6d684f9e7c32e85e3ddf0` | the runner image | Python 3.13.15 (2026-08-05) on Debian 13.7. 3.13, not 3.14, because AIPerf (a possible ch04 tool) requires `<3.14`. | 2026-09-19 |
 | Docker CLI | `docker:29.8.1-cli@sha256:018edbc908e08fcc9dbf029c812c34251e9b4719e6f71ca0e5eae2a987d014ca` | the runner image (binary copied in) | Latest CLI (tag 2026-09-15). The runner starts engines as sibling containers. Tested against daemon 29.4.0 (OrbStack), and with `DOCKER_API_VERSION=1.48`, the API of the GitHub runners' Docker 28.0.4. | 2026-09-19 |
 | Debian snapshot | `snapshot.debian.org` at `20260918T000000Z` (trixie, trixie-updates, trixie-security) | the runner image | A dated archive, so every build installs the same package versions. `apt-get update` from it took 2 s. | 2026-09-19 |
@@ -32,11 +34,36 @@ inspect` or the registry API) and the upstream release page.
 | actions/checkout | `3d3c42e5aac5ba805825da76410c181273ba90b1` (v7.0.1) | CI | Latest release (2026-07-20), pinned by commit. | 2026-09-19 |
 | actions/upload-artifact | `043fb46d1a93c77aae656e7c1c64a875d1fc6a0a` (v7.0.1) | CI at-latest job | Latest release (2026-04-10), pinned by commit. | 2026-09-19 |
 | actions/download-artifact | `3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c` (v8.0.1) | CI at-latest job | Latest release (2026-03-11), pinned by commit. | 2026-09-19 |
+| STREAM-style bandwidth test | `inference-in-production/ch02/bandwidth.py`, standard-library Python in the runner (3.13.15, pinned above) | ch02 | No external tool to pin: one process per CPU copies its share of two 512 MiB arrays at once, counting two bytes per byte copied (read and write) and keeping the best of 10 trials, as STREAM's Copy kernel does. | 2026-09-19 |
+| WikiText-2 (raw) test text | `ggml-org/ci` dataset @ `927b3642933080f1b0e811e2f916e14c292992f9`, `wikitext-2-raw-v1.zip`, 4,721,645 bytes, sha256 `ef7edb566e3e2b2d31b29c1fdb0c89a4cc683597484c3dc2517919c615435a11` | ch11 | The file llama.cpp's own `scripts/get-wikitext-2.sh` fetches (from `main`; pinned here to its commit). CC BY-SA 3.0: downloaded at run time and checked, never committed. | 2026-09-19 |
 
-Not pinned yet, because no lab uses them yet (each gets a row when its lab lands): kind, KEDA,
-Gateway API Inference Extension, llm-d-router, llm-d-inference-sim, the Gateway API implementation
-for ch14, a STREAM-style bandwidth tool for ch02, AIPerf, and the structured-output libraries for
-ch17.
+Not pinned yet, because no lab uses them yet (each gets a row when its lab lands): AIPerf, and the
+structured-output libraries for ch17.
+
+## Inference in Production — the kind-based labs (ch14, ch16, ch18)
+
+The kind labs run through the same command as every other lab (`docker compose run --rm
+inference-in-production ch14`): the runner downloads kind, kubectl and istioctl once into
+`.work/tools/`, checks each against its SHA-256, and creates the cluster's node as a sibling container
+on the host's Docker (`lib/kind.sh`). Images are pinned in
+[`images.env`](../inference-in-production/images.env) like every other image; the downloaded binaries and
+upstream manifests are pinned by URL and SHA-256 in [`tools.env`](../inference-in-production/tools.env),
+which `scripts/check_pins.py` also reads. The manifests the book prints name images by tag;
+`pin_images` (in `lib/kind.sh`) swaps each tag for the digest below before applying them. All
+verified 2026-09-19 against the release page, the release asset's own `.sha256`/digest, and the
+registry (`docker buildx imagetools inspect`).
+
+| Component | Pin | Used by | Why this version | Last verified |
+|---|---|---|---|---|
+| kind | v0.33.0 (2026-08-26): `kind-linux-amd64` `sha256:aee6151561422756b764a4ae28e7f44cda5af5a9eead3cc9985112b1de8d8e0d`, `kind-linux-arm64` `sha256:20022bee6cfcd5086cb7234d218e3454e6090022f2a8f55d1fa7fcf42c3867a2` | ch14, ch16, ch18 | Latest release, the book's pin. Runs from inside the runner through the Docker socket; tested on OrbStack 29.4.0. | 2026-09-19 |
+| kind node image | `kindest/node:v1.36.4@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed` (arm64 `sha256:10210eabcf5dc4b585756bbd3f7fbb60cc0a12a252f28aeba269d93e0070c025`, amd64 `sha256:597367624b4748b74b98e4fe2d661cd78063d02ecdaca702fd90572375b83e67`) | ch14, ch16, ch18 | Kubernetes 1.36.4, one of the four images kind v0.33.0 lists (by digest) for itself. Not its default 1.37.0: Istio 1.30 supports Kubernetes 1.32–1.36 (istio.io `supportStatus.yml`). | 2026-09-19 |
+| kubectl | v1.36.4: linux/amd64 `sha256:8b8f088da2dab964f853b38464033b1be15ede2839eca751482357c45abdd05a`, linux/arm64 `sha256:0ecf44450ee6063bf19dd166a103ee6df4a9034455c2abce626e6eea657d73fb` (dl.k8s.io) | ch14, ch16, ch18 | The node image's version. | 2026-09-19 |
+| Gateway API CRDs | v1.5.1 `standard-install.yaml`, `sha256:751002b3b91a87f7ae3bd2517c79a47a8d7ed6702901808a1cf9bd97d284f9b8` | ch14, ch18 | Not the latest (v1.6.2): v1.5.1 is the version Istio 1.30.4, GAIE v1.6.2 and llm-d-router v0.10.0 are all built against (each one's `go.mod`), and the one llm-d v0.9.0's guides install. | 2026-09-19 |
+| Gateway API implementation: Istio | 1.30.4 (2026-08-27). `istioctl-1.30.4-linux-amd64.tar.gz` `sha256:feda625a00dfc69135f4692442ef66eb2fa8aea848b483348c330a1138fe392f`, `…-linux-arm64.tar.gz` `sha256:1045d90978d5cc46ad77a7447bebf1a26c66c796c4499bbd83f62cfcb4631f95`; `docker.io/istio/pilot:1.30.4@sha256:c236c1df5cc127fe193e5a17d8ece9cdd0dc17c5d89b4e20baf01d464f029dce` (arm64 `sha256:125a02ea65e31925130479445b2986c6dffdae1b65e44109a232a29285065b2d`, amd64 `sha256:eb8860804a8877f63351b367b731f0b2f13039ea4ccf92a0b3a0d628e2646901`); `docker.io/istio/proxyv2:1.30.4@sha256:43b6aeab7428470d3d0ea6b6f0bc217e5b36df2b279bba337643df48590226d9` (arm64 `sha256:27ca30f7e67a658e333d1f24b8fd9f90e922c42c05ac25f66f5e59f852a06f4b`, amd64 `sha256:372b2de1c4e48797d54a8a129e4710a6c41496a387a95d717c8b16f009092bf8`) | ch14 | The one implementation the lab pins (the research left the choice to the repo build). Istio 1.30 is the line with a full-pass GAIE conformance report (1.30.1: 13 of 13 core tests, GAIE v1.5.0 suite, in the GAIE repo at v1.6.2); NGINX Gateway Fabric's report skips `GatewayDestinationEndpointServed`; Envoy Gateway needs Envoy AI Gateway on top; agentgateway and kgateway install by Helm only. llm-d v0.9.0 documents Istio for its guides and llm-d-router v0.10.0's own kind dev environment runs it. Installed with `istioctl install --set profile=minimal` and `ENABLE_GATEWAY_API_INFERENCE_EXTENSION=true`; 1.30.4 is the line's latest patch. | 2026-09-19 |
+| Gateway API Inference Extension | v1.6.2 (2026-09-17) `v1-manifests.yaml` (the `InferencePool` CRD, `inference.networking.k8s.io/v1`), `sha256:f410dfca474608c02903087b47f1ac081706dfb6dfe7f83d00a7cc7e00c4ad0d` | ch14, ch18 | Latest release, the book's pin. | 2026-09-19 |
+| llm-d-router | v0.10.0 (2026-08-17). CRDs: release asset `manifests.yaml` (`InferenceObjective`, `InferenceModelRewrite`, `llm-d.ai/v1alpha2`), `sha256:488c0f48f4d41067d2319e20761bae1e531cfcfc8c73ba979067365302ec1df0`. Endpoint picker: `ghcr.io/llm-d/llm-d-router-endpoint-picker:v0.10.0@sha256:2e516fa1310da7be59b82beb1445362139597d6d553ef04d546716abe3aaaa70` (arm64 `sha256:110a7225ff00abdec72d485cb215296352492476a8f87bc229229c5a35b539ad`, amd64 `sha256:9862ae38658824b2560c547237363fe21f269e649b873a4ee84fe3137b554ba9`) | ch14 | Latest stable release, the book's pin (v0.11.0-rc.1 of 2026-09-18 is a pre-release). Configured by an `EndpointPickerConfig` (`llm-d.ai/v1alpha1`); flow control behind the `flowControl` feature gate. | 2026-09-19 |
+| llm-d-inference-sim | `ghcr.io/llm-d/llm-d-inference-sim:v0.11.2@sha256:32144df791330a0006b747edfdf2b114a0fe728e023a9d1b3463eeb48d32abb9` (arm64 `sha256:ce569791376be239b2431fc3513a1498d6e70e05f2cc31f46970d38f055644b5`, amd64 `sha256:351d413e80602d227c262883079d8beb17bea91d0bc7ecd642b2d8d8e59bd7ea`) | ch03, ch14, ch16, ch18 | Latest release (2026-08-31), the book's pin. Its timings are its configuration; every result it produces is labeled simulated. | 2026-09-19 |
+| KEDA | v2.20.2 (2026-07-31). Manifest `keda-2.20.2.yaml`, `sha256:9bae123eb64fab8f96c67bbd576bb5819e4794df346c5aaa402a01c68b0557ab`; `ghcr.io/kedacore/keda:2.20.2@sha256:fe74c7b8849586a67ad2201bcb89e7f5ac221ff90399ecaa8fd28427f1ef11e6` (arm64 `sha256:19ddecf229490d4ef550ce3d5ee10677c5ccf4027455494b8f8ac566f1fa5e26`, amd64 `sha256:6c2ded1ae8ab5a6b3452e1ff64468ce76de30b2983fd7d5783719c325f806393`); `ghcr.io/kedacore/keda-metrics-apiserver:2.20.2@sha256:27286536a8a775aeeee37a7e343f8ecebb27ebf680ee1181a4f99e82eefb253b` (arm64 `sha256:1a6343daca2e703d57d3995de693d1a34e0004831026d0757f44d4d5d82e6086`, amd64 `sha256:3b6c694aed71a5480760062de91e53288e9b8b67d4b6c7e5eac49459e75b96d2`); `ghcr.io/kedacore/keda-admission-webhooks:2.20.2@sha256:41f74102aba7959c6e8d08b433ab8a5fd6cae7c5646c78f7fe3de40a52df3439` (arm64 `sha256:1a3d060789637a1464e999e07a60a22d781df890110ee8ed6c76fbb7676a0e20`, amd64 `sha256:c915db826c054e6b76ef9f9904a2a620db931e0244f3f6fc815d81682f9e5365`) | ch16 | Latest release, the book's pin. `lib/kind.sh` swaps the manifest's three image tags for these digests. | 2026-09-19 |
 
 ## Inference in Production — models
 
@@ -61,7 +88,10 @@ inference-in-production models list` prints the current totals.
 32 layers, 5 KV heads, head_dim 64 (hidden 960 / 15 heads), BF16, so
 2 × 32 × 5 × 64 × 2 = **40,960 B = 40 KiB per token**, and 1 GiB holds 26,214 tokens.
 vLLM 0.29.0 on CPU with `VLLM_CPU_KVCACHE_SPACE=1` reports `GPU KV cache size: 26,112 tokens`
-(check a): 1,632 blocks of 16 tokens, the same budget rounded down to whole blocks.
+(check a): 204 blocks of 128 tokens, the same budget rounded down to whole blocks. On the CPU
+backend vLLM 0.29.0 defaults to 128-token KV blocks, not the 16 it uses on a GPU: its
+`vllm:cache_config_info` series reports `block_size="128"` and `num_gpu_blocks="204"`
+(`measured/ch09/startup.txt`; `vllm/platforms/cpu.py` sets 128 when the user does not).
 
 ## Settled checks (2026-09-19, reference laptop)
 

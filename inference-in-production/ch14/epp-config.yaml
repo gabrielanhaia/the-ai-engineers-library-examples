@@ -1,0 +1,29 @@
+# ch14/epp-config.yaml
+# The endpoint picker's configuration (llm-d-router v0.10.0). Each
+# request is scored on predicted prefix overlap and on load, and
+# the highest total wins. Flow control holds requests in priority
+# order once every replica has 4 in flight.
+apiVersion: llm-d.ai/v1alpha1
+kind: EndpointPickerConfig
+featureGates:
+- flowControl
+plugins:
+- type: prefix-cache-scorer
+- type: queue-scorer
+- type: kv-cache-utilization-scorer
+- type: concurrency-detector
+  parameters:
+    maxConcurrency: 4        # the simulator's --max-num-seqs
+schedulingProfiles:
+- name: default
+  plugins:
+  - pluginRef: prefix-cache-scorer
+    weight: 3
+  - pluginRef: queue-scorer
+    weight: 2
+  - pluginRef: kv-cache-utilization-scorer
+    weight: 2
+flowControl:
+  defaultRequestTTL: 60s
+  saturationDetector:
+    pluginRef: concurrency-detector

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Fail if a pin is used but not recorded in docs/versions.md.
 
-Collects every image digest, Debian package pin, Python == pin and
-model revision this book's tree and the compose file use, and checks
+Collects every image digest, downloaded-file digest (tools.env),
+Debian package pin, Python == pin and model revision this book's
+tree and the compose file use, and checks
 each one appears in docs/versions.md. Also refuses an image
 reference that has a tag but no digest.
 """
@@ -33,7 +34,8 @@ def need(token, where):
 
 
 files = [REPO / "docker-compose.yml", BOOK / "images.env",
-         BOOK / "Dockerfile", REPO / ".github" / "workflows" / "ci.yml"]
+         BOOK / "Dockerfile", REPO / ".github" / "workflows" / "ci.yml",
+         BOOK / "tools.env"]
 for f in files:
     text = f.read_text(encoding="utf-8")
     for m in DIGEST.finditer(text):

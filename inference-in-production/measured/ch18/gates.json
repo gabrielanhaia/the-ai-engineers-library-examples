@@ -1,0 +1,12 @@
+{
+  "quality": {
+    "rerun": "pass",
+    "broken-template": "fail"
+  },
+  "performance": {
+    "rerun": "pass",
+    "slower-config": "fail"
+  },
+  "manifests": "valid",
+  "alert_rules": "pass"
+}

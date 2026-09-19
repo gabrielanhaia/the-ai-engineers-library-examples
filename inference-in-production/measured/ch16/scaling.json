@@ -1,0 +1,21 @@
+{
+  "kind": "simulated (llm-d-inference-sim v0.11.2, KEDA 2.20.2, kind)",
+  "events_s": {
+    "burst_starts": 30.001,
+    "queue_reaches_threshold": 34.3,
+    "replicas_raised": 45.1,
+    "second_replica_ready": 67.4,
+    "peak_replicas_ready": 67.4,
+    "burst_ends": 150.001,
+    "queue_empty_again": 155.3,
+    "replicas_lowered": 181.1
+  },
+  "peak": {
+    "waiting": 77.0,
+    "replicas": 4.0
+  },
+  "requests": 555,
+  "errors": 1,
+  "ttft_p50_s": 0.036,
+  "ttft_max_s": 40.8
+}

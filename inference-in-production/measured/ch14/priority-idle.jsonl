@@ -1,0 +1,10 @@
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.0622788219989161, "e2e": 2.139805594997597, "t": 1789843896.797}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.061420687998179346, "e2e": 2.1306623319978826, "t": 1789843897.789}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.06223436300206231, "e2e": 2.125963825001236, "t": 1789843898.785}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.06004467300226679, "e2e": 2.139394591002201, "t": 1789843899.802}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.060193757999513764, "e2e": 2.1345242059978773, "t": 1789843900.798}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.0598266289998719, "e2e": 2.117496694001602, "t": 1789843901.784}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.07080036899787956, "e2e": 2.108906728000875, "t": 1789843902.776}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.06785629699879792, "e2e": 2.1057291949982755, "t": 1789843903.773}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.06166218999715056, "e2e": 2.0964407219980785, "t": 1789843904.764}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.061117642999306554, "e2e": 2.086680661999708, "t": 1789843905.755}

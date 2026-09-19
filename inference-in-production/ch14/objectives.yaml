@@ -1,0 +1,22 @@
+# ch14/objectives.yaml
+# Two traffic classes on the pool. A request names its class in the
+# x-llm-d-inference-objective header; flow control dispatches the
+# higher priority first whenever the pool is saturated. A request
+# with no class gets priority 0.
+apiVersion: llm-d.ai/v1alpha2
+kind: InferenceObjective
+metadata:
+  name: interactive
+spec:
+  priority: 100
+  poolRef:
+    name: smollm2
+---
+apiVersion: llm-d.ai/v1alpha2
+kind: InferenceObjective
+metadata:
+  name: batch
+spec:
+  priority: -10
+  poolRef:
+    name: smollm2

@@ -49,10 +49,19 @@ There is no GPU profile: nothing here needs a GPU.
 | Dir | Lab | Needs |
 |---|---|---|
 | [`ch00/`](ch00/) | Smoke test: model cache, llama.cpp, one streamed request, the server's timings | any laptop |
+| [`ch05/`](ch05/) | Cost calculator: $ per million output tokens from MLPerf's row and a dated price, with its three labels; your own request shape | any laptop (no model) |
+| [`ch06/`](ch06/) | Break-even calculator: self-host vs API per request, three scenarios | any laptop (no model) |
+| [`ch07/`](ch07/) | Capacity calculator: fit at 0.92, running batch by Little's law, KV needed, GPUs by throughput with headroom | any laptop (no model) |
+| [`ch13/`](ch13/) | Layout calculator: KV copies under TP, the KV freed by TP=2, the P:D ratio | any laptop (no model) |
+| [`ch14/`](ch14/) | Routing on kind: Istio Gateway, `InferencePool`, llm-d-router's endpoint picker, three simulated replicas; round-robin vs prefix-aware, priority classes under a flood, multi-LoRA on vLLM CPU | ~5 GB free memory; nothing installed on the host |
+| [`ch16/`](ch16/) | KEDA scaling a simulated pool on queue depth; three phase-by-phase cold starts of the vLLM CPU container | ~5 GB free memory |
+| [`ch18/`](ch18/) | Release gates proven to fail (quality: ch11's eval vs a broken chat template; performance: `vllm bench serve` vs a slower simulator), a canary route, Xid and SLO alert rules | any laptop |
+| [`ch19/`](ch19/) | The decision worksheet: two worked plans on the ch05–ch07 calculators | any laptop (no model) |
 
 ## Where things are
 
 - [`images.env`](images.env): the engine images, pinned by digest.
 - [`models.lock.json`](models.lock.json): the lab models, pinned by commit SHA, with sizes and hashes.
+- [`inputs/`](inputs/): every cited number the calculators use, with its URL and check date.
 - [`../docs/versions.md`](../docs/versions.md): every pin, why, and when it was verified.
 - [`CONTRIBUTING-LABS.md`](CONTRIBUTING-LABS.md): how a lab is built.

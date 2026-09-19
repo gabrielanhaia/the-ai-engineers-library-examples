@@ -1,0 +1,17 @@
+[
+  {
+    "pod": "smollm2-sim-8695bbcb69-2n8zn",
+    "hits": 17280,
+    "queries": 22392
+  },
+  {
+    "pod": "smollm2-sim-8695bbcb69-5tjk2",
+    "hits": 11520,
+    "queries": 14928
+  },
+  {
+    "pod": "smollm2-sim-8695bbcb69-6cv2k",
+    "hits": 5760,
+    "queries": 7464
+  }
+]

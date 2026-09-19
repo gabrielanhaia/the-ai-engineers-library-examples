@@ -1,0 +1,47 @@
+
+== multi-LoRA on vLLM CPU (real engine, not simulated)
+models: 20 file(s), 973 MiB, into /models
+vllm ready after ~24s
+vllm ready after ~23s
+same prompt, temperature 0:
+smollm2-360m: One tip for staying focused is to eliminate
+  distractions. This can be achieved by turning off notifications on
+  your phone, closing unnecessary
+alpaca: One tip for staying focused is to eliminate distractions and
+  create a conducive environment for concentration. This can be
+  achieved by turning off
+underdog: Avoid multitasking, as it can decrease productivity and
+  increase distractions.
+burst: 8 requests, 64 tokens each; seconds to finish
+--max-loras 1: alpaca 10.2-10.4  underdog 20.5-20.6
+--max-loras 2: alpaca 12.2-12.3  underdog 12.2-12.3
+
+== cluster
+tools: kind v0.33.0, kubectl v1.36.4, istioctl 1.30.4
+cluster ch14: Kubernetes v1.36.4, node ch14-control-plane
+inference-gateway-istio-846748678b-kpgvd 0/1 Running
+smollm2-epp-8696f7d6b9-9lzvs 1/1 Running
+smollm2-sim-78675cbcbb-bxnlm 1/1 Running
+smollm2-sim-78675cbcbb-nn9zc 1/1 Running
+smollm2-sim-78675cbcbb-wxddg 1/1 Running
+
+== round-robin (route-rr.yaml), simulated
+
+== prefix-aware (route.yaml), simulated
+simulated: timings are the simulator's configuration
+policy        replica hit rates        all   same  TTFT p50
+round-robin   0.56 0.53 0.51          0.53   0.40    0.185s
+prefix-aware  0.77 0.77 0.77          0.77   1.00    0.110s
+
+== priority classes under a flood, simulated
+simulated: timings are the simulator's configuration
+run                   class      n  TTFT p50     p95  errors
+no flood              probe     10    0.062s  0.071s       0
+flood, probes 100     probe     20    1.212s  2.064s       0
+flood, probes 100     flood    121    8.504s 10.725s       0
+flood, probes -10     probe     20    7.715s  9.621s       0
+flood, probes -10     flood    163    6.425s 10.516s       0
+peak EPP queue, priority -10: 28 and 37
+
+== done
+manifest: measured/ch14/machine.json

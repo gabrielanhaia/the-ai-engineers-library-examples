@@ -1,0 +1,27 @@
+{
+  "kind": "simulated (llm-d-inference-sim v0.11.2)",
+  "round-robin": {
+    "requests": 72,
+    "replica_hit_rates": [
+      0.557,
+      0.53,
+      0.51
+    ],
+    "hit_rate": 0.532,
+    "same_replica_as_last_turn": 0.4,
+    "ttft_p50_s": 0.185,
+    "ttft_p90_s": 0.608
+  },
+  "prefix-aware": {
+    "requests": 72,
+    "replica_hit_rates": [
+      0.772,
+      0.772,
+      0.772
+    ],
+    "hit_rate": 0.772,
+    "same_replica_as_last_turn": 1.0,
+    "ttft_p50_s": 0.11,
+    "ttft_p90_s": 0.46
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "simulated (llm-d-inference-sim v0.11.2)",
+  "idle": {
+    "probe": {
+      "requests": 10,
+      "errors": 0,
+      "ttft_p50_s": 0.062,
+      "ttft_p95_s": 0.071
+    }
+  },
+  "interactive": {
+    "probe": {
+      "requests": 20,
+      "errors": 0,
+      "ttft_p50_s": 1.212,
+      "ttft_p95_s": 2.064
+    },
+    "flood": {
+      "requests": 121,
+      "errors": 0,
+      "ttft_p50_s": 8.504,
+      "ttft_p95_s": 10.725
+    },
+    "peak_batch_queue": 28
+  },
+  "batch": {
+    "probe": {
+      "requests": 20,
+      "errors": 0,
+      "ttft_p50_s": 7.715,
+      "ttft_p95_s": 9.621
+    },
+    "flood": {
+      "requests": 163,
+      "errors": 0,
+      "ttft_p50_s": 6.425,
+      "ttft_p95_s": 10.516
+    },
+    "peak_batch_queue": 37
+  }
+}

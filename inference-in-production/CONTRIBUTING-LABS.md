@@ -28,6 +28,13 @@ Extra arguments after `chNN` are passed to `run.sh`. Other runner
 commands: `test chNN`, `list`, `models [SET]`, `models list`,
 `clean`, `apple`, `shell [-c CMD]`.
 
+**The kind-based labs (ch14, ch16, ch18) print the same command.**
+There is no `make` target and nothing to install on the host: the
+entry point is `docker compose run --rm inference-in-production
+chNN` (52 characters), and `test chNN` for CI, exactly as for every
+other lab. The runner creates the Kubernetes cluster itself (section
+4a) and deletes it when the lab ends.
+
 The runner holds bash, Python 3.13 (standard library), curl, jq and
 the Docker CLI. It has **no inference engine**: a lab starts the
 engines it needs as sibling containers through the mounted Docker
@@ -150,6 +157,43 @@ one, resolve its digest (`docker buildx imagetools inspect`), add it
 there, and add a row to `docs/versions.md`; CI fails on a digest that
 is not written down.
 
+## 4a. Kubernetes labs: the helpers in lib/kind.sh
+
+A kind lab sources `lib/kind.sh` after `lib/lab.sh`. kind runs inside
+the runner and creates the cluster's node as a sibling container on
+the host's Docker, like any engine; the node joins the lab network,
+so the lab reaches a NodePort at `http://chNN-control-plane:PORT`
+and the API server at `chNN-control-plane:6443`.
+
+| Helper | Does |
+|---|---|
+| `kind_tools [istioctl]` | kind, kubectl (and istioctl) onto PATH |
+| `start_kind NAME [CONFIG]` | a one-node cluster; exports KUBECONFIG |
+| `stop_kind NAME` | delete one cluster early (free memory) |
+| `apply_pinned NAME` | apply an upstream manifest `tools.env` pins |
+| `install_istio` | Istio, minimal profile, inference extension on |
+| `install_keda` | KEDA, its images swapped for the pinned digests |
+| `pin_images` | stdin to stdout, `image: REPO:TAG` made `@sha256:` |
+| `pod_metrics NS POD [PORT]` | a pod's `/metrics`, via the API server |
+
+- **Pins.** The binaries the runner image lacks (kind, kubectl,
+  istioctl) and the upstream manifests (Gateway API, Inference
+  Extension and llm-d-router CRDs, KEDA) are pinned by URL and
+  SHA-256 in `tools.env` (`NAME=URL@sha256:HEX`) and downloaded once
+  into `.work/tools/`; `scripts/check_pins.py` reads `tools.env` too.
+  Images come from `images.env` as usual. Manifests the book prints
+  name images by tag; apply them through `pin_images`.
+- **Name the cluster after the lab** (`start_kind ch14`): its node
+  is then `ch14-control-plane`, and `clean` removes leftover nodes of
+  clusters named `chNN`. `start_kind` deletes a same-named cluster
+  first, and the lab's exit deletes it (`AIEL_KEEP=1` keeps it).
+- **Memory.** A node with the ch14 stack (Istio, one endpoint picker,
+  three simulators) peaked at 1.1 GiB; a vLLM CPU pod adds about
+  4 GiB. Delete the cluster (`stop_kind`) before starting a vLLM
+  engine beside it.
+- **Simulated.** Anything llm-d-inference-sim produces is labeled
+  "simulated" in every file: its timings are its configuration.
+
 ## 5. Models
 
 The model cache is the `aiel-models` volume: read-write at `/models`
@@ -220,6 +264,19 @@ laptop and commit when the lab changes, and paste the lab README's
 `$WORK/` (`.work/chNN/`, ignored), never to `measured/`. An ad-hoc
 run (`shell -c` with `LAB` not `chNN`) records into `$WORK/`.
 
+**DERIVED numbers** (arithmetic on cited inputs: the calculators,
+roofline bounds) are recomputed, not measured, so CI checks them
+exactly. Every cited input lives in `inputs/`, each TOML table with
+its `url` and `checked` date (see `inputs/README.md`). A lab whose
+chapter prints DERIVED numbers adds `chNN/derived.py`, which prints
+JSON `{"chapter": "NN", "outputs": {calculator: its default stdout},
+"numbers": [{"key", "value", "shown"}]}`, where `shown` is the
+string the chapter prints; `run.sh` records it as
+`measured/chNN/derived.json`. The `derived-data` CI job
+(`scripts/check_derived.py`) reruns every `derived.py` and fails on
+any difference from the record; with `--manuscript <book>/en/content/
+chapters` it also finds every `shown` string in its chapter.
+
 ## 8. Pitfalls already hit
 
 - `set -o pipefail` is on. `cmd | head -n 5` makes `cmd` die of
@@ -230,7 +287,14 @@ run (`shell -c` with `LAB` not `chNN`) records into `$WORK/`.
   `aiel.lab`.
 - After changing `Dockerfile` or `requirements.txt`, rebuild the
   runner: `docker compose build inference-in-production`.
-- The kind-based labs (ch14, ch16) are not settled yet. The runner
-  has no kind or kubectl. Whoever builds ch14 fixes the printed
-  entry point, pins kind and kubectl here, and adds the `k8s-labs`
-  CI job.
+- The kind labs run in the `cpu-labs` CI job like every other lab
+  (`test chNN`); there is no separate `k8s-labs` job, because the
+  runner brings its own kind.
+- `cmd | grep -q PATTERN` fails under pipefail as soon as grep finds
+  a match early (SIGPIPE upstream): grep a file instead.
+- A Kubernetes Service named `vllm` puts `VLLM_PORT=tcp://...` into
+  every pod started after it, and vLLM reads `VLLM_PORT` as its own
+  setting and exits. Set `enableServiceLinks: false` on vLLM pods.
+- KEDA's Prometheus scaler refuses a query that returns more than
+  one series: scale on `sum(vllm:num_requests_waiting)`, never on
+  the bare per-replica metric.

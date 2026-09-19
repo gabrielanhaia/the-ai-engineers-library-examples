@@ -1,0 +1,63 @@
+# ch18/alerts.yaml
+# Alert rules for GPU failures (dcgm-exporter) and the serving SLO
+# (vLLM). DCGM_FI_DEV_XID_ERRORS holds the last Xid a GPU raised;
+# the rules sort it into NVIDIA's resolution buckets. Xid 43 and 63
+# need no action and have no rule.
+groups:
+- name: gpu-xid
+  rules:
+  - alert: GpuXidRestartApp        # 13, 31, 94
+    expr: |
+      DCGM_FI_DEV_XID_ERRORS == 13 or DCGM_FI_DEV_XID_ERRORS == 31
+      or DCGM_FI_DEV_XID_ERRORS == 94
+    labels: {severity: warning, action: restart-app}
+    annotations:
+      summary: "Xid {{ $value }} on {{ $labels.Hostname }} GPU
+        {{ $labels.gpu }}: restart the serving pod"
+  - alert: GpuXidResetGpu          # 64, 95, 119, 120
+    expr: |
+      DCGM_FI_DEV_XID_ERRORS == 64 or DCGM_FI_DEV_XID_ERRORS == 95
+      or DCGM_FI_DEV_XID_ERRORS == 119
+      or DCGM_FI_DEV_XID_ERRORS == 120
+    labels: {severity: critical, action: reset-gpu}
+    annotations:
+      summary: "Xid {{ $value }} on {{ $labels.Hostname }} GPU
+        {{ $labels.gpu }}: cordon and drain, then reset the GPU"
+  - alert: GpuXidRestartMachine    # 79: fallen off the bus
+    expr: DCGM_FI_DEV_XID_ERRORS == 79
+    labels: {severity: critical, action: restart-machine}
+    annotations:
+      summary: "Xid 79 on {{ $labels.Hostname }}: cordon and
+        drain, then restart the machine"
+  - alert: GpuXidWorkflow          # 48 double-bit ECC, 74 NVLink
+    expr: DCGM_FI_DEV_XID_ERRORS == 48 or DCGM_FI_DEV_XID_ERRORS == 74
+    labels: {severity: critical, action: follow-workflow}
+    annotations:
+      summary: "Xid {{ $value }} on {{ $labels.Hostname }}: run
+        NVIDIA's workflow for this Xid"
+  - alert: GpuRowRemapFailed
+    expr: DCGM_FI_DEV_ROW_REMAP_FAILURE > 0
+    labels: {severity: critical, action: reset-gpu}
+    annotations:
+      summary: "Row remapping failed on {{ $labels.Hostname }} GPU
+        {{ $labels.gpu }}"
+- name: serving-slo
+  rules:
+  - alert: TtftP99OverSlo          # SLO: TTFT p99 under 500 ms
+    expr: |
+      histogram_quantile(0.99, sum by (le, model_name) (
+        rate(vllm:time_to_first_token_seconds_bucket[5m]))) > 0.5
+    for: 5m
+    labels: {severity: page}
+    annotations:
+      summary: "{{ $labels.model_name }}: TTFT p99 is
+        {{ $value | humanizeDuration }}"
+  - alert: ItlP99OverSlo           # SLO: ITL p99 under 50 ms
+    expr: |
+      histogram_quantile(0.99, sum by (le, model_name) (
+        rate(vllm:inter_token_latency_seconds_bucket[5m]))) > 0.05
+    for: 5m
+    labels: {severity: page}
+    annotations:
+      summary: "{{ $labels.model_name }}: ITL p99 is
+        {{ $value | humanizeDuration }}"

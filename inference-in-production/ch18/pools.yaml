@@ -1,0 +1,35 @@
+# ch18/pools.yaml
+# The two pools the canary route splits between: the same model on
+# the current serving stack (stable) and on the candidate (canary),
+# told apart by one label on their pods.
+apiVersion: inference.networking.k8s.io/v1
+kind: InferencePool
+metadata:
+  name: smollm2-stable
+spec:
+  selector:
+    matchLabels:
+      app: smollm2
+      track: stable
+  targetPorts:
+  - number: 8000
+  endpointPickerRef:
+    name: smollm2-stable-epp
+    port:
+      number: 9002
+---
+apiVersion: inference.networking.k8s.io/v1
+kind: InferencePool
+metadata:
+  name: smollm2-canary
+spec:
+  selector:
+    matchLabels:
+      app: smollm2
+      track: canary
+  targetPorts:
+  - number: 8000
+  endpointPickerRef:
+    name: smollm2-canary-epp
+    port:
+      number: 9002

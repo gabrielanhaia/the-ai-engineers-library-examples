@@ -1,0 +1,141 @@
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.05978346200208762, "e2e": 2.089455399000144, "t": 1789843907.933}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.062467031999403844, "e2e": 2.0913829609999084, "t": 1789843907.933}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.06055567899966263, "e2e": 2.089238521999505, "t": 1789843907.933}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.0620429860027798, "e2e": 2.0976821110016317, "t": 1789843907.94}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.062453240003378596, "e2e": 2.1033752120019926, "t": 1789843907.942}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.062375446999794804, "e2e": 2.1019220710004447, "t": 1789843907.942}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.0654821889984305, "e2e": 2.1042210960004013, "t": 1789843907.943}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.06187965100252768, "e2e": 2.102648746000341, "t": 1789843907.944}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.06310978900000919, "e2e": 2.10224799199932, "t": 1789843907.944}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.06235728100000415, "e2e": 2.107384170001751, "t": 1789843907.948}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.06139318699933938, "e2e": 2.1058633210013795, "t": 1789843907.949}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 2.1588511709996965, "e2e": 4.2226990919989476, "t": 1789843910.065}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.1502127879975887, "e2e": 4.2232349299993075, "t": 1789843910.066}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.1555952609996893, "e2e": 4.244511363001948, "t": 1789843910.088}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.151135673000681, "e2e": 4.24399919100324, "t": 1789843910.088}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.1502992480018293, "e2e": 4.245831502001238, "t": 1789843910.088}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.280441532002442, "e2e": 6.362338977000036, "t": 1789843912.209}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 4.280300990001706, "e2e": 6.3621461000002455, "t": 1789843912.209}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.277760045999457, "e2e": 6.367781241999182, "t": 1789843912.213}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.302482848001091, "e2e": 6.381294301001617, "t": 1789843912.23}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.304129072999785, "e2e": 6.382987651999429, "t": 1789843912.23}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.303119937998417, "e2e": 6.381982767001318, "t": 1789843912.23}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 4.303880111998296, "e2e": 6.382701190999796, "t": 1789843912.23}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.30057170299915, "e2e": 6.388855131001037, "t": 1789843912.233}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.299214271999517, "e2e": 6.388145916000212, "t": 1789843912.233}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 4.300282490999962, "e2e": 6.391249614000117, "t": 1789843912.236}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 1.416957323999668, "e2e": 3.494032676000643, "t": 1789843914.345}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.4209272610023618, "e2e": 2.4938049020020117, "t": 1789843914.346}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.424494129998493, "e2e": 8.509609359000024, "t": 1789843914.356}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.4434304969981895, "e2e": 8.51252751499851, "t": 1789843914.363}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.440971220999927, "e2e": 8.516391680001107, "t": 1789843914.365}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.439050783999846, "e2e": 8.516881643998204, "t": 1789843914.366}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.4454586430001655, "e2e": 8.529988156999025, "t": 1789843914.376}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.444091879002372, "e2e": 8.530158284000208, "t": 1789843914.376}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.553754073000164, "e2e": 10.623661891000665, "t": 1789843916.473}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.551587967998785, "e2e": 10.623200554000505, "t": 1789843916.474}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 1.5502384350002103, "e2e": 3.6192528270003095, "t": 1789843916.474}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.5432242569986556, "e2e": 2.612455693000811, "t": 1789843916.474}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.48130118699919, "e2e": 8.560300559998723, "t": 1789843916.493}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.572880817002442, "e2e": 10.643444766999892, "t": 1789843916.494}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.573461698000756, "e2e": 10.645982752001146, "t": 1789843916.496}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.490195238999149, "e2e": 8.562805418998323, "t": 1789843916.496}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.59202522600026, "e2e": 10.672214860998793, "t": 1789843918.613}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.59064133600259, "e2e": 10.670885638002801, "t": 1789843918.614}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.590869005998684, "e2e": 10.671391143998335, "t": 1789843918.615}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 1.6702781970016076, "e2e": 3.752683064001758, "t": 1789843918.615}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.6714315220015123, "e2e": 2.7524804990025586, "t": 1789843918.615}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.5994702220014, "e2e": 10.68447257400112, "t": 1789843918.618}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.609375116997398, "e2e": 10.688451447997068, "t": 1789843918.631}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.608905736997258, "e2e": 10.689115913999558, "t": 1789843918.631}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.725222252000094, "e2e": 12.806896611000411, "t": 1789843920.755}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.723270231999777, "e2e": 12.80588255800103, "t": 1789843920.755}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.728901664999285, "e2e": 12.811115321001125, "t": 1789843920.755}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.607646057000238, "e2e": 10.69018500799939, "t": 1789843920.756}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.8094346819998464, "e2e": 2.8918667569996614, "t": 1789843920.756}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.607933393999701, "e2e": 10.690944350000791, "t": 1789843920.757}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.585536866001348, "e2e": 10.668417612003395, "t": 1789843920.757}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 1.807963021001342, "e2e": 3.8936561299997265, "t": 1789843920.757}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.727246274000208, "e2e": 12.780404957000428, "t": 1789843922.869}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.586674961999961, "e2e": 10.64485694799805, "t": 1789843922.875}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.58642245900046, "e2e": 10.64577354100038, "t": 1789843922.876}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.587287927002762, "e2e": 10.64630813000258, "t": 1789843922.876}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.606806548999884, "e2e": 10.669677042998956, "t": 1789843922.879}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.727581151000777, "e2e": 12.790453771001921, "t": 1789843922.879}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 1.9503723100024217, "e2e": 4.020193044001644, "t": 1789843922.885}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.602797715000634, "e2e": 10.67301245300041, "t": 1789843922.886}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.717494337000971, "e2e": 12.74995867799953, "t": 1789843924.959}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.705213375000312, "e2e": 12.740782457000023, "t": 1789843924.972}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 2.0640465900032723, "e2e": 4.112823645002209, "t": 1789843924.978}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.700827204000234, "e2e": 12.746141763000196, "t": 1789843924.979}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.0699506110031507, "e2e": 2.1184710370034736, "t": 1789843924.985}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.703276395997818, "e2e": 12.751883656997961, "t": 1789843924.985}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 3.0688822859992797, "e2e": 5.120832331998827, "t": 1789843924.986}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 1.0758961940009613, "e2e": 3.1333877149991167, "t": 1789843925.0}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 1.152485082999192, "e2e": 3.213851894997788, "t": 1789843927.081}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 0.16441047999978764, "e2e": 2.214518131000659, "t": 1789843927.082}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.549758031000238, "e2e": 10.58761092900022, "t": 1789843927.084}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.687363729000936, "e2e": 12.733269920001476, "t": 1789843927.089}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.663221142000111, "e2e": 12.713507211999968, "t": 1789843927.089}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 12.800651628000196, "e2e": 14.854617069999222, "t": 1789843927.09}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.679950316996838, "e2e": 12.729520504999527, "t": 1789843927.093}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.673165954001888, "e2e": 12.736421035999228, "t": 1789843927.102}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.69067813899892, "e2e": 12.745119002996944, "t": 1789843927.111}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 12.761576341999898, "e2e": 14.81858944099804, "t": 1789843929.195}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.647927814003197, "e2e": 12.701772129999881, "t": 1789843929.198}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.674373384001228, "e2e": 12.72451603599984, "t": 1789843929.198}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.665614333000121, "e2e": 12.72368311000173, "t": 1789843929.198}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.542084116998012, "e2e": 10.583175965999544, "t": 1789843929.201}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.54484343799777, "e2e": 10.586417582999275, "t": 1789843929.201}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.652471445002448, "e2e": 12.707500022999739, "t": 1789843929.203}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 1.2710454970001592, "e2e": 3.3355538840005465, "t": 1789843929.203}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 0.27411863400266157, "e2e": 2.3356671559995448, "t": 1789843929.204}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 12.75802167999791, "e2e": 14.795104152999556, "t": 1789843931.291}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.622920050001994, "e2e": 12.662524965999182, "t": 1789843931.294}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 1.3853374489990529, "e2e": 3.4257189569980255, "t": 1789843931.294}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.505419689998234, "e2e": 10.542203534998407, "t": 1789843931.299}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.504410763001943, "e2e": 10.542551038000965, "t": 1789843931.3}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.503689672001201, "e2e": 10.54444605900062, "t": 1789843931.3}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.504428471998835, "e2e": 10.54457689300034, "t": 1789843931.301}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.648263692997716, "e2e": 12.688739159999386, "t": 1789843931.302}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.646940677997918, "e2e": 12.687457729000016, "t": 1789843931.302}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.628018396000698, "e2e": 12.674539217998245, "t": 1789843931.305}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 0.39004472799933865, "e2e": 2.438190068001859, "t": 1789843931.308}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 10.602972050000972, "e2e": 12.628373403000296, "t": 1789843933.384}
+{"cls": "probe", "objective": "interactive", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 1.480451367002388, "e2e": 3.5260512660024688, "t": 1789843933.396}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.484308467999654, "e2e": 10.532572686999629, "t": 1789843933.401}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.482626241999242, "e2e": 10.52709733699885, "t": 1789843933.404}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.482375863997731, "e2e": 10.5291747759984, "t": 1789843933.405}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.487275666000642, "e2e": 10.52858827000091, "t": 1789843933.405}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 10.60332509500222, "e2e": 12.649460833003104, "t": 1789843933.406}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.487150373002805, "e2e": 10.526901044002443, "t": 1789843933.406}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.463746297002217, "e2e": 10.527992524999718, "t": 1789843935.507}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.584180814003048, "e2e": 12.639713534001203, "t": 1789843935.519}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.491255294997245, "e2e": 10.547104434997891, "t": 1789843935.519}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 10.574445501999435, "e2e": 12.632763252000586, "t": 1789843935.519}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.503354546999617, "e2e": 10.55954948300132, "t": 1789843935.519}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.373751850998815, "e2e": 8.436146267998993, "t": 1789843935.525}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.470672827999806, "e2e": 10.53991352599769, "t": 1789843935.525}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.376552505000291, "e2e": 8.446938089000469, "t": 1789843935.531}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.47474555000008, "e2e": 10.547650701999373, "t": 1789843937.637}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.453426449999824, "e2e": 10.527914578000491, "t": 1789843937.639}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.490551758000947, "e2e": 10.564996968001651, "t": 1789843937.658}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.486716342002183, "e2e": 10.555551285000547, "t": 1789843937.658}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.492856573000608, "e2e": 10.567412242999126, "t": 1789843937.658}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.3786596639984054, "e2e": 8.462185678999958, "t": 1789843937.66}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.381852321999759, "e2e": 8.46554921400093, "t": 1789843937.66}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 6.380967020999378, "e2e": 8.462499473000207, "t": 1789843937.66}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.499682280998968, "e2e": 10.590485538999928, "t": 1789843939.788}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.404771532997984, "e2e": 8.497686438000528, "t": 1789843939.792}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.407378644998971, "e2e": 8.500510009998834, "t": 1789843939.792}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.4167213260006974, "e2e": 8.507429416000377, "t": 1789843939.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 6.415204017997894, "e2e": 8.508337216997461, "t": 1789843939.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.516504917002749, "e2e": 10.607744721000927, "t": 1789843939.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.514723272997799, "e2e": 10.606061786998907, "t": 1789843939.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-6l48q", "ttft": 8.516769211997598, "e2e": 10.608292310000252, "t": 1789843939.809}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 8.543474546000652, "e2e": 10.63143939800284, "t": 1789843941.937}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-bfzsz", "ttft": 6.4664273160015, "e2e": 8.552779652000027, "t": 1789843941.937}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.549476026000775, "e2e": 10.637811798998882, "t": 1789843941.938}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.548861185001442, "e2e": 10.637404627999786, "t": 1789843941.938}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.567509757001972, "e2e": 10.65906856500078, "t": 1789843941.961}
+{"cls": "flood", "status": 200, "pod": "smollm2-sim-b9b584d8d-t2nc4", "ttft": 8.567141752999305, "e2e": 10.65888118699877, "t": 1789843941.961}

@@ -70,6 +70,13 @@ case "$cmd" in
     mapfile -t ids < <(docker ps -aq --filter label=aiel.lab)
     [ ${#ids[@]} -eq 0 ] || docker rm -f "${ids[@]}" >/dev/null
     echo "removed ${#ids[@]} lab container(s)"
+    # The kind labs' nodes (clusters named chNN), with their volumes.
+    mapfile -t ids < <(docker ps -a \
+      --filter label=io.x-k8s.kind.cluster \
+      --format '{{.ID}} {{.Label "io.x-k8s.kind.cluster"}}' \
+      | awk '$2 ~ /^ch[0-9][0-9]$/ {print $1}')
+    [ ${#ids[@]} -eq 0 ] || docker rm -f -v "${ids[@]}" >/dev/null
+    echo "removed ${#ids[@]} kind node(s)"
     ;;
   apple) cat "$ROOT/apple/README.md" ;;
   shell|bash) exec bash "$@" ;;

@@ -1,0 +1,28 @@
+# ch16/scaledobject.yaml
+# Scale the pool on queue depth: one replica per 5 waiting requests
+# (the vLLM production-stack pattern, KEDA 2.20). Between 1 and 4
+# replicas the HPA polls, every 15 s; KEDA's own pollingInterval and
+# cooldownPeriod apply only to scaling from and to zero, and KEDA
+# warns when they are set without it.
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: smollm2-sim
+spec:
+  scaleTargetRef:
+    name: smollm2-sim
+  minReplicaCount: 1
+  maxReplicaCount: 4
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: 60   # lab: 300 by default
+  triggers:
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus.default.svc:9090
+      # sum(): the scaler refuses a query that returns one series
+      # per replica.
+      query: sum(vllm:num_requests_waiting)
+      threshold: "5"

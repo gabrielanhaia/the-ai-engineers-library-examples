@@ -1,0 +1,108 @@
+# ch14/epp.yaml
+# The endpoint picker (EPP): llm-d-router's scheduler, which the
+# gateway calls over Envoy's ext_proc for each request. It watches
+# the pool's pods, scrapes their /metrics, and reads its
+# configuration from the ConfigMap run.sh makes from epp-config.yaml.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: smollm2-epp
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: smollm2-epp
+rules:
+- apiGroups: [""]
+  resources: [pods]
+  verbs: [get, watch, list]
+- apiGroups: [inference.networking.k8s.io]
+  resources: [inferencepools]
+  verbs: [get, watch, list]
+- apiGroups: [llm-d.ai]
+  resources: [inferenceobjectives, inferencemodelrewrites]
+  verbs: [get, watch, list]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: smollm2-epp
+subjects:
+- kind: ServiceAccount
+  name: smollm2-epp
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: smollm2-epp
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smollm2-epp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smollm2-epp
+  template:
+    metadata:
+      labels:
+        app: smollm2-epp
+    spec:
+      serviceAccountName: smollm2-epp
+      containers:
+      - name: epp
+        image: ghcr.io/llm-d/llm-d-router-endpoint-picker:v0.10.0
+        args:
+        - --pool-name=smollm2
+        - --pool-namespace=default
+        - --pool-group=inference.networking.k8s.io
+        - --config-file=/config/epp-config.yaml
+        - --grpc-port=9002
+        - --grpc-health-port=9003
+        - --metrics-endpoint-auth=false
+        - --tracing=false
+        - --zap-encoder=json
+        ports:
+        - containerPort: 9002
+        - containerPort: 9003
+        - containerPort: 9090
+        readinessProbe:
+          grpc:
+            port: 9003
+            service: inference-extension
+          periodSeconds: 2
+        volumeMounts:
+        - name: config
+          mountPath: /config
+      volumes:
+      - name: config
+        configMap:
+          name: smollm2-epp-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smollm2-epp
+spec:
+  selector:
+    app: smollm2-epp
+  ports:
+  - name: grpc
+    port: 9002
+    appProtocol: http2
+  - name: metrics
+    port: 9090
+---
+# The picker serves ext_proc over TLS with a self-signed
+# certificate; tell Istio's gateway to accept it. Lab only.
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: smollm2-epp-tls
+spec:
+  host: smollm2-epp.default.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: SIMPLE
+      insecureSkipVerify: true

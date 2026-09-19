@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_secrets.py
+
+  books:
+    # Discovers every book directory that has a manifest and runs its
+    # tests against the pinned versions. Skips cleanly while no book has
+    # code yet, so an empty repository is a passing repository.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: find books with code
+        id: find
+        run: |
+          books=$(for d in */; do [ -f "$d/pyproject.toml" ] && echo "${d%/}"; done)
+          echo "books=$(echo $books)" >> "$GITHUB_OUTPUT"
+          echo "books with code: ${books:-none}"
+      - name: test pinned
+        if: steps.find.outputs.books != ''
+        run: |
+          for b in ${{ steps.find.outputs.books }}; do
+            echo "== $b"; (cd "$b" && make test)
+          done

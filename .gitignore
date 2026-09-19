@@ -1,0 +1,11 @@
+.env
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+models/
+*.gguf
+*.safetensors
+results/tmp/
+.DS_Store

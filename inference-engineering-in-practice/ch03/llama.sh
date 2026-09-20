@@ -3,7 +3,7 @@
 # Streams requests at a series of offered rates, stamps every chunk
 # at the client, and judges each run against slo.toml.
 . /lab/lib/lab.sh
-RATES=${CH03_RATES:-1 2 3 4 6 8}        # offered requests/s
+RATES=${CH03_RATES:-1 2 3 4 6 8 12 16}  # offered requests/s
 N=${CH03_N:-40}                          # requests per rate
 
 # Half the CPUs for the server: the load generator stamping chunks

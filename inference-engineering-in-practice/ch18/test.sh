@@ -16,6 +16,19 @@ jq -e '.quality["broken-template"] == "fail"' "$g" >/dev/null \
   || die "the quality gate passed a broken chat template"
 echo "ok  quality gate fails the broken chat template"
 
+for c in rerun broken-template; do
+  f=$MEASURED/verify-$c/llama.cpp.jsonl
+  [ -s "$f" ] || die "chapter 17's verifier did not run for $c"
+  jq -se 'length > 0 and all(.[]; .kind and (.valid | type)
+          == "boolean")' "$f" >/dev/null \
+    || die "$f is not a verifier record"
+done
+echo "ok  ch17's verifier ran for both judged candidates"
+
+jq -e '.contract_replies_changed > 0' "$g" >/dev/null \
+  || die "the broken template changed no contract reply"
+echo "ok  the broken template changed contract replies"
+
 jq -e '.performance.rerun == "pass"' "$g" >/dev/null \
   || die "the performance gate failed an unchanged stack"
 echo "ok  performance gate passes an unchanged stack (simulated)"

@@ -7,9 +7,11 @@ one (the baseline) and exit non-zero when it must not ship.
       items correctly, or when fewer than MIN_SAME of its replies
       are the baseline's: at temperature 0 on the same weights, a
       changed reply is a changed output, whatever the score says.
-  performance BASE CAND  `vllm bench serve` results at one fixed
-      input and output length (JSON). Fails when the candidate's
-      goodput is below MIN_GOODPUT of the baseline's.
+  performance BASE CAND  what run.sh kept from `vllm bench serve`
+      at one fixed input and output length (perf-*.json). Fails
+      when the candidate's goodput is below MIN_GOODPUT of the
+      baseline's. Request throughput is printed beside it and
+      gates nothing: it is the number that hides the regression.
 """
 import json
 import sys
@@ -39,6 +41,9 @@ def performance(base, cand):
         (f"goodput: {gc:.2f} req/s, baseline {gb:.2f} "
          f"({gc / gb:.0%}, need {MIN_GOODPUT:.0%})",
          gc >= MIN_GOODPUT * gb),
+        (f"throughput: {cand['request_throughput']:.2f} req/s, "
+         f"baseline {base['request_throughput']:.2f} (not a gate)",
+         True),
         (f"median TPOT: {cand['median_tpot_ms']:.1f} ms, "
          f"baseline {base['median_tpot_ms']:.1f} ms", True)]
 

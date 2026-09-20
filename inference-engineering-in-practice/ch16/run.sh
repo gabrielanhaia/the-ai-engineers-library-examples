@@ -10,12 +10,17 @@
 
 PHASES=${PHASES:-1:30,4:120,0.5:90}    # rate:seconds, open loop
 RUNS=${RUNS:-3}                        # cold starts
+PARTS=${PARTS:-coldstart scaling}      # halves to run
 NODE=ch16-control-plane
 
 step "cluster"
 kind_tools
 start_kind ch16
 
+# The two halves are independent, and each writes its own files:
+# PARTS=coldstart re-records the laptop cold start alone, leaving
+# the simulated scale-out as it was recorded.
+if [[ $PARTS == *coldstart* ]]; then
 step "cold start: vLLM CPU container, $RUNS runs (laptop)"
 need_models hf >"$WORK/models.txt"
 head -n 1 "$WORK/models.txt"
@@ -65,7 +70,9 @@ for i in $(seq 1 "$RUNS"); do
     || true
 done
 python3 report.py coldstart "$MEASURED"
+fi
 
+if [[ $PARTS == *scaling* ]]; then
 step "scale on queue depth (load $PHASES), simulated"
 install_keda
 for f in prometheus.yaml sim.yaml; do
@@ -86,6 +93,7 @@ kubectl get events --field-selector \
   -o custom-columns=TIME:.lastTimestamp,MSG:.message --no-headers \
   >"$MEASURED/hpa-events.txt"
 python3 report.py scaling "$MEASURED"
+fi
 
 step "done"
 kind_manifest

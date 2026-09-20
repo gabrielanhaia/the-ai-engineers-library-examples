@@ -133,19 +133,42 @@ def check_excerpt(file_text, block):
     """Verify a cut-marked excerpt segment by segment.
 
     Each segment must appear verbatim and contiguously in the repo file, and the
-    segments must appear in the order the chapter prints them. Returns a problem
-    string, or None when the excerpt is faithful.
+    segments must appear in the order the chapter prints them.
+
+    The ends matter as much as the middle. An excerpt that stops early with no
+    trailing cut marker reads as a complete file: one in this book ended on a
+    dict literal, so a function appeared to have no request and no return, and
+    every segment in it was verbatim. So a block that does not open with a cut
+    marker must start at line 1, and one that does not close with a cut marker
+    must reach the end of the file.
+
+    Returns a problem string, or None when the excerpt is faithful.
     """
     file_lines = file_text.splitlines()
-    segs = segments(block.splitlines())
+    block_lines = block.splitlines()
+    segs = segments(block_lines)
+    marks = [ln for ln in block_lines if ln.strip()]
+    head_cut = bool(marks) and CUT.match(marks[0])
+    tail_cut = bool(marks) and CUT.match(marks[-1])
+
     at = 0
+    first_at = None
     for n, seg in enumerate(segs, 1):
         i = find_run(file_lines, seg, at)
         if i < 0:
             first = seg[0].strip()[:48]
             return (f"excerpt segment {n} is not in the repo file "
                     f"(starts {first!r})")
+        if first_at is None:
+            first_at = i
         at = i + len(seg)
+
+    if not head_cut and first_at not in (0, None):
+        return (f"excerpt starts at line {first_at + 1} of the file but opens "
+                f"with no `...` cut marker, so it claims to start at the top")
+    if not tail_cut and at < len(file_lines):
+        return (f"excerpt stops at line {at} of {len(file_lines)} with no "
+                f"trailing `...` cut marker, so it claims to be the whole file")
     return None
 
 

@@ -329,7 +329,7 @@
     "chapter": "04",
     "kind": "page",
     "what": "GuideLLM's HTML report, the TTFT and throughput charts of the sweep",
-    "url": "file:///Users/gabrielanhaia/WebstormProjects/the-ai-engineers-library-examples/inference-engineering-in-practice/measured/ch04/guidellm.html",
+    "url": "file://$REPO/inference-engineering-in-practice/measured/ch04/guidellm.html",
     "data": [
       "measured/ch04/guidellm.html"
     ],

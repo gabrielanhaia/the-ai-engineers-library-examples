@@ -21,12 +21,12 @@ closed loop: 1.10 req/s; open loop sent at that rate
 
 == results
  strategy      req/s  in flight  TTFT p50  TTFT p99  TPOT p50
- synchronous    0.37        1.0    294 ms   1474 ms     34 ms
- throughput     1.60       28.0   4451 ms   7394 ms    253 ms
- poisson 0.68   0.97       10.6    418 ms   3085 ms    218 ms
- poisson 0.98   1.15       12.7    766 ms   3637 ms    150 ms
- poisson 1.29   1.18       13.6    721 ms   4215 ms    206 ms
- poisson 1.60   1.68       24.0   1947 ms   4865 ms    232 ms
+ synchronous    0.37        1.0    294 ms   1474 ms     30 ms
+ throughput     1.60       28.0   4451 ms   7394 ms    196 ms
+ poisson 0.68   0.97       10.6    418 ms   3085 ms    215 ms
+ poisson 0.98   1.15       12.7    766 ms   3637 ms    147 ms
+ poisson 1.29   1.18       13.6    721 ms   4215 ms    172 ms
+ poisson 1.60   1.68       24.0   1947 ms   4865 ms    193 ms
 
  loop     rate req/s  peak running  TTFT p50  TTFT p99
  closed         1.10             4    811 ms   1218 ms
@@ -36,7 +36,6 @@ closed loop: 1.10 req/s; open loop sent at that rate
  first        0      0.00   4557 ms        571.5
  again        0      0.88    935 ms       1207.2
  new-seed     1      0.00   3188 ms        526.6
-
 
 == done
 manifest: measured/ch04/machine.json

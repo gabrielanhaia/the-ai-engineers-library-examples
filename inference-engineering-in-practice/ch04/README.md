@@ -17,6 +17,9 @@ the laptop's, and the laptop's curve is a laptop's curve.
    and on a CPU none of them finishes inside a 60-second point.
    `report.py sweep` prints one row per point: achieved request
    rate, mean requests in flight, TTFT p50 and p99, TPOT p50.
+   That column is GuideLLM's `inter_token_latency_ms`, which is
+   this book's TPOT; GuideLLM's own `time_per_output_token_ms`
+   counts the first token too.
    GuideLLM also writes its JSON and its HTML report.
 3. **loops.** `vllm bench serve`, 64 requests of 128 in and 64 out.
    First a closed loop at concurrency 4 (`--max-concurrency 4
@@ -25,7 +28,8 @@ the laptop's, and the laptop's curve is a laptop's curve.
    Poisson arrivals) at R, the request rate the closed loop
    achieved: the same mean load, sent the way users send it.
    `report.py loops` prints both, with the most requests the
-   client ever had in flight.
+   server ever had running (its own `vllm:num_requests_running`
+   gauge, scraped once a second).
 4. **cache.** `vllm bench serve` with its random dataset, 16
    requests of 1,024 tokens in and 32 out, concurrency 4, run
    three times: without `--seed` (it defaults to 0), the same
@@ -89,12 +93,12 @@ closed loop: 1.10 req/s; open loop sent at that rate
 
 == results
  strategy      req/s  in flight  TTFT p50  TTFT p99  TPOT p50
- synchronous    0.37        1.0    294 ms   1474 ms     34 ms
- throughput     1.60       28.0   4451 ms   7394 ms    253 ms
- poisson 0.68   0.97       10.6    418 ms   3085 ms    218 ms
- poisson 0.98   1.15       12.7    766 ms   3637 ms    150 ms
- poisson 1.29   1.18       13.6    721 ms   4215 ms    206 ms
- poisson 1.60   1.68       24.0   1947 ms   4865 ms    232 ms
+ synchronous    0.37        1.0    294 ms   1474 ms     30 ms
+ throughput     1.60       28.0   4451 ms   7394 ms    196 ms
+ poisson 0.68   0.97       10.6    418 ms   3085 ms    215 ms
+ poisson 0.98   1.15       12.7    766 ms   3637 ms    147 ms
+ poisson 1.29   1.18       13.6    721 ms   4215 ms    172 ms
+ poisson 1.60   1.68       24.0   1947 ms   4865 ms    193 ms
 
  loop     rate req/s  peak running  TTFT p50  TTFT p99
  closed         1.10             4    811 ms   1218 ms
@@ -104,7 +108,6 @@ closed loop: 1.10 req/s; open loop sent at that rate
  first        0      0.00   4557 ms        571.5
  again        0      0.88    935 ms       1207.2
  new-seed     1      0.00   3188 ms        526.6
-
 
 == done
 manifest: measured/ch04/machine.json
@@ -119,10 +122,13 @@ the repeated command's total tok/s is higher than the first's.
 
 ## Files
 
-- `report.py`: the three tables, from the recorded files.
+- `report.py`: the three tables, from the recorded files, and
+  `report.py derived`, which recomputes every number the chapter
+  prints. `derived.py` is what CI reruns.
 - In `measured/ch04/`: `guidellm.json` and `guidellm.html`
   (GuideLLM's own report, the chapter's screenshot),
   `guidellm-console.txt`, `closed.json`, `open.json`,
   `cache-first.json`, `cache-again.json`, `cache-new-seed.json`
-  (each `vllm bench serve` result) and `cache.tsv` (the counters
-  before and after each cache run).
+  (each `vllm bench serve` result), `cache.tsv` (the counters
+  before and after each cache run) and `derived.json` (every
+  number the chapter prints, recomputed from the files above).

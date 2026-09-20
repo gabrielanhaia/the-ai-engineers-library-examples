@@ -1,0 +1,170 @@
+{
+ "chapter": "04",
+ "outputs": {
+  "report.py sweep": " strategy      req/s  in flight  TTFT p50  TTFT p99  TPOT p50\n synchronous    0.37        1.0    294 ms   1474 ms     30 ms\n throughput     1.60       28.0   4451 ms   7394 ms    196 ms\n poisson 0.68   0.97       10.6    418 ms   3085 ms    215 ms\n poisson 0.98   1.15       12.7    766 ms   3637 ms    147 ms\n poisson 1.29   1.18       13.6    721 ms   4215 ms    172 ms\n poisson 1.60   1.68       24.0   1947 ms   4865 ms    193 ms\n",
+  "report.py loops": " loop     rate req/s  peak running  TTFT p50  TTFT p99\n closed         1.10             4    811 ms   1218 ms\n open           1.02            16    328 ms   2098 ms\n",
+  "report.py cache": " run       seed  hit rate  TTFT p50  total tok/s\n first        0      0.00   4557 ms        571.5\n again        0      0.88    935 ms       1207.2\n new-seed     1      0.00   3188 ms        526.6\n"
+ },
+ "numbers": [
+  {
+   "key": "sweep.sync_first_ttft_ms",
+   "value": 1474.186658859253,
+   "shown": "1,474 ms"
+  },
+  {
+   "key": "sweep.sync_rest_min_ms",
+   "value": 278.0177593231201,
+   "shown": "278"
+  },
+  {
+   "key": "sweep.sync_rest_max_ms",
+   "value": 528.3763408660889,
+   "shown": "528"
+  },
+  {
+   "key": "sweep.sync_requests",
+   "value": 23,
+   "shown": "23 samples"
+  },
+  {
+   "key": "sweep.prompt_tokens",
+   "value": 158,
+   "shown": "158"
+  },
+  {
+   "key": "sweep.poisson1_label_rate",
+   "value": 0.675,
+   "shown": "poisson 0.68"
+  },
+  {
+   "key": "sweep.poisson1_rate",
+   "value": 0.9666666666666667,
+   "shown": "0.97"
+  },
+  {
+   "key": "sweep.poisson1_gap_first_ten",
+   "value": 1.5112004280090332,
+   "shown": "1.511"
+  },
+  {
+   "key": "sweep.poisson1_gap_second_ten",
+   "value": 0.03752422332763672,
+   "shown": "0.038"
+  },
+  {
+   "key": "sweep.poisson1_gap_third_ten",
+   "value": 0.47648000717163086,
+   "shown": "0.476"
+  },
+  {
+   "key": "loops.closed_rate",
+   "value": 1.096631911169321,
+   "shown": "1.10"
+  },
+  {
+   "key": "loops.closed_ttft_p50_ms",
+   "value": 810.87763000005,
+   "shown": "811 ms"
+  },
+  {
+   "key": "loops.closed_ttft_p99_ms",
+   "value": 1218.1231677205324,
+   "shown": "1,218 ms"
+  },
+  {
+   "key": "loops.closed_p99_over_p50",
+   "value": 1.5022281077361295,
+   "shown": "1.5 times"
+  },
+  {
+   "key": "loops.closed_peak_running",
+   "value": 4,
+   "shown": "4"
+  },
+  {
+   "key": "loops.open_rate",
+   "value": 1.0238634825482404,
+   "shown": "1.02"
+  },
+  {
+   "key": "loops.open_ttft_p50_ms",
+   "value": 328.0289565000203,
+   "shown": "328 ms"
+  },
+  {
+   "key": "loops.open_ttft_p99_ms",
+   "value": 2097.584379770349,
+   "shown": "2,098 ms"
+  },
+  {
+   "key": "loops.open_p99_over_p50",
+   "value": 6.394509808374858,
+   "shown": "6.4 times"
+  },
+  {
+   "key": "loops.open_peak_running",
+   "value": 16,
+   "shown": "16"
+  },
+  {
+   "key": "cache.hits",
+   "value": 14336.0,
+   "shown": "14,336"
+  },
+  {
+   "key": "cache.queries",
+   "value": 16384.0,
+   "shown": "16,384"
+  },
+  {
+   "key": "cache.hit_rate",
+   "value": 0.875,
+   "shown": "0.875"
+  },
+  {
+   "key": "cache.hits_per_prompt",
+   "value": 896.0,
+   "shown": "896"
+  },
+  {
+   "key": "cache.first_ttft_p50_ms",
+   "value": 4556.8231329998525,
+   "shown": "4,557 ms"
+  },
+  {
+   "key": "cache.first_tok_s",
+   "value": 571.5002462533417,
+   "shown": "571.5"
+  },
+  {
+   "key": "cache.again_ttft_p50_ms",
+   "value": 934.920375499587,
+   "shown": "935 ms"
+  },
+  {
+   "key": "cache.again_tok_s",
+   "value": 1207.1726250923277,
+   "shown": "1,207.2"
+  },
+  {
+   "key": "cache.new_seed_ttft_p50_ms",
+   "value": 3187.9295020003156,
+   "shown": "3,188"
+  },
+  {
+   "key": "cache.new_seed_tok_s",
+   "value": 526.5671267618948,
+   "shown": "526.6"
+  },
+  {
+   "key": "cache.speedup",
+   "value": 2.1122871477420104,
+   "shown": "2.1"
+  },
+  {
+   "key": "cache.cold_ttft_gap_ms",
+   "value": 1368.893630999537,
+   "shown": "1,369 ms"
+  }
+ ]
+}

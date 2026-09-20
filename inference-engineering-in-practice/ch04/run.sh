@@ -105,5 +105,12 @@ for p in $PARTS; do
   echo
 done
 
+# Every number the chapter prints, from the files above, for the
+# derived-data CI job (scripts/check_derived.py). A partial run
+# (CI runs the cache part alone) has nothing to write it from.
+if [[ $PARTS == *sweep*loops*cache* ]]; then
+  python3 report.py derived "$MEASURED" > "$MEASURED/derived.json"
+fi
+
 step "done"
 write_manifest

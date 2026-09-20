@@ -18,6 +18,9 @@ AIEL_MACHINE="Apple M2 Pro, 16 GB, OrbStack 29.4.0 (linux/arm64 VM)" \
 - `cache-first.json`, `cache-again.json`, `cache-new-seed.json`: the
   three cache runs; `cache.tsv`: `vllm:prefix_cache_hits_total` and
   `vllm:prefix_cache_queries_total` before and after each.
+- `derived.json`: every number the chapter prints, recomputed
+  from the files here by `ch04/derived.py`; the `derived-data` CI
+  job reruns it and fails on any difference.
 - `runs.tsv`: the start and end of every `vllm bench serve` run.
 - `metrics.om.gz`: the engine's series, one scrape a second, as
   OpenMetrics text (`promtool tsdb create-blocks-from openmetrics`).

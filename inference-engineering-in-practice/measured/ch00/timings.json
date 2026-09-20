@@ -1,11 +1,11 @@
 {
   "cache_n": 0,
   "prompt_n": 35,
-  "prompt_ms": 105.281,
-  "prompt_per_token_ms": 3.0080285714285715,
-  "prompt_per_second": 332.44365080118916,
+  "prompt_ms": 112.65,
+  "prompt_per_token_ms": 3.218571428571429,
+  "prompt_per_second": 310.69684864624946,
   "predicted_n": 32,
-  "predicted_ms": 2617.265,
-  "predicted_per_token_ms": 84.42790322580645,
-  "predicted_per_second": 11.844425382985674
+  "predicted_ms": 2709.951,
+  "predicted_per_token_ms": 87.41777419354838,
+  "predicted_per_second": 11.439321227579393
 }

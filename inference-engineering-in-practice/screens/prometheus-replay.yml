@@ -1,0 +1,7 @@
+# Prometheus for the replay stack: it scrapes nothing and only serves
+# the blocks `promtool tsdb create-blocks-from openmetrics` built from
+# a committed measured/chNN/*.om file. screens/replay.sh writes the
+# blocks and starts this config.
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s

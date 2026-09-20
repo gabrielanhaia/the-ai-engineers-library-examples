@@ -1,0 +1,337 @@
+[
+  {
+    "id": "S1-scheduler-state",
+    "figure": "fig-s1",
+    "chapter": "09",
+    "kind": "grafana",
+    "what": "vLLM's Scheduler State and Cache Utilization panels over the KV-pressure run",
+    "replay": "ch09",
+    "data": [
+      "measured/ch09/metrics.om.gz"
+    ],
+    "panels": [
+      {
+        "dashboard": "b281712d-8bff-41ef-9f3f-71ad43c05e9b",
+        "panelId": 3,
+        "height": 330
+      },
+      {
+        "dashboard": "b281712d-8bff-41ef-9f3f-71ad43c05e9b",
+        "panelId": 4,
+        "height": 300
+      }
+    ],
+    "vars": {
+      "model_name": "smollm2-360m"
+    },
+    "from": 1789852145000,
+    "to": 1789852512000,
+    "width": 520,
+    "scale": 4,
+    "provenance": "replayed from measured/ch09/metrics.om.gz (vLLM 0.29.0 CPU backend on the reference laptop, 2026-09-19)",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "vLLM 0.29.0 (CPU backend)"
+    ],
+    "caption": "vLLM 0.29.0's own Scheduler State and Cache Utilization panels in Grafana 13.2.2, replayed from measured/ch09/: the running count holds at 13 while three requests wait.",
+    "notes": [
+      "MEASURED on the reference laptop's CPU backend. No GPU measurement: the panel's GPU Cache Usage label is vLLM's own string, shared across backends.",
+      "The two panels are two d-solo captures of vLLM's dashboard, stacked; the dashboard JSON is vLLM 0.29.0's, with per-series line style, width and colour overridden for black-and-white print (screens/patch_dashboards.py). No query, unit, title or axis was changed.",
+      "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
+    ],
+    "scrapeInterval": "1s"
+  },
+  {
+    "id": "S2-preemptions",
+    "figure": "fig-s2",
+    "chapter": "09",
+    "kind": "grafana",
+    "what": "increase(vllm:num_preemptions_total) over the same replayed run",
+    "replay": "ch09",
+    "data": [
+      "measured/ch09/metrics.om.gz"
+    ],
+    "panels": [
+      {
+        "dashboard": "book-screens",
+        "panelId": 2,
+        "height": 330
+      }
+    ],
+    "from": 1789852145000,
+    "to": 1789852512000,
+    "width": 520,
+    "scale": 4,
+    "provenance": "replayed from measured/ch09/metrics.om.gz (vLLM 0.29.0 CPU backend on the reference laptop, 2026-09-19)",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "vLLM 0.29.0 (CPU backend)"
+    ],
+    "caption": "The preemption counter over the same replayed run: flat through concurrency 4, 8 and 12, one step at 13 and one more at 16; Grafana 13.2.2, measured/ch09/.",
+    "notes": [
+      "vLLM 0.29.0 ships no preemption panel; this one is provisioned by the book (screens/dashboards/book-screens.json, panel 2).",
+      "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
+    ],
+    "scrapeInterval": "1s"
+  },
+  {
+    "id": "S3-ttft-itl",
+    "figure": "fig-s3",
+    "chapter": "03",
+    "kind": "grafana",
+    "what": "vLLM's TTFT Over Time and ITL Over Time panels during a request-rate ramp",
+    "replay": "ch03",
+    "data": [
+      "measured/ch03/vllm-ramp.om.gz"
+    ],
+    "panels": [
+      {
+        "dashboard": "performance-statistics",
+        "panelId": 10,
+        "height": 300
+      },
+      {
+        "dashboard": "performance-statistics",
+        "panelId": 15,
+        "height": 360
+      }
+    ],
+    "from": 1789856518000,
+    "to": 1789856843000,
+    "width": 520,
+    "scale": 4,
+    "provenance": "replayed from measured/ch03/vllm-ramp.om.gz (vLLM 0.29.0 CPU backend on the reference laptop, 2026-09-19)",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "vLLM 0.29.0 (CPU backend)"
+    ],
+    "caption": "vLLM 0.29.0's TTFT Over Time and ITL Over Time panels in Grafana 13.2.2, replayed from measured/ch03/: a request-rate ramp on the CPU backend of the reference laptop.",
+    "notes": [
+      "Both panels come from vLLM 0.29.0's Performance Statistics dashboard, print-patched for line style and colour only.",
+      "Grafana's datasource step is 15 s here. vLLM's Performance Statistics panels use rate(...[$__interval]) rather than $__rate_interval, so a step equal to the lab's 5-second scrape interval puts one sample in the window and the panels return nothing; 15 s is three samples. The lab's own queries (measured/ch03/promql.json) are evaluated at the same 15-second step.",
+      "The TTFT panel's clock starts at the engine; the ITL panel is chunk-level, not a per-request TPOT.",
+      "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
+    ],
+    "scrapeInterval": "15s"
+  },
+  {
+    "id": "S4-hit-rate-ttft",
+    "figure": "fig-s4",
+    "chapter": "10",
+    "kind": "grafana",
+    "what": "prefix-cache hit rate beside TTFT as shared-prefix traffic switches on",
+    "replay": "ch10",
+    "data": [
+      "measured/ch10/metrics.om.gz"
+    ],
+    "panels": [
+      {
+        "dashboard": "book-screens",
+        "panelId": 4,
+        "height": 300
+      },
+      {
+        "dashboard": "book-screens",
+        "panelId": 5,
+        "height": 300
+      }
+    ],
+    "from": 1789850136000,
+    "to": 1789850234000,
+    "width": 520,
+    "scale": 4,
+    "provenance": "replayed from measured/ch10/metrics.om.gz (vLLM 0.29.0 CPU backend on the reference laptop, 2026-09-19)",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "vLLM 0.29.0 (CPU backend)"
+    ],
+    "caption": "Prefix-cache hit rate and mean TTFT as shared-prefix traffic takes over, Grafana 13.2.2, replayed from measured/ch10/: vLLM 0.29.0 CPU backend on the reference laptop.",
+    "notes": [
+      "vLLM 0.29.0's dashboards carry no hit-ratio panel; both panels are the book's (screens/dashboards/book-screens.json, panels 4 and 5).",
+      "The milliseconds are this CPU's. The hit rate is what transfers.",
+      "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
+    ],
+    "scrapeInterval": "1s"
+  },
+  {
+    "id": "S5-replica-hit-rate",
+    "figure": "fig-s5",
+    "chapter": "14",
+    "kind": "grafana",
+    "what": "per-replica prefix-cache hit rate, round-robin run then prefix-aware run",
+    "replay": "ch14",
+    "data": [
+      "measured/ch14/replicas.om"
+    ],
+    "panels": [
+      {
+        "dashboard": "book-screens",
+        "panelId": 6,
+        "height": 390
+      }
+    ],
+    "from": 1789843845000,
+    "to": 1789843894000,
+    "width": 560,
+    "scale": 4,
+    "provenance": "replayed from measured/ch14/replicas.om (simulated: llm-d-inference-sim v0.11.2 behind llm-d-router v0.10.0 and Istio 1.30.4 on kind, reference laptop, 2026-09-19)",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "llm-d-inference-sim v0.11.2",
+      "llm-d-router v0.10.0",
+      "Istio 1.30.4",
+      "kind v0.33.0"
+    ],
+    "caption": "Simulated: per-replica prefix-cache hit rate, the round-robin run then the prefix-aware run, from measured/ch14/replicas.om (llm-d-inference-sim v0.11.2 on kind; Grafana 13.2.2).",
+    "notes": [
+      "SIMULATED. llm-d-inference-sim v0.11.2's timings are its configuration; the hit counts are the router's placement, not a GPU's cache.",
+      "The two runs were recorded back to back and sit in the two halves of the time axis, with the replicas restarted in between.",
+      "Prometheus's lookback is cut from its 5-minute default to 10 s for this capture, so each run's series stop when that run stops instead of carrying their last value across the other run's window. Nothing is interpolated or filled.",
+      "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
+    ],
+    "scrapeInterval": "2s",
+    "promArgs": "--query.lookback-delta=10s"
+  },
+  {
+    "id": "S6-keda-scale-out",
+    "figure": "fig-s6",
+    "chapter": "16",
+    "kind": "grafana",
+    "what": "KEDA scale-out: queue depth against desired and ready replicas",
+    "replay": "ch16",
+    "data": [
+      "measured/ch16/timeline.om"
+    ],
+    "panels": [
+      {
+        "dashboard": "book-screens",
+        "panelId": 7,
+        "height": 380
+      }
+    ],
+    "from": 1789842200000,
+    "to": 1789842478000,
+    "width": 560,
+    "scale": 4,
+    "provenance": "replayed from measured/ch16/timeline.om (simulated: KEDA 2.20.2 scaling llm-d-inference-sim v0.11.2 on kind v0.33.0, reference laptop, 2026-09-19)",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "KEDA 2.20.2",
+      "llm-d-inference-sim v0.11.2",
+      "kind v0.33.0"
+    ],
+    "caption": "Simulated: KEDA 2.20.2 scaling a pool of llm-d-inference-sim v0.11.2 on kind v0.33.0, queue depth against desired and ready replicas, from measured/ch16/timeline.om.",
+    "notes": [
+      "SIMULATED. The simulator's 20-second start-up is its configuration, not a measured cold start; the laptop's measured vLLM cold start is 108.6 s.",
+      "All four replicas are ready at 67 s and the queue empties only at 155 s: the backlog is stranded on the replica that accepted it.",
+      "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
+    ],
+    "scrapeInterval": "2s"
+  },
+  {
+    "id": "S11-llama-cpp-webui",
+    "figure": "fig-s11",
+    "chapter": "01",
+    "kind": "page",
+    "what": "llama.cpp's built-in web UI streaming an answer on the reference laptop",
+    "url": "http://127.0.0.1:8080/",
+    "width": 640,
+    "height": 700,
+    "scale": 4,
+    "serverHint": "bash screens/live-servers.sh llama",
+    "steps": [
+      {
+        "do": "wait",
+        "ms": 1500
+      },
+      {
+        "do": "fill",
+        "selector": "textarea",
+        "text": "In one paragraph, explain what a token is and why a language model is billed by the token."
+      },
+      {
+        "do": "wait",
+        "ms": 400
+      },
+      {
+        "do": "click",
+        "selector": "button:has-text(\"Send\")"
+      }
+    ],
+    "stream": {
+      "stopSelector": "button:has-text(\"Stop\")",
+      "minChars": 700,
+      "pollMs": 30,
+      "timeoutMs": 90000
+    },
+    "provenance": "live on the reference laptop: llama.cpp v0.4.1 (build b10964) serving SmolLM2-135M-Instruct Q8_0 on the CPU",
+    "tools": [
+      "llama.cpp v0.4.1 (server-v0.4.1, build b10964)",
+      "SmolLM2-135M-Instruct Q8_0"
+    ],
+    "caption": "llama.cpp v0.4.1's built-in web UI mid-answer, SmolLM2-135M-Instruct Q8_0 on the reference laptop's CPU: the model, the token count and the tokens per second are all local.",
+    "images": [
+      "LLAMA_CPP_IMAGE"
+    ],
+    "notes": [
+      "MEASURED on the reference laptop (Apple M2 Pro, 16 GB, CPU only). The tokens-per-second the UI shows are this laptop's and belong to no GPU.",
+      "The frame is the last one taken while the stop control was still up, so the answer really is mid-stream; nothing is staged."
+    ]
+  },
+  {
+    "id": "S10-guidellm-report",
+    "figure": "fig-s10",
+    "chapter": "04",
+    "kind": "page",
+    "what": "GuideLLM's HTML report, the TTFT and throughput charts of the sweep",
+    "url": "file:///Users/gabrielanhaia/WebstormProjects/the-ai-engineers-library-examples/inference-engineering-in-practice/measured/ch04/guidellm.html",
+    "data": [
+      "measured/ch04/guidellm.html"
+    ],
+    "width": 1400,
+    "height": 1100,
+    "scale": 4,
+    "css": "svg text, svg tspan { font-size: 14px !important; }\nsvg { overflow: visible !important; }",
+    "steps": [
+      {
+        "do": "wait",
+        "ms": 5000
+      },
+      {
+        "do": "evalFile",
+        "file": "screens/guidellm-print.js"
+      },
+      {
+        "do": "wait",
+        "ms": 1200
+      }
+    ],
+    "selectors": [
+      "[data-shot=\"ttft\"]",
+      "[data-shot=\"thru\"]"
+    ],
+    "gapPx": 8,
+    "gapColour": "#12151c",
+    "provenance": "measured/ch04/guidellm.html, the report GuideLLM 0.7.4 wrote for the sweep against vLLM 0.29.0's CPU backend on the reference laptop, 2026-09-19",
+    "tools": [
+      "GuideLLM 0.7.4",
+      "vLLM 0.29.0 (CPU backend)"
+    ],
+    "caption": "GuideLLM 0.7.4's own report for the sweep in measured/ch04/: time to first token and throughput against achieved rate, vLLM 0.29.0 CPU backend on the reference laptop.",
+    "images": [
+      "GUIDELLM_IMAGE",
+      "VLLM_CPU_IMAGE"
+    ],
+    "notes": [
+      "MEASURED on the reference laptop's CPU backend. Where this curve bends is set by that CPU and says nothing about where a GPU's bends.",
+      "GuideLLM 0.7.4's report ships dark-only: it has no light theme and ignores prefers-color-scheme, so this is the one capture in the book that is not on a white ground. Inverting it would have shown the reader a report that does not exist.",
+      "Print patches, and nothing else (screens/guidellm-print.js): the chart's SVG type is raised from 10 px to 14 px, the rotated y-axis title is slid clear of the wider tick labels, and each of the five series gets a line style, because p50, p90, p95, p99 and the mean are otherwise told apart by colour alone. No colour, number, axis or data point is changed."
+    ]
+  }
+]

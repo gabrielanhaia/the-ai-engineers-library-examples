@@ -1,0 +1,11 @@
+# Provisions every dashboard JSON in the capture stack's folder:
+# vLLM 0.29.0's own three (fetched by the URL+SHA-256 tools.env pins)
+# and screens/dashboards/*.json, the panels the book adds.
+apiVersion: 1
+providers:
+  - name: screens
+    type: file
+    allowUiUpdates: false
+    options:
+      path: /var/lib/grafana/dashboards
+      foldersFromFilesStructure: false

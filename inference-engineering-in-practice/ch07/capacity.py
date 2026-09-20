@@ -91,8 +91,9 @@ def plan(w, hw, models, frac):
         fits = kv_budget(gpu, weights, frac) // per_tok
         batch = running_batch(peak, ttft, osl, tpot)
         tokens = batch * (isl + osl / 2)
-        need = math.ceil(tokens / fits) * unit
-        each = tokens / (need // unit)
+        replicas = math.ceil(tokens / fits)
+        need = math.ceil(replicas / unit) * unit
+        each = tokens / replicas
         step = (weights + each * per_tok) / (gpu["tb_s"] * 1e12)
         print(f"  W          <= {ttft:g} + {osl - 1} x {tpot:g} = "
               f"{batch / peak:.2f} s in service")
@@ -104,7 +105,7 @@ def plan(w, hw, models, frac):
               f"{tokens * per_tok / 1e9:,.1f} GB")
         print(f"  memory     {tokens:,.0f} / {fits:,.0f} = "
               f"{tokens / fits:.2f} -> {need} {w['gpu']}")
-        print(f"             each {batch / (need // unit):,.1f} "
+        print(f"             each {batch / replicas:,.1f} "
               f"seqs, {each:,.0f} tokens ({each / fits:.0%} of fit)")
         print(f"  step       >= ({weights / 1e9:.2f} + "
               f"{each * per_tok / 1e9:.2f}) GB / {gpu['tb_s']} TB/s"

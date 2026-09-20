@@ -1,0 +1,9 @@
+# TYPE vllm:generation_tokens counter
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 0 1789894369.424
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 431746 1789894374.479
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 885610 1789894379.533
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 1342276 1789894384.614
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 1796894 1789894389.671
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 2229508 1789894394.491
+vllm:generation_tokens_total{model_name="gpt-oss",kind="simulated"} 2684779 1789894399.553
+# EOF

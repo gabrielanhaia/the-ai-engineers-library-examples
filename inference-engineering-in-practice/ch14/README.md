@@ -52,7 +52,12 @@ and istioctl once (pinned by SHA-256 in `../tools.env`). The first
 run also pulls the kind node image and the cluster's images (about
 1 GB) and the lab models; after that it takes about 7 minutes. It
 needs about 4 GB of free memory for the vLLM step, which runs
-before the cluster exists.
+before the cluster exists. `PARTS=lora` (or `PARTS=routing`) runs
+one part of the lab: the real-engine multi-LoRA step, or the
+simulated routing and priority steps on the cluster. A part run on
+its own writes only its own files, so the multi-LoRA step can be
+re-recorded on a quiet machine without disturbing the simulated
+records; `PARTS=lora` writes its manifest to `machine-lora.json`.
 
 ## Expected output
 

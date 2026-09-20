@@ -12,8 +12,13 @@
 CONVS=${CONVS:-12}        # conversations per routing policy
 FLOOD=${FLOOD:-36}        # concurrent batch requests in the flood
 PROBES=${PROBES:-20}      # probes, one a second
+PARTS=${PARTS:-lora routing}   # parts to run
 GW=ch14-control-plane:30080
 
+# The two parts are independent, and each writes its own files:
+# PARTS=lora re-records the real-engine step alone, leaving the
+# simulated routing and priority records as they were.
+if [[ $PARTS == *lora* ]]; then
 step "multi-LoRA on vLLM CPU (real engine, not simulated)"
 need_models hf lora >"$WORK/models.txt"
 head -n 1 "$WORK/models.txt"
@@ -28,7 +33,9 @@ for n in 1 2; do
   stop_server vllm
 done
 python3 report.py lora "$MEASURED"
+fi
 
+if [[ $PARTS == *routing* ]]; then
 step "cluster"
 kind_tools istioctl
 start_kind ch14
@@ -167,6 +174,13 @@ for cls in interactive batch; do
   kill "$q"
 done
 python3 report.py priority "$MEASURED"
+fi
 
 step "done"
-kind_manifest
+# A part re-recorded on its own writes its own manifest, so it never
+# overwrites the manifest of the part it left alone.
+if [ "$PARTS" = lora ]; then
+  write_manifest "$MEASURED/machine-lora.json"
+else
+  kind_manifest
+fi

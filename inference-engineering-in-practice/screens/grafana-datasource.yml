@@ -1,8 +1,15 @@
 # Provisions the Prometheus datasource for the capture stack.
+# `timeInterval` is the lab's scrape interval: it is the floor Grafana
+# puts under $__interval and $__rate_interval, so a datasource left at
+# the 15 s default quietly decimates a lab that scrapes every second.
+# screens/replay.sh rewrites it per replayed data file.
 apiVersion: 1
 datasources:
   - name: Prometheus
     type: prometheus
+    uid: prometheus
     access: proxy
     url: http://prometheus:9090
     isDefault: true
+    jsonData:
+      timeInterval: 5s

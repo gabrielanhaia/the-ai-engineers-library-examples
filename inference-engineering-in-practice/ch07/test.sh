@@ -58,3 +58,35 @@ for w in c.toml(c.HERE / "examples.toml")["workload"]:
     assert fleet >= max(memory, rate) and fleet % w["unit"] == 0
 print("ok  every fleet covers both counts, in whole units")
 PY
+
+python3 - <<'PY' || die "the purchase unit multiplied a GPU count"
+import contextlib
+import io
+import capacity as c
+
+# The purchase unit rounds the memory count UP to a whole unit; it
+# never multiplies it. A workload whose KV needs three GPUs is 8
+# H100 when you buy 8 at a time, never 24, and the per-replica line
+# says the same thing whatever the unit is.
+hw = c.toml(c.INPUTS / "hardware.toml")
+models = c.toml(c.INPUTS / "models.toml")
+base = c.toml(c.HERE / "examples.toml")["workload"][0]
+
+
+def memory_count(unit):
+    out = io.StringIO()
+    with contextlib.redirect_stdout(out):
+        need, _, _ = c.plan(dict(base, unit=unit), hw, models, 0.92)
+    per = [ln for ln in out.getvalue().splitlines() if "seqs," in ln]
+    return need, per
+
+
+one, per_one = memory_count(1)
+assert one > 1, "this workload must need more than one GPU"
+for unit in (2, 8):
+    need, per = memory_count(unit)
+    assert need % unit == 0, f"{need} is not whole units of {unit}"
+    assert one <= need < one + unit, f"unit {unit} gave {need}"
+    assert per == per_one, "the per-replica line moved with the unit"
+print("ok  the purchase unit rounds the count up, never multiplies")
+PY

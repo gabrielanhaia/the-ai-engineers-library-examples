@@ -40,7 +40,12 @@
       "The two panels are two d-solo captures of vLLM's dashboard, stacked; the dashboard JSON is vLLM 0.29.0's, with per-series line style, width and colour overridden for black-and-white print (screens/patch_dashboards.py). No query, unit, title or axis was changed.",
       "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
     ],
-    "scrapeInterval": "1s"
+    "scrapeInterval": "1s",
+    "images": [
+      "VLLM_CPU_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
+    ]
   },
   {
     "id": "S2-preemptions",
@@ -69,12 +74,17 @@
       "Prometheus v3.14.0",
       "vLLM 0.29.0 (CPU backend)"
     ],
-    "caption": "The preemption counter over the same replayed run: flat through concurrency 4, 8 and 12, one step at 13 and one more at 16; Grafana 13.2.2, measured/ch09/.",
+    "caption": "The preemption counter over the same replayed run: flat through concurrency 4, 8 and 12, one step at 13 and one more at 16; Grafana 13.2.2, vLLM 0.29.0 CPU backend, measured/ch09/.",
     "notes": [
       "vLLM 0.29.0 ships no preemption panel; this one is provisioned by the book (screens/dashboards/book-screens.json, panel 2).",
       "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
     ],
-    "scrapeInterval": "1s"
+    "scrapeInterval": "1s",
+    "images": [
+      "VLLM_CPU_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
+    ]
   },
   {
     "id": "S3-ttft-itl",
@@ -115,7 +125,12 @@
       "The TTFT panel's clock starts at the engine; the ITL panel is chunk-level, not a per-request TPOT.",
       "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
     ],
-    "scrapeInterval": "15s"
+    "scrapeInterval": "15s",
+    "images": [
+      "VLLM_CPU_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
+    ]
   },
   {
     "id": "S4-hit-rate-ttft",
@@ -155,7 +170,12 @@
       "The milliseconds are this CPU's. The hit rate is what transfers.",
       "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
     ],
-    "scrapeInterval": "1s"
+    "scrapeInterval": "1s",
+    "images": [
+      "VLLM_CPU_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
+    ]
   },
   {
     "id": "S5-replica-hit-rate",
@@ -195,7 +215,15 @@
       "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
     ],
     "scrapeInterval": "2s",
-    "promArgs": "--query.lookback-delta=10s"
+    "promArgs": "--query.lookback-delta=10s",
+    "images": [
+      "LLM_D_SIM_IMAGE",
+      "LLM_D_EPP_IMAGE",
+      "ISTIO_PILOT_IMAGE",
+      "KIND_NODE_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
+    ]
   },
   {
     "id": "S6-keda-scale-out",
@@ -226,13 +254,20 @@
       "llm-d-inference-sim v0.11.2",
       "kind v0.33.0"
     ],
-    "caption": "Simulated: KEDA 2.20.2 scaling a pool of llm-d-inference-sim v0.11.2 on kind v0.33.0, queue depth against desired and ready replicas, from measured/ch16/timeline.om.",
+    "caption": "Simulated: KEDA 2.20.2 scaling a pool of llm-d-inference-sim v0.11.2 on kind v0.33.0, queue depth against desired and ready replicas; Grafana 13.2.2, measured/ch16/timeline.om.",
     "notes": [
       "SIMULATED. The simulator's 20-second start-up is its configuration, not a measured cold start; the laptop's measured vLLM cold start is 108.6 s.",
       "All four replicas are ready at 67 s and the queue empties only at 155 s: the backlog is stranded on the replica that accepted it.",
       "Grafana's 'Powered by Grafana' embed watermark, which sits over the plot in the top-right corner and cannot be switched off in the OSS build, was removed from the DOM before the shot. Nothing else on the panel was changed."
     ],
-    "scrapeInterval": "2s"
+    "scrapeInterval": "2s",
+    "images": [
+      "LLM_D_SIM_IMAGE",
+      "KEDA_IMAGE",
+      "KIND_NODE_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
+    ]
   },
   {
     "id": "S11-llama-cpp-webui",
@@ -242,8 +277,8 @@
     "what": "llama.cpp's built-in web UI streaming an answer on the reference laptop",
     "url": "http://127.0.0.1:8080/",
     "width": 640,
-    "height": 700,
-    "scale": 4,
+    "height": 720,
+    "scale": 3,
     "serverHint": "bash screens/live-servers.sh llama",
     "steps": [
       {
@@ -253,7 +288,7 @@
       {
         "do": "fill",
         "selector": "textarea",
-        "text": "In one paragraph, explain what a token is and why a language model is billed by the token."
+        "text": "What is a token, and why is a language model billed by the token? Answer in three sentences."
       },
       {
         "do": "wait",
@@ -266,22 +301,26 @@
     ],
     "stream": {
       "stopSelector": "button:has-text(\"Stop\")",
-      "minChars": 700,
-      "pollMs": 30,
-      "timeoutMs": 90000
+      "minChars": 530,
+      "pollMs": 15,
+      "timeoutMs": 90000,
+      "followStream": true,
+      "requireText": "tokens/s"
     },
     "provenance": "live on the reference laptop: llama.cpp v0.4.1 (build b10964) serving SmolLM2-135M-Instruct Q8_0 on the CPU",
     "tools": [
       "llama.cpp v0.4.1 (server-v0.4.1, build b10964)",
       "SmolLM2-135M-Instruct Q8_0"
     ],
-    "caption": "llama.cpp v0.4.1's built-in web UI mid-answer, SmolLM2-135M-Instruct Q8_0 on the reference laptop's CPU: the model, the token count and the tokens per second are all local.",
+    "caption": "llama.cpp v0.4.1's built-in web UI mid-answer, SmolLM2-135M-Instruct Q8_0 on the reference laptop's CPU, 2026-09-20: the model, the token counts and the tokens per second are all local.",
     "images": [
       "LLAMA_CPP_IMAGE"
     ],
     "notes": [
-      "MEASURED on the reference laptop (Apple M2 Pro, 16 GB, CPU only). The tokens-per-second the UI shows are this laptop's and belong to no GPU.",
-      "The frame is the last one taken while the stop control was still up, so the answer really is mid-stream; nothing is staged."
+      "MEASURED on the reference laptop (Apple M2 Pro, 16 GB, CPU only). Every number on the screen is this laptop's and belongs to no GPU.",
+      "The frame is one where the stop control was up both before and after the screenshot, so the answer really is mid-stream; nothing is staged and no text is edited.",
+      "The tokens-per-second the UI shows for the answer is computed over elapsed wall time and this frame is taken part-way through, so it sits below the completed-request figure chapter 1 reports for the same model.",
+      "llama.cpp caches prompts between requests, so screens/live-servers.sh starts a fresh server for the capture; a re-run against a warm server reports a one-token prefill and a nonsense prefill rate."
     ]
   },
   {
@@ -323,7 +362,7 @@
       "GuideLLM 0.7.4",
       "vLLM 0.29.0 (CPU backend)"
     ],
-    "caption": "GuideLLM 0.7.4's own report for the sweep in measured/ch04/: time to first token and throughput against achieved rate, vLLM 0.29.0 CPU backend on the reference laptop.",
+    "caption": "GuideLLM 0.7.4's own report for the sweep in measured/ch04/: time to first token and throughput against achieved rate, vLLM 0.29.0 CPU backend on the reference laptop, 2026-09-19.",
     "images": [
       "GUIDELLM_IMAGE",
       "VLLM_CPU_IMAGE"
@@ -332,6 +371,47 @@
       "MEASURED on the reference laptop's CPU backend. Where this curve bends is set by that CPU and says nothing about where a GPU's bends.",
       "GuideLLM 0.7.4's report ships dark-only: it has no light theme and ignores prefers-color-scheme, so this is the one capture in the book that is not on a white ground. Inverting it would have shown the reader a report that does not exist.",
       "Print patches, and nothing else (screens/guidellm-print.js): the chart's SVG type is raised from 10 px to 14 px, the rotated y-axis title is slid clear of the wider tick labels, and each of the five series gets a line style, because p50, p90, p95, p99 and the mean are otherwise told apart by colour alone. No colour, number, axis or data point is changed."
+    ]
+  },
+  {
+    "id": "S12-cost-panel",
+    "figure": "fig-s12",
+    "chapter": "15",
+    "kind": "grafana",
+    "what": "the $/M output-token recording rule, over a simulator driven at chapter 5's cited rate",
+    "replay": "cost",
+    "scrapeInterval": "5s",
+    "data": [
+      "measured/ch15/cost-sim.om"
+    ],
+    "panels": [
+      {
+        "dashboard": "book-screens",
+        "panelId": 8,
+        "height": 340
+      }
+    ],
+    "from": 1789894780000,
+    "to": 1789895205000,
+    "width": 560,
+    "scale": 4,
+    "provenance": "simulated at a cited rate: llm-d-inference-sim v0.11.2 paced to MLPerf v6.1 Server's 89,856.3 output tokens a second for one eight-B200 node, with ch15/cost.yml backfilled over it",
+    "tools": [
+      "Grafana 13.2.2",
+      "Prometheus v3.14.0",
+      "llm-d-inference-sim v0.11.2"
+    ],
+    "caption": "Simulated at a cited rate: ch15/cost.yml over llm-d-inference-sim v0.11.2 paced to MLPerf's 89,856.3 output tokens a second for one node, so the panel reads chapter 5's $0.177 per million; Grafana 13.2.2.",
+    "notes": [
+      "SIMULATED, and the delicate one. Not one token here was produced by the reference laptop's engine, and no laptop rate is multiplied by a GPU price. The simulator was paced to a PUBLISHED per-node output-token rate (MLPerf Inference v6.1 Server, eight B200s), so the rule divides chapter 5's dated list price by chapter 5's cited throughput and returns chapter 5's own figure.",
+      "The laptop's Prometheus never loads this rule -- ch15/prometheus.yml has two rule files, not three -- for exactly the reason the chapter gives. Here the rule is evaluated by promtool tsdb create-blocks-from rules over the simulator's counter, never over a lab's.",
+      "screens/cost_pacer.py held the counter on the cited line to within 109 ms of generation; the achieved rate over the 780-second recording was 89,844.3 tokens a second, 99.99% of the cited figure."
+    ],
+    "driver": "screens/cost-replay.sh",
+    "images": [
+      "LLM_D_SIM_IMAGE",
+      "PROMETHEUS_IMAGE",
+      "GRAFANA_IMAGE"
     ]
   }
 ]

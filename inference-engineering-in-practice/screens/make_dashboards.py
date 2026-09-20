@@ -54,7 +54,8 @@ def series(name: str, color: str, style: dict, width: float = 2.0,
 def panel(pid: int, title: str, targets: list[dict], *, unit: str = "short",
           decimals: int | None = None, mn=0, mx=None, overrides=None,
           axis_label: str = "", legend: bool = True,
-          interpolation: str = "linear", axis_soft_max=None) -> dict:
+          interpolation: str = "linear", axis_soft_max=None,
+          legend_calcs: list | None = None) -> dict:
     custom = {
         "drawStyle": "line",
         "lineInterpolation": interpolation,
@@ -93,9 +94,9 @@ def panel(pid: int, title: str, targets: list[dict], *, unit: str = "short",
         "options": {
             "legend": {
                 "showLegend": legend,
-                "displayMode": "list",
+                "displayMode": "table" if legend_calcs else "list",
                 "placement": "bottom",
-                "calcs": [],
+                "calcs": legend_calcs or [],
             },
             "tooltip": {"mode": "multi", "sort": "none"},
         },
@@ -195,6 +196,7 @@ PANELS = [
         decimals=3,
         mn=0,
         axis_soft_max=0.3,
+        legend_calcs=["lastNotNull"],
         overrides=[series("$ / M output tokens", INK, SOLID, 2.4)],
     ),
 ]

@@ -10,7 +10,9 @@
 #   bash screens/shoot.sh S1 S2        # just these
 #
 # The live shots (S10, S11) and the simulator-driven one (S12) have
-# their own scripts, because each needs a server running first.
+# their own scripts, because each needs something else first: a running
+# engine, or a recording rule backfilled over the replayed series. Any
+# shot carrying a `driver` in shots.json is skipped here.
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
@@ -25,8 +27,8 @@ import json, sys, pathlib
 shots = json.loads(pathlib.Path("screens/shots.json").read_text())
 want = sys.argv[1:]
 for s in shots:
-    if s["kind"] != "grafana":
-        continue
+    if s["kind"] != "grafana" or s.get("driver"):
+        continue   # S12 needs a rule backfill; screens/cost-replay.sh does it
     if want and s["id"] not in want and s["id"].split("-")[0] not in want:
         continue
     print("|".join([s["id"], s["replay"], s.get("scrapeInterval", "5s"),

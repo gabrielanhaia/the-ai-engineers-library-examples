@@ -36,6 +36,7 @@ import subprocess
 import sys
 import urllib.request
 
+INFO: dict = {}
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SHOTS = json.loads((ROOT / "screens/shots.json").read_text())
 WORK = ROOT / ".work/screens"
@@ -92,12 +93,17 @@ def dashboard_files() -> list[dict]:
 # --------------------------------------------------------------- browser
 
 
-def browser_info(pw) -> dict:
-    import playwright
+def browser_info(pw, browser=None) -> dict:
+    from importlib import metadata
 
+    try:
+        ver = metadata.version("playwright")
+    except Exception:
+        ver = "unknown"
     return {
-        "playwright": getattr(playwright, "__version__", "unknown"),
-        "chromium": pw.chromium.executable_path.rsplit("/", 1)[-1],
+        "playwright": ver,
+        "chromium": browser.version if browser is not None else "unknown",
+        "executable": pw.chromium.executable_path.rsplit("/", 1)[-1],
     }
 
 
@@ -213,6 +219,7 @@ def capture_grafana(shot: dict, out: pathlib.Path, pw, args) -> dict:
     css = CSS % {"title": shot.get("titlePx", 17),
                  "legend": shot.get("legendPx", 15)}
     browser = pw.chromium.launch()
+    INFO["browser"] = browser_info(pw, browser)
     shots, problems = [], []
     try:
         for i, panel in enumerate(shot["panels"]):
@@ -262,6 +269,7 @@ def capture_page(shot: dict, out: pathlib.Path, pw, args) -> dict:
     height = shot.get("height", 520)
     scale = shot.get("scale", 3)
     browser = pw.chromium.launch(args=shot.get("browserArgs", []))
+    INFO["browser"] = browser_info(pw, browser)
     try:
         ctx = browser.new_context(
             viewport={"width": width, "height": height},
@@ -334,19 +342,47 @@ def capture_stream(page, spec: dict, out: pathlib.Path) -> tuple[str, list]:
     """
     import time
 
+    # Keep the view on the newest text, the way a reader watching it
+    # would: an answer that overruns the window otherwise streams out
+    # of sight and the shot catches the middle of a paragraph.
+    to_bottom = """() => {
+      document.querySelectorAll('*').forEach((e) => {
+        if (e.scrollHeight > e.clientHeight + 4) e.scrollTop = e.scrollHeight;
+      });
+      window.scrollTo(0, document.body.scrollHeight);
+    }"""
+    # Never leave an older capture standing in for one that failed.
+    if out.exists():
+        out.unlink()
     stop_sel = spec["stopSelector"]
     deadline = time.time() + spec.get("timeoutMs", 60_000) / 1000
+    tmp = out.with_suffix(".frame.png")
     shots, last = 0, 0
     while time.time() < deadline:
+        if spec.get("followStream", True):
+            page.evaluate(to_bottom)
         streaming = page.locator(stop_sel).count() > 0
-        chars = len(page.inner_text("body"))
-        if streaming and chars >= spec.get("minChars", 400) and chars > last:
-            page.screenshot(path=str(out))
-            shots += 1
-            last = chars
+        body = page.inner_text("body")
+        chars = len(body)
+        want = spec.get("requireText")
+        ready = want is None or want in body
+        if streaming and ready and chars >= spec.get("minChars", 400) and chars > last:
+            page.screenshot(path=str(tmp))
+            # A short answer can finish during the screenshot, which
+            # would leave a finished page under a caption that says
+            # mid-stream. Keep the frame only if the stop control was
+            # still up on the far side of it as well.
+            if page.locator(stop_sel).count() > 0:
+                tmp.replace(out)
+                shots += 1
+                last = chars
+            else:
+                tmp.unlink(missing_ok=True)
+                break
         if shots and not streaming:
             break
         page.wait_for_timeout(spec.get("pollMs", 40))
+    tmp.unlink(missing_ok=True)
     if not shots:
         return "no frame captured", [
             "never saw the stream with enough of an answer on screen"
@@ -367,7 +403,6 @@ def run(shot: dict, args) -> pathlib.Path:
     png = out_dir / f"{shot['id']}.png"
 
     with sync_playwright() as pw:
-        info = browser_info(pw)
         if shot["kind"] == "grafana":
             extra = capture_grafana(shot, png, pw, args)
         else:
@@ -390,8 +425,8 @@ def run(shot: dict, args) -> pathlib.Path:
         ],
         "provenance": shot["provenance"],
         "tools": shot["tools"],
-        "images": shot.get("images", []),
-        "browser": info,
+        "images": [{"name": n, "pin": env(n)} for n in shot.get("images", [])],
+        "browser": INFO.get("browser", {}),
         "viewport": {
             "cssWidth": shot.get("width"),
             "deviceScaleFactor": shot.get("scale"),
@@ -426,8 +461,9 @@ def run(shot: dict, args) -> pathlib.Path:
         side["replayStack"] = {
             "prometheus": env("PROMETHEUS_IMAGE"),
             "grafana": env("GRAFANA_IMAGE"),
-            "rebuild": f"bash screens/replay.sh {shot['replay']} "
-                       + " ".join(shot.get("data", [])),
+            "rebuild": shot.get("driver")
+            or (f"bash screens/replay.sh {shot['replay']} "
+                + " ".join(shot.get("data", []))),
         }
     (out_dir / f"{shot['id']}.json").write_text(json.dumps(side, indent=2) + "\n")
 

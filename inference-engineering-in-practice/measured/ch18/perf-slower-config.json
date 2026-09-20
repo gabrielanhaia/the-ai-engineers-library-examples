@@ -1,0 +1,9 @@
+{
+  "run": "slower-config",
+  "request_rate": 2.0,
+  "num_prompts": 60,
+  "request_throughput": 1.7512005233770787,
+  "request_goodput": 0.0,
+  "median_tpot_ms": 30.643999870070424,
+  "p99_ttft_ms": 466.29047136930234
+}

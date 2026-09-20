@@ -1,8 +1,8 @@
 # SIMULATED: llm-d-inference-sim v0.11.2; every latency
 # below is the simulator's configuration, not a server.
-INFO 09-19 18:46:36 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
-Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0xfffef2be85e0>, trust_remote_code=False, seed=7, num_prompts=200, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, enable_multimodal_chat=False, disable_shuffle=False, custom_output_len=256, custom_ensure_client_side_data=False, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, timed_trace_chunk_hash_size=16, timed_trace_sec_multiplier=1, timed_trace_label_timestamp='timestamp', timed_trace_label_input_length='input_length', timed_trace_label_output_length='output_length', timed_trace_label_hash_ids='hash_ids', blazedit_min_distance=0.0, blazedit_max_distance=1.0, asr_max_audio_len_sec=inf, asr_min_audio_len_sec=0.0, random_input_len=256, random_output_len=64, random_range_ratio='0.0', random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 1}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, bfcl_categories=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, speed_bench_dataset_subset='qualitative', speed_bench_output_len=4096, speed_bench_category=None, label=None, backend='openai-chat', base_url='http://sim:8000', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=None, model='smollm2-360m', input_len=None, output_len=None, tokenizer='/models/hf/SmolLM2-360M-Instruct', tokenizer_mode='auto', use_beam_search=False, logprobs=None, request_rate=8.0, burstiness=1.0, probe_request_rate=0.0, disable_tqdm=True, num_warmups=0, profile=False, save_result=True, save_detailed=False, append_result=False, metadata=['simulated=true', 'simulator=llm-d-inference-sim'], result_dir='/scratch/ch03', result_filename='simulated-8.json', ignore_eos=True, self_timed=None, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='50,90,99', goodput=['ttft:200', 'tpot:50'], request_id_prefix='bench-45f92b37-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, served_model_name=None, lora_modules=None, lora_assignment='random', ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=0, chat_template_kwargs=None, extra_body=None, skip_tokenizer_init=False, insecure=False, plot_timeline=False, timeline_itl_thresholds='25,50', plot_dataset_stats=False)
-INFO 09-19 18:46:38 [utils.py:90] Sampling input_len from [256, 256] and output_len from [64, 64]
+INFO 09-19 22:28:36 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0xfffeee4ec5e0>, trust_remote_code=False, seed=7, num_prompts=200, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, enable_multimodal_chat=False, disable_shuffle=False, custom_output_len=256, custom_ensure_client_side_data=False, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, timed_trace_chunk_hash_size=16, timed_trace_sec_multiplier=1, timed_trace_label_timestamp='timestamp', timed_trace_label_input_length='input_length', timed_trace_label_output_length='output_length', timed_trace_label_hash_ids='hash_ids', blazedit_min_distance=0.0, blazedit_max_distance=1.0, asr_max_audio_len_sec=inf, asr_min_audio_len_sec=0.0, random_input_len=256, random_output_len=64, random_range_ratio='0.0', random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 1}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, bfcl_categories=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, speed_bench_dataset_subset='qualitative', speed_bench_output_len=4096, speed_bench_category=None, label=None, backend='openai-chat', base_url='http://sim:8000', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=None, model='smollm2-360m', input_len=None, output_len=None, tokenizer='/models/hf/SmolLM2-360M-Instruct', tokenizer_mode='auto', use_beam_search=False, logprobs=None, request_rate=8.0, burstiness=1.0, probe_request_rate=0.0, disable_tqdm=True, num_warmups=0, profile=False, save_result=True, save_detailed=False, append_result=False, metadata=['simulated=true', 'simulator=llm-d-inference-sim'], result_dir='/scratch/ch03', result_filename='simulated-8.json', ignore_eos=True, self_timed=None, percentile_metrics='ttft,tpot,itl,e2el', metric_percentiles='50,90,99', goodput=['ttft:200', 'tpot:50'], request_id_prefix='bench-69b8a816-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, served_model_name=None, lora_modules=None, lora_assignment='random', ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=0, chat_template_kwargs=None, extra_body=None, skip_tokenizer_init=False, insecure=False, plot_timeline=False, timeline_itl_thresholds='25,50', plot_dataset_stats=False)
+INFO 09-19 22:28:38 [utils.py:90] Sampling input_len from [256, 256] and output_len from [64, 64]
 WARNING: tokenizer mismatch (server=212, expected=256), re-aligning prompts.
 WARNING: vllm bench serve no longer sets temperature==0 (greedy) in requests by default. The default will be determined on the server side and can be model/API specific. For the old behavior, include --temperature=0.
 Starting initial single prompt test run...
@@ -16,37 +16,37 @@ tip: install termplotlib and gnuplot to plot the metrics
 Successful requests:                     200       
 Failed requests:                         0         
 Request rate configured (RPS):           8.00      
-Benchmark duration (s):                  37.88     
+Benchmark duration (s):                  37.85     
 Total input tokens:                      37297     
 Total generated tokens:                  12800     
 Request throughput (req/s):              5.28      
 Request goodput (req/s):                 0.48      
-Output token throughput (tok/s):         337.91    
-Peak output token throughput (tok/s):    381.00    
+Output token throughput (tok/s):         338.13    
+Peak output token throughput (tok/s):    380.00    
 Peak concurrent requests:                82.00     
-Total token throughput (tok/s):          1322.53   
+Total token throughput (tok/s):          1323.40   
 ---------------Time to First Token----------------
-Mean TTFT (ms):                          4851.22   
-Median TTFT (ms):                        4840.73   
-P50 TTFT (ms):                           4840.73   
-P90 TTFT (ms):                           8977.80   
-P99 TTFT (ms):                           10860.60  
+Mean TTFT (ms):                          4810.15   
+Median TTFT (ms):                        4828.42   
+P50 TTFT (ms):                           4828.42   
+P90 TTFT (ms):                           8880.06   
+P99 TTFT (ms):                           10790.88  
 -----Time per Output Token (excl. 1st token)------
-Mean TPOT (ms):                          42.72     
-Median TPOT (ms):                        43.26     
-P50 TPOT (ms):                           43.26     
-P90 TPOT (ms):                           43.90     
-P99 TPOT (ms):                           44.49     
+Mean TPOT (ms):                          42.67     
+Median TPOT (ms):                        43.21     
+P50 TPOT (ms):                           43.21     
+P90 TPOT (ms):                           43.60     
+P99 TPOT (ms):                           43.95     
 ---------------Inter-token Latency----------------
-Mean ITL (ms):                           41.41     
-Median ITL (ms):                         41.84     
-P50 ITL (ms):                            41.84     
-P90 ITL (ms):                            48.41     
-P99 ITL (ms):                            51.20     
+Mean ITL (ms):                           41.36     
+Median ITL (ms):                         42.26     
+P50 ITL (ms):                            42.26     
+P90 ITL (ms):                            47.60     
+P99 ITL (ms):                            50.47     
 ----------------End-to-end Latency----------------
-Mean E2EL (ms):                          7542.65   
-Median E2EL (ms):                        7561.94   
-P50 E2EL (ms):                           7561.94   
-P90 E2EL (ms):                           11730.24  
-P99 E2EL (ms):                           12938.34  
+Mean E2EL (ms):                          7498.50   
+Median E2EL (ms):                        7557.78   
+P50 E2EL (ms):                           7557.78   
+P90 E2EL (ms):                           11622.02  
+P99 E2EL (ms):                           12943.84  
 ==================================================

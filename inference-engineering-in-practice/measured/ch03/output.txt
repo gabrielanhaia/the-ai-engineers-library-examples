@@ -5,32 +5,38 @@ models: 1 file(s), 138 MiB, into /models
 llama ready after ~1s
 
 == llama.cpp: 40 requests at 1 requests/s (Poisson)
-errors: 0; last chunk at 42.8 s
+errors: 0; last chunk at 42.7 s
 
 == llama.cpp: 40 requests at 2 requests/s (Poisson)
 errors: 0; last chunk at 21.5 s
 
 == llama.cpp: 40 requests at 3 requests/s (Poisson)
-errors: 0; last chunk at 14.4 s
+errors: 0; last chunk at 14.5 s
 
 == llama.cpp: 40 requests at 4 requests/s (Poisson)
-errors: 0; last chunk at 11 s
+errors: 0; last chunk at 10.9 s
 
 == llama.cpp: 40 requests at 6 requests/s (Poisson)
 errors: 0; last chunk at 7.4 s
 
 == llama.cpp: 40 requests at 8 requests/s (Poisson)
-errors: 0; last chunk at 5.7 s
+errors: 0; last chunk at 5.6 s
+
+== llama.cpp: 40 requests at 12 requests/s (Poisson)
+errors: 0; last chunk at 3.9 s
+
+== llama.cpp: 40 requests at 16 requests/s (Poisson)
+errors: 0; last chunk at 3.7 s
 
 == SLO report at 1 requests/s
 llama.cpp b10964-b29c606e2, SmolLM2-135M Q8_0, 2026-09-19
 Apple M2 Pro, 16 GB, OrbStack 29.4.0 (linux/arm64 VM)
 ms                 n     mean      p50      p90      p99
-TTFT, client      40     41.6     36.7     53.9    107.7
-TTFT, server      40     33.6     27.1     47.3    102.9
-TPOT              40      4.0      3.4      5.7      9.7
-ITL (pooled)    2514      4.0      2.7      4.5     29.5
-client - server TTFT: p50 7.0 ms, min 2.5 ms
+TTFT, client      40     50.6     57.3     67.6     87.0
+TTFT, server      40     40.5     45.2     54.4     77.7
+TPOT              40      3.5      3.2      4.7      5.6
+ITL (pooled)    2514      3.5      2.7      4.3     20.9
+client - server TTFT: p50 10.3 ms, min 2.7 ms
 requests with one token per chunk: 38 of 40
 
 == goodput at the SLO in slo.toml
@@ -39,8 +45,10 @@ rate 2.0 req/s: attainment 100%
 rate 3.0 req/s: attainment 100%
 rate 4.0 req/s: attainment 100%
 rate 6.0 req/s: attainment 100%
-rate 8.0 req/s: attainment 75%
-goodput: 6.0 req/s per replica, at TTFT <= 500 ms and TPOT <= 25 ms for 90% of requests
+rate 8.0 req/s: attainment 100%
+rate 12.0 req/s: attainment 100%
+rate 16.0 req/s: attainment 57%
+goodput: 12.0 req/s per replica, at TTFT <= 500 ms and TPOT <= 25 ms for 90% of requests
 
 == vLLM 0.29.0 (CPU): SmolLM2-360M-Instruct, BF16
 models: 8 file(s), 693 MiB, into /models
@@ -52,14 +60,14 @@ models: 8 file(s), 693 MiB, into /models
   ok      hf/SmolLM2-360M-Instruct/tokenizer.json
   ok      hf/SmolLM2-360M-Instruct/tokenizer_config.json
   ok      hf/SmolLM2-360M-Instruct/vocab.json
-vllm ready after ~55s
+vllm ready after ~56s
 
 == ramp: 0.2,0.4,0.6,0.8,1.0 requests/s, 60 s per step
 178 requests, 0 errors
 
 == one scrape, filtered to the TTFT histogram and one counter
 vllm:generation_tokens_total{engine="0",model_name="smollm2-360m"} 11392.0
-vllm:generation_tokens_created{engine="0",model_name="smollm2-360m"} 1.7898432023697093e+09
+vllm:generation_tokens_created{engine="0",model_name="smollm2-360m"} 1.78985652202672e+09
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.001",model_name="smollm2-360m"} 0.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.005",model_name="smollm2-360m"} 0.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.01",model_name="smollm2-360m"} 0.0
@@ -68,10 +76,10 @@ vllm:time_to_first_token_seconds_bucket{engine="0",le="0.04",model_name="smollm2
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.06",model_name="smollm2-360m"} 0.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.08",model_name="smollm2-360m"} 0.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.1",model_name="smollm2-360m"} 0.0
-vllm:time_to_first_token_seconds_bucket{engine="0",le="0.25",model_name="smollm2-360m"} 102.0
+vllm:time_to_first_token_seconds_bucket{engine="0",le="0.25",model_name="smollm2-360m"} 129.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="0.5",model_name="smollm2-360m"} 167.0
-vllm:time_to_first_token_seconds_bucket{engine="0",le="0.75",model_name="smollm2-360m"} 175.0
-vllm:time_to_first_token_seconds_bucket{engine="0",le="1.0",model_name="smollm2-360m"} 175.0
+vllm:time_to_first_token_seconds_bucket{engine="0",le="0.75",model_name="smollm2-360m"} 168.0
+vllm:time_to_first_token_seconds_bucket{engine="0",le="1.0",model_name="smollm2-360m"} 171.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="2.5",model_name="smollm2-360m"} 178.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="5.0",model_name="smollm2-360m"} 178.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="7.5",model_name="smollm2-360m"} 178.0
@@ -84,13 +92,13 @@ vllm:time_to_first_token_seconds_bucket{engine="0",le="640.0",model_name="smollm
 vllm:time_to_first_token_seconds_bucket{engine="0",le="2560.0",model_name="smollm2-360m"} 178.0
 vllm:time_to_first_token_seconds_bucket{engine="0",le="+Inf",model_name="smollm2-360m"} 178.0
 vllm:time_to_first_token_seconds_count{engine="0",model_name="smollm2-360m"} 178.0
-vllm:time_to_first_token_seconds_sum{engine="0",model_name="smollm2-360m"} 50.003501176834106
-vllm:time_to_first_token_seconds_created{engine="0",model_name="smollm2-360m"} 1.7898432023700442e+09
+vllm:time_to_first_token_seconds_sum{engine="0",model_name="smollm2-360m"} 50.285691261291504
+vllm:time_to_first_token_seconds_created{engine="0",model_name="smollm2-360m"} 1.7898565220271022e+09
 
 == replay: the recording into Prometheus, and the two queries
 prom ready after ~1s
-20 points, max 2250 ms
-20 points, max 141 ms
+20 points, max 2365 ms
+20 points, max 115 ms
 
 == llm-d-inference-sim v0.11.2 (simulated)
 models: 8 file(s), 693 MiB, into /models
@@ -111,39 +119,39 @@ sim ready after ~1s
 Successful requests:                     200       
 Failed requests:                         0         
 Request rate configured (RPS):           4.00      
-Benchmark duration (s):                  52.07     
+Benchmark duration (s):                  52.03     
 Total input tokens:                      37297     
 Total generated tokens:                  12800     
 Request throughput (req/s):              3.84      
-Request goodput (req/s):                 3.78      
-Output token throughput (tok/s):         245.84    
-Peak output token throughput (tok/s):    376.00    
+Request goodput (req/s):                 3.75      
+Output token throughput (tok/s):         246.01    
+Peak output token throughput (tok/s):    379.00    
 Peak concurrent requests:                21.00     
-Total token throughput (tok/s):          962.17    
+Total token throughput (tok/s):          962.83    
 ---------------Time to First Token----------------
-Mean TTFT (ms):                          139.18    
-Median TTFT (ms):                        131.50    
-P50 TTFT (ms):                           131.50    
-P90 TTFT (ms):                           155.39    
-P99 TTFT (ms):                           406.27    
+Mean TTFT (ms):                          142.02    
+Median TTFT (ms):                        132.04    
+P50 TTFT (ms):                           132.04    
+P90 TTFT (ms):                           158.26    
+P99 TTFT (ms):                           457.16    
 -----Time per Output Token (excl. 1st token)------
-Mean TPOT (ms):                          35.67     
-Median TPOT (ms):                        35.61     
-P50 TPOT (ms):                           35.61     
-P90 TPOT (ms):                           40.80     
-P99 TPOT (ms):                           42.01     
+Mean TPOT (ms):                          35.53     
+Median TPOT (ms):                        35.41     
+P50 TPOT (ms):                           35.41     
+P90 TPOT (ms):                           40.86     
+P99 TPOT (ms):                           42.35     
 ---------------Inter-token Latency----------------
-Mean ITL (ms):                           34.57     
-Median ITL (ms):                         35.25     
-P50 ITL (ms):                            35.25     
-P90 ITL (ms):                            42.21     
-P99 ITL (ms):                            47.33     
+Mean ITL (ms):                           34.43     
+Median ITL (ms):                         35.20     
+P50 ITL (ms):                            35.20     
+P90 ITL (ms):                            42.15     
+P99 ITL (ms):                            47.07     
 ----------------End-to-end Latency----------------
-Mean E2EL (ms):                          2386.36   
-Median E2EL (ms):                        2370.42   
-P50 E2EL (ms):                           2370.42   
-P90 E2EL (ms):                           2729.06   
-P99 E2EL (ms):                           2857.94   
+Mean E2EL (ms):                          2380.11   
+Median E2EL (ms):                        2366.49   
+P50 E2EL (ms):                           2366.49   
+P90 E2EL (ms):                           2725.23   
+P99 E2EL (ms):                           2900.20   
 ==================================================
 
 == simulated: vllm bench serve at 8 requests/s
@@ -153,39 +161,39 @@ P99 E2EL (ms):                           2857.94
 Successful requests:                     200       
 Failed requests:                         0         
 Request rate configured (RPS):           8.00      
-Benchmark duration (s):                  37.88     
+Benchmark duration (s):                  37.85     
 Total input tokens:                      37297     
 Total generated tokens:                  12800     
 Request throughput (req/s):              5.28      
 Request goodput (req/s):                 0.48      
-Output token throughput (tok/s):         337.91    
-Peak output token throughput (tok/s):    381.00    
+Output token throughput (tok/s):         338.13    
+Peak output token throughput (tok/s):    380.00    
 Peak concurrent requests:                82.00     
-Total token throughput (tok/s):          1322.53   
+Total token throughput (tok/s):          1323.40   
 ---------------Time to First Token----------------
-Mean TTFT (ms):                          4851.22   
-Median TTFT (ms):                        4840.73   
-P50 TTFT (ms):                           4840.73   
-P90 TTFT (ms):                           8977.80   
-P99 TTFT (ms):                           10860.60  
+Mean TTFT (ms):                          4810.15   
+Median TTFT (ms):                        4828.42   
+P50 TTFT (ms):                           4828.42   
+P90 TTFT (ms):                           8880.06   
+P99 TTFT (ms):                           10790.88  
 -----Time per Output Token (excl. 1st token)------
-Mean TPOT (ms):                          42.72     
-Median TPOT (ms):                        43.26     
-P50 TPOT (ms):                           43.26     
-P90 TPOT (ms):                           43.90     
-P99 TPOT (ms):                           44.49     
+Mean TPOT (ms):                          42.67     
+Median TPOT (ms):                        43.21     
+P50 TPOT (ms):                           43.21     
+P90 TPOT (ms):                           43.60     
+P99 TPOT (ms):                           43.95     
 ---------------Inter-token Latency----------------
-Mean ITL (ms):                           41.41     
-Median ITL (ms):                         41.84     
-P50 ITL (ms):                            41.84     
-P90 ITL (ms):                            48.41     
-P99 ITL (ms):                            51.20     
+Mean ITL (ms):                           41.36     
+Median ITL (ms):                         42.26     
+P50 ITL (ms):                            42.26     
+P90 ITL (ms):                            47.60     
+P99 ITL (ms):                            50.47     
 ----------------End-to-end Latency----------------
-Mean E2EL (ms):                          7542.65   
-Median E2EL (ms):                        7561.94   
-P50 E2EL (ms):                           7561.94   
-P90 E2EL (ms):                           11730.24  
-P99 E2EL (ms):                           12938.34  
+Mean E2EL (ms):                          7498.50   
+Median E2EL (ms):                        7557.78   
+P50 E2EL (ms):                           7557.78   
+P90 E2EL (ms):                           11622.02  
+P99 E2EL (ms):                           12943.84  
 ==================================================
 
 == simulated: vllm bench serve at 16 requests/s
@@ -195,45 +203,45 @@ P99 E2EL (ms):                           12938.34
 Successful requests:                     200       
 Failed requests:                         0         
 Request rate configured (RPS):           16.00     
-Benchmark duration (s):                  37.79     
+Benchmark duration (s):                  37.61     
 Total input tokens:                      37297     
 Total generated tokens:                  12800     
-Request throughput (req/s):              5.29      
-Request goodput (req/s):                 0.42      
-Output token throughput (tok/s):         338.73    
-Peak output token throughput (tok/s):    384.00    
+Request throughput (req/s):              5.32      
+Request goodput (req/s):                 0.43      
+Output token throughput (tok/s):         340.31    
+Peak output token throughput (tok/s):    381.00    
 Peak concurrent requests:                144.00    
-Total token throughput (tok/s):          1325.75   
+Total token throughput (tok/s):          1331.93   
 ---------------Time to First Token----------------
-Mean TTFT (ms):                          10940.56  
-Median TTFT (ms):                        11137.38  
-P50 TTFT (ms):                           11137.38  
-P90 TTFT (ms):                           20833.45  
-P99 TTFT (ms):                           23247.03  
+Mean TTFT (ms):                          10849.94  
+Median TTFT (ms):                        11092.19  
+P50 TTFT (ms):                           11092.19  
+P90 TTFT (ms):                           20672.97  
+P99 TTFT (ms):                           23085.69  
 -----Time per Output Token (excl. 1st token)------
-Mean TPOT (ms):                          43.39     
-Median TPOT (ms):                        43.81     
-P50 TPOT (ms):                           43.81     
-P90 TPOT (ms):                           44.60     
-P99 TPOT (ms):                           45.21     
+Mean TPOT (ms):                          43.11     
+Median TPOT (ms):                        43.69     
+P50 TPOT (ms):                           43.69     
+P90 TPOT (ms):                           44.25     
+P99 TPOT (ms):                           44.63     
 ---------------Inter-token Latency----------------
-Mean ITL (ms):                           42.05     
-Median ITL (ms):                         42.49     
-P50 ITL (ms):                            42.49     
-P90 ITL (ms):                            49.17     
-P99 ITL (ms):                            51.39     
+Mean ITL (ms):                           41.79     
+Median ITL (ms):                         42.69     
+P50 ITL (ms):                            42.69     
+P90 ITL (ms):                            48.19     
+P99 ITL (ms):                            50.62     
 ----------------End-to-end Latency----------------
-Mean E2EL (ms):                          13673.89  
-Median E2EL (ms):                        13905.48  
-P50 E2EL (ms):                           13905.48  
-P90 E2EL (ms):                           23620.10  
-P99 E2EL (ms):                           25345.70  
+Mean E2EL (ms):                          13566.01  
+Median E2EL (ms):                        13844.85  
+P50 E2EL (ms):                           13844.85  
+P90 E2EL (ms):                           23442.27  
+P99 E2EL (ms):                           25169.75  
 ==================================================
 
 == simulated: attainment by offered rate (TTFT 200, TPOT 50 ms)
-rate 4 req/s: goodput 3.78 of 3.84 completed/s = 99% (simulated)
+rate 4 req/s: goodput 3.75 of 3.84 completed/s = 98% (simulated)
 rate 8 req/s: goodput 0.48 of 5.28 completed/s = 9% (simulated)
-rate 16 req/s: goodput 0.42 of 5.29 completed/s = 8% (simulated)
+rate 16 req/s: goodput 0.43 of 5.32 completed/s = 8% (simulated)
 
 == done
 manifest: measured/ch03/machine.json

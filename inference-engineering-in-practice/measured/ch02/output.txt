@@ -10,13 +10,13 @@ arch: aarch64, 10 CPUs
 features: asimd fphp asimdhp asimddp bf16
 
 == memory bandwidth (STREAM-style copy)
-{"copy_gb_s": 157.7, "median_gb_s": 151.8, "processes": 10, "array_mib": 512, "trials": 10, "counted": "2 bytes per byte copied"}
+{"copy_gb_s": 164.4, "median_gb_s": 158.6, "processes": 10, "array_mib": 512, "trials": 10, "counted": "2 bytes per byte copied"}
 
-== prediction: 157.7 GB/s / weight bytes
+== prediction: 164.4 GB/s / weight bytes
 format   weight bytes      tok/s <=
-f16         725553792           217
-Q8_0        386405280           408
-Q4_K_M      270590880           583
+f16         725553792           227
+Q8_0        386405280           425
+Q4_K_M      270590880           608
 
 == measurement: llama bench, 64 tokens, 5 runs, threads 2,4,6,8,10
 load_backend: loaded CPU backend from /app/libggml-cpu-armv8.2_2.so
@@ -24,9 +24,9 @@ llama.cpp build b10964, commit b29c606e2
 
 == measured / predicted
 format   predicted   measured  threads    ratio
-f16            217      113.2        4     0.52
-Q8_0           408      207.5        6     0.51
-Q4_K_M         583      225.1        6     0.39
+f16            227      132.3        6     0.58
+Q8_0           425      207.9        6     0.49
+Q4_K_M         608      219.6        6     0.36
 
 == done
 manifest: measured/ch02/machine.json

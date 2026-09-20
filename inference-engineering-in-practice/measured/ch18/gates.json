@@ -3,6 +3,7 @@
     "rerun": "pass",
     "broken-template": "fail"
   },
+  "contract_replies_changed": 24,
   "performance": {
     "rerun": "pass",
     "slower-config": "fail"

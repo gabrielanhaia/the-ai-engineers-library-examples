@@ -55,7 +55,8 @@ kubectl once (pinned by SHA-256 in `../tools.env`). The run takes
 about 15 minutes, most of it three pulls of the vLLM CPU image
 (0.9 GB compressed on arm64, 1.8 GB on x64). It needs about 5 GB of
 free memory while vLLM runs inside the cluster. `RUNS=1` in the
-environment does one cold start instead of three.
+environment does one cold start instead of three, and
+`PARTS=coldstart` (or `PARTS=scaling`) runs one half of the lab.
 
 ## Expected output
 
@@ -74,10 +75,10 @@ cluster ch16: Kubernetes v1.36.4, node ch16-control-plane
 models: 16 file(s), 953 MiB, into /models
 laptop, CPU container; not a GPU cold start (seconds)
 run    pull   start weights warm-up compile    rest   total  TTFT 1  TTFT 2
-  1   50.65   10.69    3.44   40.93   31.20   18.80  124.51    1.55    0.78
-  2   46.71    9.88    2.40   36.69   28.38   17.83  113.50    1.69    0.69
-  3   45.36   10.40    5.24   84.72   73.71   27.43  173.15    2.70    0.51
-med   46.71   10.40    3.44   40.93   31.20   18.80  124.51    1.69    0.69
+  1   45.91    9.67    1.66   32.26   25.91   17.04  106.55    0.99    0.19
+  2   47.92   10.35    2.11   33.66   27.31   17.00  111.03    1.27    0.20
+  3   46.35   10.05    2.32   33.92   26.62   15.93  108.57    1.27    0.21
+med   46.35   10.05    2.11   33.66   26.62   17.00  108.57    1.27    0.20
 
 == scale on queue depth (load 1:30,4:120,0.5:90), simulated
 default prometheus-595fdb8cb7-hd4vl Running
@@ -143,4 +144,7 @@ slowest first token.
 - `report.py`: the tables.
 - Output lands in `measured/ch16/`: `scaling.json`,
   `coldstart.json`, and the raw records (`timeline.csv`,
-  `requests.jsonl`, `hpa-events.txt`, `coldstart-N.log`).
+  `requests.jsonl`, `hpa-events.txt`, `coldstart-N.log`). The
+  committed cold start was re-recorded on its own
+  (`PARTS=coldstart`) on a quiet machine, with its own manifest in
+  `machine-coldstart.json`.

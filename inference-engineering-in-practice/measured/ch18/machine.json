@@ -1,13 +1,13 @@
 {
   "lab": "ch18",
-  "date": "2026-09-19T16:56:20Z",
+  "date": "2026-09-19T23:30:38Z",
   "machine": "Apple M2 Pro, 16 GB, OrbStack 29.4.0 (linux/arm64 VM)",
   "docker": {
     "server": "29.4.0",
     "os": "OrbStack",
     "arch": "aarch64",
     "cpus": 10,
-    "memory_bytes": 8381853696
+    "memory_bytes": 8393289728
   },
   "images": [
     "LLAMA_CPP_IMAGE=ghcr.io/ggml-org/llama.cpp:server-v0.4.1@sha256:283ed1799f2711361dadd863305ffe31c9fca3321a099712a8cc65061502b523",

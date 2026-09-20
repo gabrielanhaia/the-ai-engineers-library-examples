@@ -56,19 +56,19 @@ A token is a small, self-contained unit of information that serves as a unique i
 {
   "cache_n": 0,
   "prompt_n": 39,
-  "prompt_ms": 19.041,
-  "prompt_per_token_ms": 0.48823076923076925,
-  "prompt_per_second": 2048.2117535843704,
+  "prompt_ms": 39.97,
+  "prompt_per_token_ms": 1.024871794871795,
+  "prompt_per_second": 975.7317988491369,
   "predicted_n": 32,
-  "predicted_ms": 200.184,
-  "predicted_per_token_ms": 6.457548387096774,
-  "predicted_per_second": 154.8575310714143
+  "predicted_ms": 85.014,
+  "predicted_per_token_ms": 2.7423870967741935,
+  "predicted_per_second": 364.6458230409109
 }
 
 == first token at the client
 {
-  "client_ttft_ms": 28.05,
-  "server_prompt_ms": 19.041
+  "client_ttft_ms": 52.381,
+  "server_prompt_ms": 39.97
 }
 
 == done

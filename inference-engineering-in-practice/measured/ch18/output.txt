@@ -1,23 +1,38 @@
 
-== quality gate: ch11's task eval, llama.cpp, SmolLM2-360M Q8_0
+== quality gate: ch11's eval + ch17's verifier, llama.cpp F16
+contract check, rerun (chapter 17's requests):
+ engine     kind         requests  valid   rate  right tool
+ llama.cpp  tool call          20     12   0.60          11
+ llama.cpp  json schema        20     20   1.00
+contract check, broken-template (chapter 17's requests):
+ engine     kind         requests  valid   rate  right tool
+ llama.cpp  tool call          20     12   0.60          11
+ llama.cpp  json schema        20     20   1.00
 first reply, broken template: "assistant\nApollo 11 landed on the Moon on July 20, 1969"
 quality gate, candidate: rerun
-  ok   correct: 38/40 (baseline 38/40)
+  ok   correct: 39/40 (baseline 39/40)
   ok   replies unchanged: 100% (need 90%)
   quality gate: PASS
+ pass  llama.cpp  tool call     0.60 >= 0.45
+ pass  llama.cpp  json schema   1.00 >= 0.90
 quality gate, candidate: broken-template
-  ok   correct: 37/40 (baseline 38/40)
+  ok   correct: 38/40 (baseline 39/40)
   FAIL replies unchanged: 0% (need 90%)
   quality gate: FAIL, do not ship
+ pass  llama.cpp  tool call     0.60 >= 0.45
+ pass  llama.cpp  json schema   1.00 >= 0.90
+contract replies changed: 24 of 40, all still valid
 
 == performance gate: vllm bench serve, 512 in / 128 out, simulated
 performance gate, candidate: rerun
-  ok   goodput: 1.81 req/s, baseline 1.80 (100%, need 90%)
-  ok   median TPOT: 21.9 ms, baseline 21.9 ms
+  ok   goodput: 1.80 req/s, baseline 1.80 (100%, need 90%)
+  ok   throughput: 1.80 req/s, baseline 1.80 (not a gate)
+  ok   median TPOT: 23.7 ms, baseline 23.9 ms
   performance gate: PASS
 performance gate, candidate: slower-config
   FAIL goodput: 0.00 req/s, baseline 1.80 (0%, need 90%)
-  ok   median TPOT: 27.1 ms, baseline 21.9 ms
+  ok   throughput: 1.75 req/s, baseline 1.80 (not a gate)
+  ok   median TPOT: 30.6 ms, baseline 23.9 ms
   performance gate: FAIL, do not ship
 
 == canary route: validated by the API server (kind)
@@ -39,6 +54,7 @@ Checking /scratch/ch18/alerts.yaml
     "rerun": "pass",
     "broken-template": "fail"
   },
+  "contract_replies_changed": 24,
   "performance": {
     "rerun": "pass",
     "slower-config": "fail"

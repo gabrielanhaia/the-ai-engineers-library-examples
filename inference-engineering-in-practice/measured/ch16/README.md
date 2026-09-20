@@ -13,12 +13,17 @@ The scale-out is **simulated** (llm-d-inference-sim v0.11.2, KEDA
 start-up, are its configuration (`ch16/sim.yaml`). The cold starts
 are the real vLLM 0.29.0 CPU container on this laptop, never a GPU.
 
-Two things about this recording. The machine was shared with other
-labs: runs 1 and 2 of the cold start had it nearly to themselves,
-but another lab's vLLM engine started during run 3 (the VM's swap
-grew from 0.4 to 2.7 GB), so run 3's warm-up (84.7 s) is inflated.
-And one request of 555 failed with a 503, at t = 196 s, when the
-scale-in removed a replica the Service was still sending traffic to.
+The two halves were recorded separately. The scale-out is from
+2026-09-19 at 18:27 UTC (`machine.json`); one request of 555
+failed with a 503, at t = 196 s, when the scale-in removed a
+replica the Service was still sending traffic to. The cold start
+was re-recorded at 23:42 UTC with nothing else running
+(`PARTS=coldstart`, manifest in `machine-coldstart.json`; VM load
+average 1.92 at the start, 3.90 at the end, no other lab
+container). The earlier cold start shared the machine with another
+lab's vLLM engine during run 3, whose warm-up came out at 84.7 s
+against 36.7 s for run 2; the three quiet runs agree within 5%
+(106.6, 111.0 and 108.6 s in total), so that caveat is gone.
 
 - `timeline.csv`: every ~2 s, the queue and running requests (from
   Prometheus), the HPA's desired replicas, the Deployment's replicas
@@ -31,4 +36,5 @@ scale-in removed a replica the Service was still sending traffic to.
   and their medians; `coldstart-N.log`: each run's vLLM log with
   timestamps, from which the weight-load and warm-up phases come.
 - `machine.json`: the Docker host, image digests, model revisions,
-  and the pinned downloads (`tools`).
+  and the pinned downloads (`tools`), for the scale-out;
+  `machine-coldstart.json`: the same for the cold-start recording.

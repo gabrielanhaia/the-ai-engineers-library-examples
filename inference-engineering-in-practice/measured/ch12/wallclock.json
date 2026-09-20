@@ -1,1 +1,1 @@
-{"prompts": 16, "temperature": 0.0, "tokens": {"plain": 1948, "speculative": 1948}, "plain_s": 13.94844038699739, "speculative_s": 19.5849739410005, "plain_over_speculative": 0.7122011205640049}
+{"prompts": 16, "temperature": 0.0, "tokens": {"plain": 1948, "speculative": 1948}, "plain_s": 11.323650304000694, "speculative_s": 15.316872031002276, "plain_over_speculative": 0.7392926102066362}

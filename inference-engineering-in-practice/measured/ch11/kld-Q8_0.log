@@ -1,8 +1,8 @@
-0.00.473.908 I cmn          init: llama threadpool init, n_threads = 10
-0.00.577.068 I 
-0.00.577.152 I system_info: n_threads = 10 (n_threads_batch = 10) / 10 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
-0.00.585.961 I kl_divergence: computing over 100 chunks, n_ctx=512, batch_size=2048, n_seq=4
-0.02.482.490 I kl_divergence: 1.90 seconds per pass - ETA 0.78 minutes
+0.01.350.758 I cmn          init: llama threadpool init, n_threads = 10
+0.01.465.442 I 
+0.01.465.528 I system_info: n_threads = 10 (n_threads_batch = 10) / 10 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | DOTPROD = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.488.822 I kl_divergence: computing over 100 chunks, n_ctx=512, batch_size=2048, n_seq=4
+0.03.569.443 I kl_divergence: 2.08 seconds per pass - ETA 0.87 minutes
 
 chunk             PPL               ln(PPL(Q)/PPL(base))          KL Divergence              Δp RMS            Same top p
    1       8.3884 ±    1.5964      -0.00362 ±    0.00499       0.00253 ±    0.00024     1.304 ±  0.153 %    97.647 ±  0.951 %

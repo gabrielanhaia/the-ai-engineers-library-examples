@@ -1,92 +1,92 @@
-2026-09-19T18:18:05.463841813Z INFO 09-19 18:18:05 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
-2026-09-19T18:18:07.518449712Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:347] 
-2026-09-19T18:18:07.518459879Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:347]        █     █     █▄   ▄█
-2026-09-19T18:18:07.518461712Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:347]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.29.0
-2026-09-19T18:18:07.518463171Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:347]   █▄█▀ █     █     █     █  model   /models/hf/SmolLM2-360M-Instruct
-2026-09-19T18:18:07.518466796Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:347]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
-2026-09-19T18:18:07.518467796Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:347] 
-2026-09-19T18:18:07.521477551Z (APIServer pid=1) INFO 09-19 18:18:07 [api_utils.py:286] non-default args: {'model_tag': '/models/hf/SmolLM2-360M-Instruct', 'model': '/models/hf/SmolLM2-360M-Instruct', 'max_model_len': 2048, 'served_model_name': ['smollm2-360m']}
-2026-09-19T18:18:12.067173869Z (APIServer pid=1) INFO 09-19 18:18:12 [model.py:684] Resolved architecture: LlamaForCausalLM
-2026-09-19T18:18:12.067189952Z (APIServer pid=1) INFO 09-19 18:18:12 [model.py:2021] Using max model len 2048
-2026-09-19T18:18:12.071273668Z (APIServer pid=1) INFO 09-19 18:18:12 [kernel.py:369] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
-2026-09-19T18:18:12.071654419Z (APIServer pid=1) WARNING 09-19 18:18:12 [vllm.py:663] Model Runner V2 requires Triton; using the V1 model runner instead.
-2026-09-19T18:18:15.310558976Z INFO 09-19 18:18:15 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
-2026-09-19T18:18:16.025039637Z (EngineCore pid=78) INFO 09-19 18:18:16 [core.py:123] Initializing a V1 LLM engine (v0.29.0) with config: model='/models/hf/SmolLM2-360M-Instruct', speculative_config=None, tokenizer='/models/hf/SmolLM2-360M-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=None, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cpu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=smollm2-360m, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.DYNAMO_TRACE_ONCE: 2>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none', '+gelu', '+gelu_tanh', '+gelu_and_mul'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': None, 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'dce': True, 'size_asserts': False, 'nan_asserts': False, 'epilogue_fusion': True, 'cpp.dynamic_threads': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': None, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
-2026-09-19T18:18:16.054064441Z (EngineCore pid=78) INFO 09-19 18:18:16 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.244.0.6 (local), world_size=1, local_world_size=1
-2026-09-19T18:18:16.063907417Z (EngineCore pid=78) INFO 09-19 18:18:16 [ompmultiprocessing.py:185] OpenMP thread binding info: 
-2026-09-19T18:18:16.063924126Z (EngineCore pid=78) INFO 09-19 18:18:16 [ompmultiprocessing.py:185] 	VLLM_CPU_OMP_THREADS_BIND='auto', auto_setup=True, skip_setup=False
-2026-09-19T18:18:16.063926626Z (EngineCore pid=78) INFO 09-19 18:18:16 [ompmultiprocessing.py:185] 	local_world_size=1, reserve_cpu_num=1
-2026-09-19T18:18:16.063928709Z (EngineCore pid=78) INFO 09-19 18:18:16 [ompmultiprocessing.py:185] 	local_rank=0, core ids=[0, 1, 2, 3, 4, 5, 6, 7, 8]
-2026-09-19T18:18:16.063929626Z (EngineCore pid=78) INFO 09-19 18:18:16 [ompmultiprocessing.py:185] 	reserved_cpus=[9]
-2026-09-19T18:18:19.186419842Z INFO 09-19 18:18:19 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
-2026-09-19T18:18:20.378135680Z WARNING 09-19 18:18:20 [vllm.py:663] Model Runner V2 requires Triton; using the V1 model runner instead.
-2026-09-19T18:18:20.378160638Z (Worker pid=115) INFO 09-19 18:18:20 [parallel_state.py:1775] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_710a23b9319d456d8e5ff0abf33a1b90 backend=gloo
-2026-09-19T18:18:20.383551732Z (Worker pid=115) INFO 09-19 18:18:20 [parallel_state.py:2119] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
-2026-09-19T18:18:20.407994027Z (Worker pid=115) INFO 09-19 18:18:20 [cpu_model_runner.py:131] Starting to load model /models/hf/SmolLM2-360M-Instruct...
-2026-09-19T18:18:20.787412940Z (Worker pid=115) WARNING 09-19 18:18:20 [compilation.py:1354] Op 'gelu' not present in model, enabling with '+gelu' has no effect
-2026-09-19T18:18:20.787439899Z (Worker pid=115) WARNING 09-19 18:18:20 [compilation.py:1354] Op 'gelu_tanh' not present in model, enabling with '+gelu_tanh' has no effect
-2026-09-19T18:18:20.787442024Z (Worker pid=115) WARNING 09-19 18:18:20 [compilation.py:1354] Op 'gelu_and_mul' not present in model, enabling with '+gelu_and_mul' has no effect
-2026-09-19T18:18:20.788861735Z (Worker pid=115) INFO 09-19 18:18:20 [weight_utils.py:863] Filesystem type for checkpoints: OVERLAY. Checkpoint size: 0.67 GiB. Available RAM: 4.39 GiB.
-2026-09-19T18:18:20.788931318Z (Worker pid=115) INFO 09-19 18:18:20 [weight_utils.py:886] Auto-prefetch is disabled because the filesystem (OVERLAY) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
-2026-09-19T18:18:20.789279569Z (Worker pid=115) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
-2026-09-19T18:18:23.164548855Z (Worker pid=115) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.37s/it]
-2026-09-19T18:18:23.164584355Z (Worker pid=115) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.37s/it]
-2026-09-19T18:18:23.164587314Z (Worker pid=115) 
-2026-09-19T18:18:23.193322200Z (Worker pid=115) INFO 09-19 18:18:23 [default_loader.py:430] Loading weights took 2.40 seconds
-2026-09-19T18:18:23.604453547Z (EngineCore pid=78) INFO 09-19 18:18:23 [torch_utils.py:277] Reducing Torch threads from 10 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
-2026-09-19T18:18:23.609332598Z (EngineCore pid=78) INFO 09-19 18:18:23 [utils.py:306] Using LBHNC KV cache layout.
-2026-09-19T18:18:23.609661974Z (Worker pid=115) INFO 09-19 18:18:23 [cpu_model_runner.py:150] Warming up model for the compilation...
-2026-09-19T18:18:51.988945557Z (Worker pid=115) INFO 09-19 18:18:51 [decorators.py:719] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/2e992fcdacc0067601cb586f96952c01342be2c66a326f4e836764fbb80b8f19/rank_0_0/model
-2026-09-19T18:18:58.301356782Z (Worker pid=115) INFO 09-19 18:18:58 [monitor.py:81] Initial profiling/warmup run took 6.31 s
-2026-09-19T18:18:59.754093396Z (Worker pid=115) INFO 09-19 18:18:59 [cpu_model_runner.py:154] Warming up done.
-2026-09-19T18:18:59.759171197Z (Worker pid=115) INFO 09-19 18:18:59 [cpu_worker.py:255] Explicitly set (1.0/7.81) GiB for KV cache on node 0.
-2026-09-19T18:18:59.764824208Z (EngineCore pid=78) INFO 09-19 18:18:59 [kv_cache_utils.py:2032] GPU KV cache size: 26,112 tokens, Maximum concurrency for 2,048 tokens per request: 12.75x
-2026-09-19T18:19:00.302105331Z (EngineCore pid=78) INFO 09-19 18:19:00 [core.py:368] init engine (profile, create kv cache, warmup model) took 36.69 s
-2026-09-19T18:19:00.692848640Z (EngineCore pid=78) WARNING 09-19 18:19:00 [vllm.py:663] Model Runner V2 requires Triton; using the V1 model runner instead.
-2026-09-19T18:19:01.009685937Z (EngineCore pid=78) WARNING 09-19 18:19:01 [vllm.py:1406] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
-2026-09-19T18:19:01.017235034Z (EngineCore pid=78) INFO 09-19 18:19:01 [kernel.py:369] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
-2026-09-19T18:19:01.045069294Z (APIServer pid=1) INFO 09-19 18:19:01 [entry.py:135] Supported tasks: ['generate']
-2026-09-19T18:19:02.050085619Z (APIServer pid=1) INFO 09-19 18:19:02 [hf.py:547] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
-2026-09-19T18:19:02.066653358Z (APIServer pid=1) INFO 09-19 18:19:02 [entry.py:139] Starting vLLM server on http://0.0.0.0:8000
-2026-09-19T18:19:02.066767817Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:61] Available routes are:
-2026-09-19T18:19:02.066809442Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /openapi.json, Methods: HEAD, GET
-2026-09-19T18:19:02.066838025Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /docs, Methods: HEAD, GET
-2026-09-19T18:19:02.066869442Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /docs/oauth2-redirect, Methods: HEAD, GET
-2026-09-19T18:19:02.066892317Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /redoc, Methods: HEAD, GET
-2026-09-19T18:19:02.066914150Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /load, Methods: GET
-2026-09-19T18:19:02.066943484Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /version, Methods: GET
-2026-09-19T18:19:02.066970942Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /health, Methods: GET
-2026-09-19T18:19:02.067022942Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /metrics, Methods: GET
-2026-09-19T18:19:02.067048234Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /tokenize, Methods: POST
-2026-09-19T18:19:02.067076734Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /detokenize, Methods: POST
-2026-09-19T18:19:02.067123734Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/models, Methods: GET
-2026-09-19T18:19:02.067159276Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /ping, Methods: GET
-2026-09-19T18:19:02.067198859Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /ping, Methods: POST
-2026-09-19T18:19:02.067227359Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /invocations, Methods: POST
-2026-09-19T18:19:02.067248818Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/chat/completions, Methods: POST
-2026-09-19T18:19:02.067272693Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/chat/completions/batch, Methods: POST
-2026-09-19T18:19:02.067300484Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/responses, Methods: POST
-2026-09-19T18:19:02.067322568Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/responses/{response_id}, Methods: GET
-2026-09-19T18:19:02.067342776Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/responses/{response_id}/cancel, Methods: POST
-2026-09-19T18:19:02.067362984Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/completions, Methods: POST
-2026-09-19T18:19:02.067413526Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/messages, Methods: POST
-2026-09-19T18:19:02.067432485Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/messages/count_tokens, Methods: POST
-2026-09-19T18:19:02.067461568Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /generative_scoring, Methods: POST
-2026-09-19T18:19:02.067495485Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /scale_elastic_ep, Methods: POST
-2026-09-19T18:19:02.067515651Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /is_scaling_elastic_ep, Methods: POST
-2026-09-19T18:19:02.067545485Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/chat/completions/render, Methods: POST
-2026-09-19T18:19:02.067565693Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/messages/render, Methods: POST
-2026-09-19T18:19:02.067585735Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/completions/render, Methods: POST
-2026-09-19T18:19:02.067637110Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/chat/completions/derender, Methods: POST
-2026-09-19T18:19:02.067661193Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /v1/completions/derender, Methods: POST
-2026-09-19T18:19:02.067681610Z (APIServer pid=1) INFO 09-19 18:19:02 [launcher.py:70] Route: /inference/v1/generate, Methods: POST
-2026-09-19T18:19:02.121128709Z (APIServer pid=1) INFO:     Started server process [1]
-2026-09-19T18:19:02.121221168Z (APIServer pid=1) INFO:     Waiting for application startup.
-2026-09-19T18:19:02.348741132Z (APIServer pid=1) INFO:     Application startup complete.
-2026-09-19T18:19:02.375199140Z (APIServer pid=1) INFO:     10.244.0.1:51126 - "GET /health HTTP/1.1" 200 OK
-2026-09-19T18:19:03.325360904Z (APIServer pid=1) INFO:     10.244.0.1:51134 - "GET /health HTTP/1.1" 200 OK
-2026-09-19T18:19:03.335961716Z (APIServer pid=1) INFO:     10.244.0.1:51150 - "GET /health HTTP/1.1" 200 OK
-2026-09-19T18:19:03.527927989Z (APIServer pid=1) INFO:     10.244.0.1:57221 - "GET /health HTTP/1.1" 200 OK
-2026-09-19T18:19:03.701387061Z (APIServer pid=1) INFO:     10.244.0.1:64575 - "POST /v1/chat/completions HTTP/1.1" 200 OK
-2026-09-19T18:19:05.334435636Z (APIServer pid=1) INFO:     10.244.0.1:51164 - "GET /health HTTP/1.1" 200 OK
-2026-09-19T18:19:05.354637923Z (APIServer pid=1) INFO:     10.244.0.1:14632 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-19T23:46:11.128651435Z INFO 09-19 23:46:11 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
+2026-09-19T23:46:12.970994063Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:347] 
+2026-09-19T23:46:12.971009354Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:347]        █     █     █▄   ▄█
+2026-09-19T23:46:12.971011021Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:347]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.29.0
+2026-09-19T23:46:12.971012438Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:347]   █▄█▀ █     █     █     █  model   /models/hf/SmolLM2-360M-Instruct
+2026-09-19T23:46:12.971015479Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:347]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+2026-09-19T23:46:12.971016313Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:347] 
+2026-09-19T23:46:12.973836102Z (APIServer pid=1) INFO 09-19 23:46:12 [api_utils.py:286] non-default args: {'model_tag': '/models/hf/SmolLM2-360M-Instruct', 'model': '/models/hf/SmolLM2-360M-Instruct', 'max_model_len': 2048, 'served_model_name': ['smollm2-360m']}
+2026-09-19T23:46:17.337868685Z (APIServer pid=1) INFO 09-19 23:46:17 [model.py:684] Resolved architecture: LlamaForCausalLM
+2026-09-19T23:46:17.338028602Z (APIServer pid=1) INFO 09-19 23:46:17 [model.py:2021] Using max model len 2048
+2026-09-19T23:46:17.341520141Z (APIServer pid=1) INFO 09-19 23:46:17 [kernel.py:369] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+2026-09-19T23:46:17.341946307Z (APIServer pid=1) WARNING 09-19 23:46:17 [vllm.py:663] Model Runner V2 requires Triton; using the V1 model runner instead.
+2026-09-19T23:46:20.407314055Z INFO 09-19 23:46:20 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
+2026-09-19T23:46:21.006145742Z (EngineCore pid=80) INFO 09-19 23:46:21 [core.py:123] Initializing a V1 LLM engine (v0.29.0) with config: model='/models/hf/SmolLM2-360M-Instruct', speculative_config=None, tokenizer='/models/hf/SmolLM2-360M-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=True, quantization=None, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cpu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=smollm2-360m, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.DYNAMO_TRACE_ONCE: 2>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none', '+gelu', '+gelu_tanh', '+gelu_and_mul'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': None, 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'dce': True, 'size_asserts': False, 'nan_asserts': False, 'epilogue_fusion': True, 'cpp.dynamic_threads': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': None, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+2026-09-19T23:46:21.034288552Z (EngineCore pid=80) INFO 09-19 23:46:21 [multiproc_executor.py:153] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.244.0.6 (local), world_size=1, local_world_size=1
+2026-09-19T23:46:21.047605417Z (EngineCore pid=80) INFO 09-19 23:46:21 [ompmultiprocessing.py:185] OpenMP thread binding info: 
+2026-09-19T23:46:21.047611875Z (EngineCore pid=80) INFO 09-19 23:46:21 [ompmultiprocessing.py:185] 	VLLM_CPU_OMP_THREADS_BIND='auto', auto_setup=True, skip_setup=False
+2026-09-19T23:46:21.047613083Z (EngineCore pid=80) INFO 09-19 23:46:21 [ompmultiprocessing.py:185] 	local_world_size=1, reserve_cpu_num=1
+2026-09-19T23:46:21.047614500Z (EngineCore pid=80) INFO 09-19 23:46:21 [ompmultiprocessing.py:185] 	local_rank=0, core ids=[0, 1, 2, 3, 4, 5, 6, 7, 8]
+2026-09-19T23:46:21.047615458Z (EngineCore pid=80) INFO 09-19 23:46:21 [ompmultiprocessing.py:185] 	reserved_cpus=[9]
+2026-09-19T23:46:23.855656955Z INFO 09-19 23:46:23 [importing.py:98] Triton not installed or not compatible; certain GPU-related functions will not be available.
+2026-09-19T23:46:25.489044186Z WARNING 09-19 23:46:25 [vllm.py:663] Model Runner V2 requires Triton; using the V1 model runner instead.
+2026-09-19T23:46:25.489735394Z (Worker pid=117) INFO 09-19 23:46:25 [parallel_state.py:1775] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_427024e0d06c451986006a5f6c64a723 backend=gloo
+2026-09-19T23:46:25.508026088Z (Worker pid=117) INFO 09-19 23:46:25 [parallel_state.py:2119] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+2026-09-19T23:46:25.521897868Z (Worker pid=117) INFO 09-19 23:46:25 [cpu_model_runner.py:131] Starting to load model /models/hf/SmolLM2-360M-Instruct...
+2026-09-19T23:46:25.899263232Z (Worker pid=117) WARNING 09-19 23:46:25 [compilation.py:1354] Op 'gelu' not present in model, enabling with '+gelu' has no effect
+2026-09-19T23:46:25.899307649Z (Worker pid=117) WARNING 09-19 23:46:25 [compilation.py:1354] Op 'gelu_tanh' not present in model, enabling with '+gelu_tanh' has no effect
+2026-09-19T23:46:25.899407065Z (Worker pid=117) WARNING 09-19 23:46:25 [compilation.py:1354] Op 'gelu_and_mul' not present in model, enabling with '+gelu_and_mul' has no effect
+2026-09-19T23:46:25.900908731Z (Worker pid=117) INFO 09-19 23:46:25 [weight_utils.py:863] Filesystem type for checkpoints: OVERLAY. Checkpoint size: 0.67 GiB. Available RAM: 4.52 GiB.
+2026-09-19T23:46:25.900926022Z (Worker pid=117) INFO 09-19 23:46:25 [weight_utils.py:886] Auto-prefetch is disabled because the filesystem (OVERLAY) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+2026-09-19T23:46:25.901797230Z (Worker pid=117) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+2026-09-19T23:46:28.002731919Z (Worker pid=117) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.10s/it]
+2026-09-19T23:46:28.002767836Z (Worker pid=117) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.10s/it]
+2026-09-19T23:46:28.002770252Z (Worker pid=117) 
+2026-09-19T23:46:28.011772495Z (Worker pid=117) INFO 09-19 23:46:28 [default_loader.py:430] Loading weights took 2.11 seconds
+2026-09-19T23:46:28.276454700Z (EngineCore pid=80) INFO 09-19 23:46:28 [torch_utils.py:277] Reducing Torch threads from 10 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+2026-09-19T23:46:28.283132736Z (EngineCore pid=80) INFO 09-19 23:46:28 [utils.py:306] Using LBHNC KV cache layout.
+2026-09-19T23:46:28.283755527Z (Worker pid=117) INFO 09-19 23:46:28 [cpu_model_runner.py:150] Warming up model for the compilation...
+2026-09-19T23:46:55.595290862Z (Worker pid=117) INFO 09-19 23:46:55 [decorators.py:719] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/2e992fcdacc0067601cb586f96952c01342be2c66a326f4e836764fbb80b8f19/rank_0_0/model
+2026-09-19T23:47:00.370426155Z (Worker pid=117) INFO 09-19 23:47:00 [monitor.py:81] Initial profiling/warmup run took 4.77 s
+2026-09-19T23:47:01.651028461Z (Worker pid=117) INFO 09-19 23:47:01 [cpu_model_runner.py:154] Warming up done.
+2026-09-19T23:47:01.655877832Z (Worker pid=117) INFO 09-19 23:47:01 [cpu_worker.py:255] Explicitly set (1.0/7.82) GiB for KV cache on node 0.
+2026-09-19T23:47:01.666536365Z (EngineCore pid=80) INFO 09-19 23:47:01 [kv_cache_utils.py:2032] GPU KV cache size: 26,112 tokens, Maximum concurrency for 2,048 tokens per request: 12.75x
+2026-09-19T23:47:01.942929185Z (EngineCore pid=80) INFO 09-19 23:47:01 [core.py:368] init engine (profile, create kv cache, warmup model) took 33.66 s
+2026-09-19T23:47:02.265229093Z (EngineCore pid=80) WARNING 09-19 23:47:02 [vllm.py:663] Model Runner V2 requires Triton; using the V1 model runner instead.
+2026-09-19T23:47:02.515165393Z (EngineCore pid=80) WARNING 09-19 23:47:02 [vllm.py:1406] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+2026-09-19T23:47:02.524578927Z (EngineCore pid=80) INFO 09-19 23:47:02 [kernel.py:369] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+2026-09-19T23:47:02.575301469Z (APIServer pid=1) INFO 09-19 23:47:02 [entry.py:135] Supported tasks: ['generate']
+2026-09-19T23:47:03.244710682Z (APIServer pid=1) INFO 09-19 23:47:03 [hf.py:547] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+2026-09-19T23:47:03.258494171Z (APIServer pid=1) INFO 09-19 23:47:03 [entry.py:139] Starting vLLM server on http://0.0.0.0:8000
+2026-09-19T23:47:03.258605713Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:61] Available routes are:
+2026-09-19T23:47:03.258652504Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /openapi.json, Methods: HEAD, GET
+2026-09-19T23:47:03.258684546Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /docs, Methods: HEAD, GET
+2026-09-19T23:47:03.258726046Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+2026-09-19T23:47:03.258746796Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /redoc, Methods: HEAD, GET
+2026-09-19T23:47:03.258774921Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /load, Methods: GET
+2026-09-19T23:47:03.258800213Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /version, Methods: GET
+2026-09-19T23:47:03.258823463Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /health, Methods: GET
+2026-09-19T23:47:03.258843421Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /metrics, Methods: GET
+2026-09-19T23:47:03.258869421Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /tokenize, Methods: POST
+2026-09-19T23:47:03.258890088Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /detokenize, Methods: POST
+2026-09-19T23:47:03.258913963Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/models, Methods: GET
+2026-09-19T23:47:03.258933629Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /ping, Methods: GET
+2026-09-19T23:47:03.258957421Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /ping, Methods: POST
+2026-09-19T23:47:03.258977296Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /invocations, Methods: POST
+2026-09-19T23:47:03.258996671Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/chat/completions, Methods: POST
+2026-09-19T23:47:03.259019046Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/chat/completions/batch, Methods: POST
+2026-09-19T23:47:03.259043254Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/responses, Methods: POST
+2026-09-19T23:47:03.259067379Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/responses/{response_id}, Methods: GET
+2026-09-19T23:47:03.259086421Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/responses/{response_id}/cancel, Methods: POST
+2026-09-19T23:47:03.259105212Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/completions, Methods: POST
+2026-09-19T23:47:03.259128879Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/messages, Methods: POST
+2026-09-19T23:47:03.259148379Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/messages/count_tokens, Methods: POST
+2026-09-19T23:47:03.259167462Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /generative_scoring, Methods: POST
+2026-09-19T23:47:03.259186504Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /scale_elastic_ep, Methods: POST
+2026-09-19T23:47:03.259208212Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /is_scaling_elastic_ep, Methods: POST
+2026-09-19T23:47:03.259228254Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/chat/completions/render, Methods: POST
+2026-09-19T23:47:03.259248046Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/messages/render, Methods: POST
+2026-09-19T23:47:03.259266629Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/completions/render, Methods: POST
+2026-09-19T23:47:03.259289046Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/chat/completions/derender, Methods: POST
+2026-09-19T23:47:03.259312504Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /v1/completions/derender, Methods: POST
+2026-09-19T23:47:03.259331837Z (APIServer pid=1) INFO 09-19 23:47:03 [launcher.py:70] Route: /inference/v1/generate, Methods: POST
+2026-09-19T23:47:03.308638048Z (APIServer pid=1) INFO:     Started server process [1]
+2026-09-19T23:47:03.308650298Z (APIServer pid=1) INFO:     Waiting for application startup.
+2026-09-19T23:47:03.480827785Z (APIServer pid=1) INFO:     Application startup complete.
+2026-09-19T23:47:03.890722581Z (APIServer pid=1) INFO:     10.244.0.1:34490 - "GET /health HTTP/1.1" 200 OK
+2026-09-19T23:47:05.306878653Z (APIServer pid=1) INFO:     10.244.0.1:34498 - "GET /health HTTP/1.1" 200 OK
+2026-09-19T23:47:05.311814690Z (APIServer pid=1) INFO:     10.244.0.1:34510 - "GET /health HTTP/1.1" 200 OK
+2026-09-19T23:47:06.079357408Z (APIServer pid=1) INFO:     10.244.0.1:4604 - "GET /health HTTP/1.1" 200 OK
+2026-09-19T23:47:06.240655570Z (APIServer pid=1) INFO:     10.244.0.1:32772 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-09-19T23:47:07.310561628Z (APIServer pid=1) INFO:     10.244.0.1:34516 - "GET /health HTTP/1.1" 200 OK
+2026-09-19T23:47:07.507630262Z (APIServer pid=1) INFO:     10.244.0.1:44676 - "POST /v1/chat/completions HTTP/1.1" 200 OK

@@ -2,49 +2,49 @@
   {
     "format": "f16",
     "bytes": 725553792,
-    "predicted_tok_s": 217.35121742703262,
+    "predicted_tok_s": 226.58554308816844,
     "file": "/models/gguf/SmolLM2-360M-Instruct-f16.gguf",
-    "threads": 4,
-    "measured_tok_s": 113.224,
+    "threads": 6,
+    "measured_tok_s": 132.251,
     "runs_tok_s": [
-      113.224,
-      111.458,
-      114.126,
-      114.082,
-      108.909
+      133.423,
+      131.926,
+      132.251,
+      132.284,
+      126.658
     ],
-    "ratio": 0.5209264587533798
+    "ratio": 0.5836691882347446
   },
   {
     "format": "Q8_0",
     "bytes": 386405280,
-    "predicted_tok_s": 408.120717191028,
+    "predicted_tok_s": 425.46002476984785,
     "file": "/models/gguf/SmolLM2-360M-Instruct-Q8_0.gguf",
     "threads": 6,
-    "measured_tok_s": 207.536,
+    "measured_tok_s": 207.917,
     "runs_tok_s": [
-      208.113,
-      207.127,
-      207.536,
-      207.923,
-      204.764
+      206.252,
+      206.692,
+      207.917,
+      209.209,
+      209.119
     ],
-    "ratio": 0.5085162091951807
+    "ratio": 0.48868750974306574
   },
   {
     "format": "Q4_K_M",
     "bytes": 270590880,
-    "predicted_tok_s": 582.7986516027444,
+    "predicted_tok_s": 607.5592791597411,
     "file": "/models/gguf/SmolLM2-360M-Instruct-Q4_K_M.gguf",
     "threads": 6,
-    "measured_tok_s": 225.098,
+    "measured_tok_s": 219.572,
     "runs_tok_s": [
-      224.668,
-      225.098,
-      217.319,
-      225.162,
-      226.034
+      219.572,
+      219.581,
+      210.841,
+      218.158,
+      219.809
     ],
-    "ratio": 0.38623630885377297
+    "ratio": 0.3614001259328467
   }
 ]

@@ -46,8 +46,18 @@
   {
    "offered_rate": 8.0,
    "requests": 40,
-   "attainment": 0.75
+   "attainment": 1.0
+  },
+  {
+   "offered_rate": 12.0,
+   "requests": 40,
+   "attainment": 1.0
+  },
+  {
+   "offered_rate": 16.0,
+   "requests": 40,
+   "attainment": 0.575
   }
  ],
- "goodput_per_replica": 6.0
+ "goodput_per_replica": 12.0
 }

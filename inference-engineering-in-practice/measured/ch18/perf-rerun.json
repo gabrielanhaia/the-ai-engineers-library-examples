@@ -1,0 +1,9 @@
+{
+  "run": "rerun",
+  "request_rate": 2.0,
+  "num_prompts": 60,
+  "request_throughput": 1.795070106108581,
+  "request_goodput": 1.795070106108581,
+  "median_tpot_ms": 23.70714429921141,
+  "p99_ttft_ms": 461.56093037941895
+}

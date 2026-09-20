@@ -97,11 +97,11 @@ llama.cpp build b10964, commit b29c606e2
 
 == summary (perplexity and KLD on 100 chunks of 512 tokens)
 format  bits/w     PPL     KLD  top %   eval    d/n  tok/s
-f16      16.04  13.963       -      -  39/40  20/20  128.0
-Q8_0      8.54  13.991  0.0029   96.7  38/40  19/20  200.4
-Q4_K_M    5.98  14.268  0.0255   91.1  38/40  19/20  223.3
+f16      16.04  13.963       -      -  39/40  20/20  129.3
+Q8_0      8.54  13.991  0.0029   96.7  38/40  19/20  208.1
+Q4_K_M    5.98  14.268  0.0255   91.1  38/40  19/20  222.4
 bits/w = file bytes x 8 / 361,821,120 parameters
-Q4_K_M vs F16: 2.68x fewer bytes, 1.74x the decode speed
+Q4_K_M vs F16: 2.68x fewer bytes, 1.72x the decode speed
 
 == done
 manifest: measured/ch11/machine.json

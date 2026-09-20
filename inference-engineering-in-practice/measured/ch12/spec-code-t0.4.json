@@ -1,7 +1,7 @@
 {
  "task": "code",
  "temperature": 0.4,
- "wall_s": 6.824951954000426,
+ "wall_s": 5.343846895999377,
  "requests": [
   {
    "prompt": "Write a Python function that returns the factorial of n.",
@@ -9,13 +9,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 42,
-    "prompt_ms": 63.32,
-    "prompt_per_token_ms": 1.5076190476190476,
-    "prompt_per_second": 663.2975363234366,
+    "prompt_ms": 45.482,
+    "prompt_per_token_ms": 1.0829047619047618,
+    "prompt_per_second": 923.4422408865046,
     "predicted_n": 128,
-    "predicted_ms": 1170.792,
-    "predicted_per_token_ms": 9.218834645669292,
-    "predicted_per_second": 108.4735802772824,
+    "predicted_ms": 846.071,
+    "predicted_per_token_ms": 6.661976377952756,
+    "predicted_per_second": 150.10560579431277,
     "draft_n": 128,
     "draft_n_accepted": 95
    }
@@ -26,13 +26,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 45,
-    "prompt_ms": 48.763,
-    "prompt_per_token_ms": 1.0836222222222223,
-    "prompt_per_second": 922.8308348542954,
+    "prompt_ms": 47.198,
+    "prompt_per_token_ms": 1.0488444444444445,
+    "prompt_per_second": 953.4302300944955,
     "predicted_n": 128,
-    "predicted_ms": 877.079,
-    "predicted_per_token_ms": 6.906133858267716,
-    "predicted_per_second": 144.79881515804163,
+    "predicted_ms": 638.004,
+    "predicted_per_token_ms": 5.023653543307087,
+    "predicted_per_second": 199.05831311402434,
     "draft_n": 106,
     "draft_n_accepted": 100
    }
@@ -43,13 +43,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 45,
-    "prompt_ms": 48.487,
-    "prompt_per_token_ms": 1.077488888888889,
-    "prompt_per_second": 928.0838162806525,
+    "prompt_ms": 47.678,
+    "prompt_per_token_ms": 1.059511111111111,
+    "prompt_per_second": 943.8315365577415,
     "predicted_n": 28,
-    "predicted_ms": 183.51,
-    "predicted_per_token_ms": 6.796666666666666,
-    "predicted_per_second": 147.13094654242278,
+    "predicted_ms": 138.423,
+    "predicted_per_token_ms": 5.126777777777778,
+    "predicted_per_second": 195.05429011074747,
     "draft_n": 24,
     "draft_n_accepted": 21
    }
@@ -60,13 +60,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 45,
-    "prompt_ms": 50.936,
-    "prompt_per_token_ms": 1.131911111111111,
-    "prompt_per_second": 883.461598869169,
+    "prompt_ms": 47.412,
+    "prompt_per_token_ms": 1.0535999999999999,
+    "prompt_per_second": 949.1268033409265,
     "predicted_n": 128,
-    "predicted_ms": 860.235,
-    "predicted_per_token_ms": 6.773503937007874,
-    "predicted_per_second": 147.6340767348457,
+    "predicted_ms": 654.819,
+    "predicted_per_token_ms": 5.156055118110236,
+    "predicted_per_second": 193.94672420928532,
     "draft_n": 102,
     "draft_n_accepted": 101
    }
@@ -77,13 +77,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 46,
-    "prompt_ms": 51.635,
-    "prompt_per_token_ms": 1.1225,
-    "prompt_per_second": 890.8685968819599,
+    "prompt_ms": 48.947,
+    "prompt_per_token_ms": 1.0640652173913043,
+    "prompt_per_second": 939.792019939935,
     "predicted_n": 128,
-    "predicted_ms": 1158.58,
-    "predicted_per_token_ms": 9.12267716535433,
-    "predicted_per_second": 109.61694488080236,
+    "predicted_ms": 801.335,
+    "predicted_per_token_ms": 6.309724409448819,
+    "predicted_per_second": 158.48552727635757,
     "draft_n": 129,
     "draft_n_accepted": 94
    }
@@ -94,13 +94,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 45,
-    "prompt_ms": 50.993,
-    "prompt_per_token_ms": 1.1331777777777778,
-    "prompt_per_second": 882.4740650677544,
+    "prompt_ms": 47.148,
+    "prompt_per_token_ms": 1.0477333333333334,
+    "prompt_per_second": 954.4413336726902,
     "predicted_n": 128,
-    "predicted_ms": 765.372,
-    "predicted_per_token_ms": 6.026551181102362,
-    "predicted_per_second": 165.9323832071202,
+    "predicted_ms": 727.329,
+    "predicted_per_token_ms": 5.726999999999999,
+    "predicted_per_second": 174.6114894360049,
     "draft_n": 106,
     "draft_n_accepted": 100
    }
@@ -111,13 +111,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 47,
-    "prompt_ms": 51.785,
-    "prompt_per_token_ms": 1.1018085106382978,
-    "prompt_per_second": 907.5987254996621,
+    "prompt_ms": 50.615,
+    "prompt_per_token_ms": 1.0769148936170214,
+    "prompt_per_second": 928.5784846389411,
     "predicted_n": 52,
-    "predicted_ms": 634.538,
-    "predicted_per_token_ms": 12.441921568627452,
-    "predicted_per_second": 80.37343705183929,
+    "predicted_ms": 479.653,
+    "predicted_per_token_ms": 9.404960784313726,
+    "predicted_per_second": 106.32686546315773,
     "draft_n": 80,
     "draft_n_accepted": 31
    }
@@ -128,13 +128,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 43,
-    "prompt_ms": 47.872,
-    "prompt_per_token_ms": 1.1133023255813954,
-    "prompt_per_second": 898.2286096256685,
+    "prompt_ms": 46.386,
+    "prompt_per_token_ms": 1.0787441860465117,
+    "prompt_per_second": 927.0038373647221,
     "predicted_n": 128,
-    "predicted_ms": 718.569,
-    "predicted_per_token_ms": 5.658023622047244,
-    "predicted_per_second": 176.74015995680304,
+    "predicted_ms": 638.339,
+    "predicted_per_token_ms": 5.026291338582678,
+    "predicted_per_second": 198.95384740709872,
     "draft_n": 105,
     "draft_n_accepted": 100
    }

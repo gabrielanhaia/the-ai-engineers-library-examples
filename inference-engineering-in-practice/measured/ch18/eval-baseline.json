@@ -2,11 +2,11 @@
  "label": "baseline",
  "written": "2026-09-19",
  "all": {
-  "correct": 38,
+  "correct": 39,
   "n": 40
  },
  "date_number": {
-  "correct": 19,
+  "correct": 20,
   "n": 20
  },
  "fact": {
@@ -29,7 +29,7 @@
   {
    "id": "d03",
    "kind": "date",
-   "reply": "The Berlin Wall fell in 1989.",
+   "reply": "The Berlin Wall fell on November 9, 1989.",
    "correct": true
   },
   {
@@ -113,8 +113,8 @@
   {
    "id": "n07",
    "kind": "number",
-   "reply": "A spider has six legs.",
-   "correct": false
+   "reply": "A spider has eight legs.",
+   "correct": true
   },
   {
    "id": "n08",
@@ -149,7 +149,7 @@
   {
    "id": "f03",
    "kind": "fact",
-   "reply": "The capital of Italy is Rome.",
+   "reply": "Rome",
    "correct": true
   },
   {
@@ -251,7 +251,7 @@
   {
    "id": "f20",
    "kind": "fact",
-   "reply": "Blue and yellow paint create green.",
+   "reply": "Blue and yellow paint make green.",
    "correct": true
   }
  ]

@@ -1,7 +1,7 @@
 {
  "task": "prose",
  "temperature": 0.4,
- "wall_s": 11.795719851998001,
+ "wall_s": 11.59045340099874,
  "requests": [
   {
    "prompt": "Write a short story about a lighthouse keeper who finds a letter.",
@@ -9,13 +9,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 43,
-    "prompt_ms": 47.744,
-    "prompt_per_token_ms": 1.1103255813953488,
-    "prompt_per_second": 900.6367292225202,
+    "prompt_ms": 46.055,
+    "prompt_per_token_ms": 1.0710465116279069,
+    "prompt_per_second": 933.666268591901,
     "predicted_n": 128,
-    "predicted_ms": 1438.866,
-    "predicted_per_token_ms": 11.329653543307087,
-    "predicted_per_second": 88.26395230688611,
+    "predicted_ms": 1212.752,
+    "predicted_per_token_ms": 9.549228346456692,
+    "predicted_per_second": 104.72050345000461,
     "draft_n": 197,
     "draft_n_accepted": 77
    }
@@ -26,13 +26,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 39,
-    "prompt_ms": 58.438,
-    "prompt_per_token_ms": 1.4984102564102564,
-    "prompt_per_second": 667.3739689927787,
+    "prompt_ms": 42.836,
+    "prompt_per_token_ms": 1.0983589743589743,
+    "prompt_per_second": 910.4491549164254,
     "predicted_n": 128,
-    "predicted_ms": 1405.185,
-    "predicted_per_token_ms": 11.064448818897638,
-    "predicted_per_second": 90.37955856346318,
+    "predicted_ms": 1317.879,
+    "predicted_per_token_ms": 10.376999999999999,
+    "predicted_per_second": 96.36696540425943,
     "draft_n": 204,
     "draft_n_accepted": 76
    }
@@ -43,13 +43,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 44,
-    "prompt_ms": 48.507,
-    "prompt_per_token_ms": 1.1024318181818182,
-    "prompt_per_second": 907.085575277795,
+    "prompt_ms": 46.315,
+    "prompt_per_token_ms": 1.0526136363636363,
+    "prompt_per_second": 950.0161934578431,
     "predicted_n": 128,
-    "predicted_ms": 1384.945,
-    "predicted_per_token_ms": 10.90507874015748,
-    "predicted_per_second": 91.7003924343566,
+    "predicted_ms": 1207.09,
+    "predicted_per_token_ms": 9.504645669291339,
+    "predicted_per_second": 105.2117074948844,
     "draft_n": 190,
     "draft_n_accepted": 79
    }
@@ -60,13 +60,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 40,
-    "prompt_ms": 43.85,
-    "prompt_per_token_ms": 1.09625,
-    "prompt_per_second": 912.200684150513,
+    "prompt_ms": 42.962,
+    "prompt_per_token_ms": 1.0740500000000002,
+    "prompt_per_second": 931.0553512406312,
     "predicted_n": 128,
-    "predicted_ms": 1115.714,
-    "predicted_per_token_ms": 8.785149606299212,
-    "predicted_per_second": 113.82845424544284,
+    "predicted_ms": 1018.275,
+    "predicted_per_token_ms": 8.017913385826771,
+    "predicted_per_second": 124.72072868331246,
     "draft_n": 166,
     "draft_n_accepted": 85
    }
@@ -77,13 +77,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 37,
-    "prompt_ms": 40.25,
-    "prompt_per_token_ms": 1.087837837837838,
-    "prompt_per_second": 919.2546583850932,
+    "prompt_ms": 39.751,
+    "prompt_per_token_ms": 1.0743513513513512,
+    "prompt_per_second": 930.7941938567584,
     "predicted_n": 128,
-    "predicted_ms": 1359.932,
-    "predicted_per_token_ms": 10.708125984251968,
-    "predicted_per_second": 93.38702229229108,
+    "predicted_ms": 1278.275,
+    "predicted_per_token_ms": 10.065157480314962,
+    "predicted_per_second": 99.35264321057674,
     "draft_n": 207,
     "draft_n_accepted": 75
    }
@@ -94,13 +94,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 39,
-    "prompt_ms": 43.992,
-    "prompt_per_token_ms": 1.128,
-    "prompt_per_second": 886.5248226950356,
+    "prompt_ms": 42.308,
+    "prompt_per_token_ms": 1.0848205128205128,
+    "prompt_per_second": 921.8114777347073,
     "predicted_n": 128,
-    "predicted_ms": 1287.281,
-    "predicted_per_token_ms": 10.136070866141733,
-    "predicted_per_second": 98.65755806230341,
+    "predicted_ms": 1889.87,
+    "predicted_per_token_ms": 14.880866141732282,
+    "predicted_per_second": 67.20038944477663,
     "draft_n": 174,
     "draft_n_accepted": 82
    }
@@ -111,13 +111,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 42,
-    "prompt_ms": 46.51,
-    "prompt_per_token_ms": 1.1073809523809524,
-    "prompt_per_second": 903.0316061062138,
+    "prompt_ms": 121.21,
+    "prompt_per_token_ms": 2.885952380952381,
+    "prompt_per_second": 346.5060638561175,
     "predicted_n": 128,
-    "predicted_ms": 2061.601,
-    "predicted_per_token_ms": 16.23307874015748,
-    "predicted_per_second": 61.60260884623164,
+    "predicted_ms": 2038.451,
+    "predicted_per_token_ms": 16.050795275590552,
+    "predicted_per_second": 62.30220888311762,
     "draft_n": 212,
     "draft_n_accepted": 73
    }
@@ -128,13 +128,13 @@
    "timings": {
     "cache_n": 0,
     "prompt_n": 40,
-    "prompt_ms": 43.762,
-    "prompt_per_token_ms": 1.09405,
-    "prompt_per_second": 914.0350075407888,
+    "prompt_ms": 42.293,
+    "prompt_per_token_ms": 1.057325,
+    "prompt_per_second": 945.7829900929232,
     "predicted_n": 128,
-    "predicted_ms": 1323.705,
-    "predicted_per_token_ms": 10.42287401574803,
-    "predicted_per_second": 95.94282714048825,
+    "predicted_ms": 1165.874,
+    "predicted_per_token_ms": 9.180110236220473,
+    "predicted_per_second": 108.9311537953501,
     "draft_n": 192,
     "draft_n_accepted": 79
    }

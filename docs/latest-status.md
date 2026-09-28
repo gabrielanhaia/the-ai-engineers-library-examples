@@ -3,19 +3,19 @@
 Written by the weekly CI job. Not a pin: the pins
 are in [versions.md](versions.md).
 
-Run: 2026-09-21T09:03Z, [log](https://github.com/gabrielanhaia/the-ai-engineers-library-examples/actions/runs/35562598135)
+Run: 2026-09-28T08:26Z, [log](https://github.com/gabrielanhaia/the-ai-engineers-library-examples/actions/runs/36379852237)
 
 ## Versions
 
 | Image | Pinned | Latest | Moved |
 |---|---|---|---|
-| `ghcr.io/ggml-org/llama.cpp` | `server-v0.4.1` | `server-v0.4.1` | no |
-| `vllm/vllm-openai-cpu` | `v0.29.0` | `v0.29.0` | no |
+| `ghcr.io/ggml-org/llama.cpp` | `server-v0.4.1` | `server-v0.5.0` | yes |
+| `vllm/vllm-openai-cpu` | `v0.29.0` | `v0.30.0` | yes |
 | `ghcr.io/vllm-project/guidellm` | `v0.7.4` | `v0.7.4` | no |
-| `prom/prometheus` | `v3.14.0` | `v3.14.0` | no |
+| `prom/prometheus` | `v3.14.0` | `v3.15.0` | yes |
 | `grafana/grafana` | `13.2.2` | `13.2.2` | no |
 | `ghcr.io/llm-d/llm-d-inference-sim` | `v0.11.2` | `v0.11.2` | no |
-| `ghcr.io/llm-d/llm-d-router-endpoint-picker` | `v0.10.0` | `v0.10.0` | no |
+| `ghcr.io/llm-d/llm-d-router-endpoint-picker` | `v0.10.0` | `v0.11.0` | yes |
 | `kindest/node` | pinned | not tracked | no |
 | `docker.io/istio/pilot` | pinned | not tracked | no |
 | `docker.io/istio/proxyv2` | pinned | not tracked | no |
@@ -37,7 +37,7 @@ Run: 2026-09-21T09:03Z, [log](https://github.com/gabrielanhaia/the-ai-engineers-
 | ch06 | ubuntu-24.04-arm | pass |
 | ch07 | ubuntu-24.04-arm | pass |
 | ch08 | ubuntu-24.04-arm | FAIL |
-| ch09 | ubuntu-24.04-arm | pass |
+| ch09 | ubuntu-24.04-arm | FAIL |
 | ch10 | ubuntu-24.04-arm | pass |
 | ch11 | ubuntu-24.04-arm | pass |
 | ch12 | ubuntu-24.04-arm | pass |
@@ -57,7 +57,7 @@ Run: 2026-09-21T09:03Z, [log](https://github.com/gabrielanhaia/the-ai-engineers-
 | ch06 | ubuntu-24.04 | pass |
 | ch07 | ubuntu-24.04 | pass |
 | ch08 | ubuntu-24.04 | FAIL |
-| ch09 | ubuntu-24.04 | pass |
+| ch09 | ubuntu-24.04 | FAIL |
 | ch10 | ubuntu-24.04 | pass |
 | ch11 | ubuntu-24.04 | pass |
 | ch12 | ubuntu-24.04 | pass |
